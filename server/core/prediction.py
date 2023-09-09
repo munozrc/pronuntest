@@ -4,16 +4,16 @@ import os
 from keras.models import load_model
 import numpy as np
 
-from preprocesor import convert_audio_to_spectrograms
-from utils import get_pred_percentage
+from .utils import get_pred_percentage
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-phonemes = ["a", "e", "noise", "o"]
+phonemes = ["phoneme-a", "phoneme-e", "noise", "phoneme-o"]
 
 
 class PhonemeRecognitionService:
     _instance = None
     _model: Any
+    _confidence_threshold = 0.7
 
     def __new__(cls):
         if cls._instance is None:
@@ -27,12 +27,10 @@ class PhonemeRecognitionService:
         print("\n")
 
         for logits in predicts:
-            max_confidence = np.max(logits)
-            predicted_class = phonemes[np.argmax(logits)]
             percentage = get_pred_percentage(logits)
+            predicted_class = phonemes[np.argmax(logits)]
 
             data = {
-                "max_confidence": max_confidence,
                 "predicted": predicted_class,
                 "percentage": percentage,
             }
@@ -47,12 +45,8 @@ class PhonemeRecognitionService:
             segs_filter = recording
 
         predicted = max(segs_filter, key=lambda x: x["percentage"])
-        predicted_class = predicted["predicted"]
-        return predicted_class
 
+        if predicted["percentage"] >= self._confidence_threshold * 100:
+            return predicted["predicted"]
 
-if __name__ == "__main__":
-    model = PhonemeRecognitionService()
-    recording = "data/validation/phoneme-a_correct.wav"
-    spectrograms = convert_audio_to_spectrograms(recording)
-    model.predict(spectrograms)
+        return "unknown"
