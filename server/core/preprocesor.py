@@ -41,6 +41,12 @@ def get_spectrogram(signal: np.ndarray) -> np.ndarray:
     return np.expand_dims(spectrogram, axis=2)
 
 
+def convert_audio_to_spectrograms(file) -> np.ndarray:
+    segments = read_audio_segments(file)
+    recording = [get_spectrogram(signal) for signal in segments]
+    return np.array(recording)
+
+
 def add_white_noise(signal: np.ndarray, output: str):
     noise_percentage_factor = 0.2
     noise = np.random.normal(0, signal.std(), signal.size)
@@ -50,7 +56,7 @@ def add_white_noise(signal: np.ndarray, output: str):
 
 def add_time_stretch(signal: np.ndarray, output: str):
     augmented_signal = librosa.effects.time_stretch(signal, rate=0.3)
-    save_audio(output, augmented_signal)
+    save_audio(output, augmented_signal[: len(signal)])
 
 
 def add_pitch_scale(signal: np.ndarray, output: str):
