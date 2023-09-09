@@ -1,7 +1,9 @@
 import shutil
 import os
 
+from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+import numpy as np
 
 from utils import enumerate_recordings
 import preprocesor as prep
@@ -27,8 +29,8 @@ def segment_audio_files():
 
         for i, segment in enumerate(recording):
             new_pathname = os.path.join(root, f"{name}-{i}{extension}")
-            prep.save_audio(new_pathname, segment)
             print(f"[+] Saved segment {i + 1}/{num_segs}: {new_pathname}")
+            prep.save_audio(new_pathname, segment)
 
     print("[+] Segmentation complete.")
 
@@ -125,6 +127,25 @@ def apply_data_augmentation():
         prep.add_pitch_scale(signal, pathmame.replace("@", "pitch-scale"))
 
     print("[*] Data created successfully")
+
+
+def load_dataset_file(pathname: str):
+    sound_encoder = LabelEncoder()
+    pronun_encoder = LabelEncoder()
+
+    df = pd.read_json(pathname, orient="records")
+    df["sound"] = sound_encoder.fit_transform(df["sound"])
+    df["pronunciation"] = pronun_encoder.fit_transform(df["pronunciation"])
+
+    X = np.array(df["spectrogram"].to_list())
+    y = {"sound": df["sound"].to_numpy(), "pronun": df["pronunciation"].to_numpy()}
+
+    classes = {
+        "sounds": list(sound_encoder.classes_),
+        "pronuns": list(pronun_encoder.classes_),
+    }
+
+    return X, y, classes
 
 
 if __name__ == "__main__":
