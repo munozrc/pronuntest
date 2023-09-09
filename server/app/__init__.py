@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
-from ..core.preprocesor import convert_audio_to_spectrograms
-from ..core.prediction import PhonemeRecognitionService
+from core.preprocesor import convert_audio_to_spectrograms
+from core.prediction import PhonemeRecognitionService
 
 app = Flask(__name__)
 model = PhonemeRecognitionService()
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/api/", methods=["POST"])
 def predict():
     recording = request.files["file"]
     spectrograms = convert_audio_to_spectrograms(recording)
