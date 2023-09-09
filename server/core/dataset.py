@@ -1,12 +1,13 @@
 import shutil
 import os
 
-import preprocesor as prep
+from preprocesor import read_audio_segments, save_audio, read_audio
+from utils import enumerate_recordings
 
 
 def segment_audio_files():
     print("[*] Reading path of audio recordings...")
-    recordings = prep.enumerate_audio_recordings("data/raw")
+    recordings = enumerate_recordings("data/raw")
     num_files = len(recordings)
     print(f"[*] Found {num_files} audio files in the raw data directory.")
 
@@ -14,7 +15,7 @@ def segment_audio_files():
         root, filename = os.path.split(pathname)
         root = root.replace("data/raw", "data/.temp")
         name, extension = os.path.splitext(filename)
-        recording = prep.split_signal_into_segments(pathname)
+        recording = read_audio_segments(pathname)
         progress = f"{index + 1}/{num_files}"
         num_segs = len(recording)
         print(f"[*] Processing file {progress}: {filename} with {num_segs} segments...")
@@ -24,7 +25,7 @@ def segment_audio_files():
 
         for i, segment in enumerate(recording):
             new_pathname = os.path.join(root, f"{name}-{i}{extension}")
-            prep.save_audio_recording(new_pathname, segment)
+            save_audio(new_pathname, segment)
             print(f"[+] Saved segment {i + 1}/{num_segs}: {new_pathname}")
 
     print("[+] Segmentation complete.")
@@ -32,7 +33,7 @@ def segment_audio_files():
 
 def split_audio_dataset():
     print("\n[*] Splitting audio dataset into train and test sets...")
-    recordings = prep.enumerate_audio_recordings("data/.temp", True)
+    recordings = enumerate_recordings("data/.temp", True)
 
     test_percentage = 0.3
     num_files = len(recordings)
@@ -43,8 +44,8 @@ def split_audio_dataset():
     print(f"[*] Train files: {num_files - num_test_files}")
 
     for index, pathname in recordings:
+        recording = read_audio(pathname)
         root, filename = os.path.split(pathname)
-        recording = prep.read_audio_file(pathname)
         destination = "data/test" if index <= num_test_files else "data/train"
         root = root.replace("data/.temp", destination)
         pathname = os.path.join(root, filename)
@@ -52,7 +53,7 @@ def split_audio_dataset():
         if not os.path.exists(root):
             os.makedirs(root)
 
-        prep.save_audio_recording(pathname, recording)
+        save_audio(pathname, recording)
 
         if index == num_test_files:
             print("[+] Starting to move files to train set...")

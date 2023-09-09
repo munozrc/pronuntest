@@ -1,8 +1,6 @@
-from typing import List, Tuple
-from glob import glob
+from typing import List
 import soundfile as sf
 import numpy as np
-import random
 import librosa
 
 SAMPLE_RATE = 22050  # frequency with which instants of the audio signal
@@ -11,15 +9,8 @@ HOP_LENGTH = 128  # sliding window for FFT. Measured in number of samples
 N_FFT = 255  # length of the windowed signal after padding with zeros
 
 
-def enumerate_audio_recordings(pathname: str, shuffle=False) -> List[Tuple[int, str]]:
-    recordings = glob(f"{pathname}/*/*.wav")
-    if shuffle:
-        random.shuffle(recordings)
-    return list(enumerate(recordings))
-
-
-def split_signal_into_segments(file) -> List[np.ndarray]:
-    signal = read_audio_file(file)
+def read_audio_segments(file) -> List[np.ndarray]:
+    signal = read_audio(file)
     num_segments = (len(signal) + TARGET_SAMPLES - 1) // TARGET_SAMPLES
 
     segments = []
@@ -34,10 +25,10 @@ def split_signal_into_segments(file) -> List[np.ndarray]:
     return segments
 
 
-def read_audio_file(file):
+def read_audio(file) -> np.ndarray:
     signal, _ = librosa.load(file, sr=SAMPLE_RATE, dtype=np.float32)
     return signal
 
 
-def save_audio_recording(filename: str, data: np.ndarray):
+def save_audio(filename: str, data: np.ndarray) -> None:
     sf.write(file=filename, data=data, samplerate=SAMPLE_RATE)
