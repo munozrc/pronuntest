@@ -2,6 +2,8 @@ from typing import List, Tuple
 from glob import glob
 import random
 
+from librosa.display import specshow, waveshow
+from librosa import amplitude_to_db
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
@@ -52,6 +54,39 @@ def plot_confusion_matrix(confusion_mtx, classes):
     plt.xlabel("Prediction", fontsize=14, fontweight="bold", labelpad=10)
     plt.ylabel("Expected", fontsize=14, fontweight="bold", labelpad=10)
     plt.title("Confusion Matrix", fontsize=16, fontweight="bold")
+    plt.show()
+
+
+def plot_waveform(waveform: np.ndarray, sample_rate: int):
+    """
+    Plots the waveform of an audio signal.
+    """
+    plt.figure(figsize=(8, 4))
+    waveshow(waveform, sr=sample_rate)
+    plt.xlabel("Time (s)")
+    plt.ylabel("Amplitude")
+    plt.title("Waveform")
+    plt.show()
+
+
+def plot_spectrogram(spectrogram: np.ndarray, sample_rate: int, hop_length: int):
+    """
+    Plots the spectrogram of an audio signal.
+    """
+    plt.figure(figsize=(8, 4))
+    db = amplitude_to_db(spectrogram[:, :, 0].T, ref=np.max)
+    specshow(
+        db,
+        sr=sample_rate,
+        hop_length=hop_length,
+        x_axis="ms",
+        y_axis="linear",
+        cmap="viridis",
+    )
+    plt.colorbar(format="%+2.0f dB")
+    plt.xlabel("Time (ms)")
+    plt.ylabel("Frequency")
+    plt.title("Spectrogram")
     plt.show()
 
 
