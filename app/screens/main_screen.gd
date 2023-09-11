@@ -42,26 +42,28 @@ func _on_record_button_button_down():
 
 func _on_record_button_button_up():
 	record_effect.set_recording_active(false)
+	
 	record_button_voice.scale = Vector2.ZERO
 	record_button_animator.play_backwards("press_button")
+	
 	recording = record_effect.get_recording()
-	recording.save_to_wav("res://assets/recording.wav")
-	active_visualizer = false
+	recording.save_to_wav("user://recording.wav")
 
-	var file = FileAccess.open("res://assets/recording.wav", FileAccess.READ)
+	var file = FileAccess.open("user://recording.wav", FileAccess.READ)
 	var content = file.get_buffer(file.get_length())
 	file.close()
 	
 	var headers = [	"Content-Type: multipart/form-data; boundary=\"boundary\""]
 	var body = PackedByteArray()
-	
+
 	body.append_array("--boundary\r\n".to_utf8_buffer())
-	body.append_array("Content-Disposition: form-data; name=\"file\"; filename=\"audio.wav\"\r\n".to_utf8_buffer())
+	body.append_array("Content-Disposition: form-data; name=\"recording\"; filename=\"recording.wav\"\r\n".to_utf8_buffer())
 	body.append_array("Content-Type: audio/wav\r\n\r\n".to_utf8_buffer())
 	body.append_array(content)
 	body.append_array("\r\n--boundary--\r\n".to_utf8_buffer())
 	
 	request.request_raw(url, headers, HTTPClient.METHOD_POST, body)
+	active_visualizer = false
 	print("release")
 
 
