@@ -13,7 +13,7 @@ phonemes = ["phoneme-a", "phoneme-e", "phoneme-i", "noise", "phoneme-o", "phonem
 class PhonemeRecognitionService:
     _instance = None
     _model: Any
-    _confidence_threshold = 0.7
+    _confidence_threshold = 0.0
 
     def __new__(cls):
         if cls._instance is None:
