@@ -69,16 +69,13 @@ def split_audio_dataset():
 def get_audio_metadata(pathname: str):
     root, filename = os.path.split(pathname)
     sound = os.path.basename(root).split("-")[1]
-    pronun = None
+    pronun = "noise"
 
     if sound not in ["noise"]:
         condition = filename.split("_")[3]
         pronun = "correct" if condition == "N" else "incorrect"
 
-    return {
-        "sound": sound,
-        "pronunciation": pronun,
-    }
+    return {"sound": sound, "pronunciation": pronun, "spectrogram": None}
 
 
 def create_dataset_file(folder: str, output: str):
@@ -100,6 +97,8 @@ def create_dataset_file(folder: str, output: str):
     df.to_json(output, orient="records")
 
     print(f"[*] Dataset exported successfully in {output}")
+    count = df.groupby(["sound", "pronunciation"]).size().reset_index(name="count")
+    print(count)
     shutil.rmtree(folder)
 
 
