@@ -74,7 +74,7 @@ func _on_http_request_request_completed(_result, response_code, _headers, body):
 		return
 	
 	var data = JSON.parse_string(body.get_string_from_utf8())
-	phoneme.text = data["phoneme"].capitalize()
+	phoneme.text = data["phoneme"]["class"].capitalize()
 	pronunciation.text = data["pronunciation"].capitalize()
 	print(data)
 	
