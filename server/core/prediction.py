@@ -7,7 +7,8 @@ import numpy as np
 from .utils import get_pred_percentage
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-phonemes = ["phoneme-a", "phoneme-e", "phoneme-i", "noise", "phoneme-o", "phoneme-u"]
+phonemes = ["a", "e", "i", "noise", "o", "u"]
+pronuns = ["correct", "incorrect", "noise"]
 
 
 class PhonemeRecognitionService:
