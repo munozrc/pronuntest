@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import pprint
 
 from core.preprocesor import convert_audio_to_spectrograms
 from core.prediction import PhonemeRecognitionService
@@ -11,13 +12,19 @@ model = PhonemeRecognitionService()
 def predict():
     recording = request.files["recording"]
     spectrograms = convert_audio_to_spectrograms(recording)
-    predicted_class = model.predict(spectrograms)
+
+    preds = model.predict(spectrograms)
+    pprint.pprint(preds)
+
+    phonemes = list(filter(lambda pred: pred["class"] != "noise", preds))
+    preds = phonemes if len(phonemes) > 0 else preds
+    phoneme = max(preds, key=lambda x: x["percentage"])
 
     return jsonify(
         {
             "status": "succesfully",
-            "phoneme": predicted_class,
             "pronunciation": "correct",
+            "phoneme": phoneme,
         }
     )
 
