@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PronunTest"
-run/main_scene="res://screens/main_screen.tscn"
+run/main_scene="res://screens/scroll_container.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -22,8 +22,10 @@ driver/enable_input=true
 
 [display]
 
-window/size/viewport_width=375
-window/size/viewport_height=667
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/window_width_override=360
+window/size/window_height_override=640
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
@@ -31,6 +33,10 @@ window/handheld/orientation=1
 [filesystem]
 
 import/blender/enabled=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
