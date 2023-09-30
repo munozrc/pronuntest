@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mjpqwy5i7pbp"]
+[gd_scene load_steps=13 format=3 uid="uid://mjpqwy5i7pbp"]
 
 [ext_resource type="Script" path="res://screens/main_menu.gd" id="1_tks4m"]
 [ext_resource type="PackedScene" uid="uid://daeqcfxdm1n36" path="res://islands/forest_island.tscn" id="2_0s3oj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ia5u3o6n0ufc" path="res://assets/buttons/button_settings.png" id="2_qdwrg"]
 [ext_resource type="Texture2D" uid="uid://ca4tq44se35gq" path="res://assets/cloud.png" id="3_i0k7w"]
 [ext_resource type="Texture2D" uid="uid://bblpi6s4c14vt" path="res://assets/buttons/arrow/arrow.png" id="4_pj2ar"]
+[ext_resource type="AudioStream" uid="uid://v5uqfv6cpasw" path="res://assets/sounds_effects/ui/abstract_001.mp3" id="7_lrctq"]
 
 [sub_resource type="Gradient" id="Gradient_imhir"]
 colors = PackedColorArray(0.400261, 0.831247, 0.936316, 1, 1, 1, 1, 1)
@@ -300,6 +301,9 @@ layout_mode = 2
 texture_normal = ExtResource("4_pj2ar")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SliderControls"]
+stream = ExtResource("7_lrctq")
 
 [connection signal="pressed" from="SliderControls/CenterContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="SliderControls/CenterContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]
