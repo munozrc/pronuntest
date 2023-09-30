@@ -1,0 +1,305 @@
+[gd_scene load_steps=12 format=3 uid="uid://mjpqwy5i7pbp"]
+
+[ext_resource type="Script" path="res://screens/main_menu.gd" id="1_tks4m"]
+[ext_resource type="PackedScene" uid="uid://daeqcfxdm1n36" path="res://islands/forest_island.tscn" id="2_0s3oj"]
+[ext_resource type="PackedScene" uid="uid://dsjice86tsans" path="res://islands/beach_island.tscn" id="2_3b2n4"]
+[ext_resource type="Texture2D" uid="uid://ia5u3o6n0ufc" path="res://assets/buttons/button_settings.png" id="2_qdwrg"]
+[ext_resource type="Texture2D" uid="uid://ca4tq44se35gq" path="res://assets/cloud.png" id="3_i0k7w"]
+[ext_resource type="Texture2D" uid="uid://bblpi6s4c14vt" path="res://assets/buttons/arrow/arrow.png" id="4_pj2ar"]
+
+[sub_resource type="Gradient" id="Gradient_imhir"]
+colors = PackedColorArray(0.400261, 0.831247, 0.936316, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h1355"]
+gradient = SubResource("Gradient_imhir")
+fill_from = Vector2(0.487179, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="Animation" id="Animation_bnasy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-669, -359)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cloud2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-46, -373)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-136, -350)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-335, -321)]
+}
+
+[sub_resource type="Animation" id="Animation_2enu6"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cloud:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-669, -377), Vector2(-669, -359)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cloud2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-46, -387), Vector2(-46, -373)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud3:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-136, -362), Vector2(-136, -350)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud4:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-335, -297), Vector2(-335, -321)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fy6n"]
+_data = {
+"RESET": SubResource("Animation_bnasy"),
+"idle": SubResource("Animation_2enu6")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tks4m")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_h1355")
+
+[node name="SlidingMenu" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SlidingMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 100
+
+[node name="ForestIsland" parent="SlidingMenu/HBoxContainer" instance=ExtResource("2_0s3oj")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BeachIsland" parent="SlidingMenu/HBoxContainer" instance=ExtResource("2_3b2n4")]
+layout_mode = 2
+
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 181.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="TextureButton" type="TextureButton" parent="Header/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_qdwrg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SliderControls" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.678
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 158.16
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Clouds" type="Control" parent="SliderControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 123.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cloud3" type="TextureRect" parent="SliderControls/Clouds"]
+modulate = Color(1, 1, 1, 0.670588)
+layout_mode = 0
+offset_left = -136.0
+offset_top = -359.895
+offset_right = 482.0
+offset_bottom = -0.895111
+texture = ExtResource("3_i0k7w")
+expand_mode = 2
+
+[node name="Cloud4" type="TextureRect" parent="SliderControls/Clouds"]
+modulate = Color(1, 1, 1, 0.823529)
+layout_mode = 0
+offset_left = -335.0
+offset_top = -314.637
+offset_right = 162.0
+offset_bottom = -25.6375
+texture = ExtResource("3_i0k7w")
+expand_mode = 2
+flip_h = true
+
+[node name="Cloud2" type="TextureRect" parent="SliderControls/Clouds"]
+layout_mode = 0
+offset_left = -46.0
+offset_top = -379.301
+offset_right = 706.0
+offset_bottom = 56.699
+texture = ExtResource("3_i0k7w")
+expand_mode = 2
+
+[node name="Cloud" type="TextureRect" parent="SliderControls/Clouds"]
+layout_mode = 0
+offset_left = -669.0
+offset_top = -377.0
+offset_right = 31.0
+offset_bottom = 29.0
+texture = ExtResource("3_i0k7w")
+expand_mode = 2
+flip_h = true
+
+[node name="AnimationClouds" type="AnimationPlayer" parent="SliderControls/Clouds"]
+autoplay = "idle"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_8fy6n")
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="SliderControls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SliderControls/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="SliderControls/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(82.5, 168.3)
+layout_mode = 2
+texture_normal = ExtResource("4_pj2ar")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="RightButton" type="TextureButton" parent="SliderControls/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(82.5, 168.3)
+layout_mode = 2
+texture_normal = ExtResource("4_pj2ar")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="SliderControls/CenterContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="SliderControls/CenterContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]

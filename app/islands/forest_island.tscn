@@ -1,0 +1,528 @@
+[gd_scene load_steps=17 format=3 uid="uid://daeqcfxdm1n36"]
+
+[ext_resource type="Texture2D" uid="uid://dahvumw6vnuh4" path="res://assets/islands/forest_terrain.png" id="1_nhwba"]
+[ext_resource type="Texture2D" uid="uid://cy2om1j4mjpja" path="res://assets/tree/branch.png" id="2_2c3gl"]
+[ext_resource type="Texture2D" uid="uid://3fdlwtfymopj" path="res://assets/reference_forest_island.png" id="2_2jm2b"]
+[ext_resource type="Texture2D" uid="uid://bjnmi7mwxmtyw" path="res://assets/tree/shadow.png" id="2_fart8"]
+[ext_resource type="Texture2D" uid="uid://btgnl8kljf32c" path="res://assets/tree/trunk.png" id="4_5r64l"]
+[ext_resource type="Texture2D" uid="uid://cxaj2qiis8c0l" path="res://assets/tent.png" id="6_1ynmg"]
+[ext_resource type="Texture2D" uid="uid://bj6ows34h7dep" path="res://assets/lagoon.png" id="6_jxb5a"]
+[ext_resource type="Texture2D" uid="uid://bgw10p40rfqf3" path="res://assets/bonfire/wood_sticks.png" id="8_jnppg"]
+[ext_resource type="Texture2D" uid="uid://byjfdgg7b0s4x" path="res://assets/bonfire/fire.png" id="9_gh34q"]
+[ext_resource type="Texture2D" uid="uid://dww2kk2vkv4gd" path="res://assets/tree/leaf.png" id="10_42qht"]
+
+[sub_resource type="Animation" id="Animation_vwmkp"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3.5, 4.2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-38, 313), Vector2(-34, 313), Vector2(-38, 313), Vector2(-38, 313), Vector2(-34, 313), Vector2(-38, 313), Vector2(-38, 313)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Branch3:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3.5, 4.2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0271955, 0.0, 0.0, 0.0271955, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Branch2:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3.5, 4.2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0582228, 0.0, 0.0, 0.0582228, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Branch:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3.5, 4.2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-31, -65), Vector2(-16, -65), Vector2(-31, -65), Vector2(-31, -65), Vector2(-16, -65), Vector2(-31, -65), Vector2(-31, -65)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Branch:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3.5, 4.2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0930345, 0.0, 0.0, 0.0930345, 0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Branch2:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.1, 3.5, 4.2, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-29, 23), Vector2(-25, 23), Vector2(-29, 23), Vector2(-29, 23), Vector2(-25, 23), Vector2(-29, 23), Vector2(-29, 23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqb8s"]
+_data = {
+"idle": SubResource("Animation_vwmkp")
+}
+
+[sub_resource type="Animation" id="Animation_54k78"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Branch3:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.7, 3.1, 3.8, 6, 7.4, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.00468512, 0.0, 0.0, 0.00468512, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Branch2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1.7, 3.1, 3.8, 6, 7.4, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0166849, 0.0475302, 0.0166849, 0.0166849, 0.0475302, 0.0166849, 0.0166849]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Branch2:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.7, 3.1, 3.8, 6, 7.4, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-30.9523, 15.4762), Vector2(-27.3809, 15.4762), Vector2(-30.9523, 15.4762), Vector2(-30.9523, 15.4762), Vector2(-27.3809, 15.4762), Vector2(-30.9523, 15.4762), Vector2(-30.9523, 15.4762)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Branch:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1.7, 3.1, 3.8, 6, 7.4, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-31, -64.2856), Vector2(-21.4285, -64.2856), Vector2(-31, -64.2856), Vector2(-31, -64.2856), Vector2(-21.4285, -64.2856), Vector2(-31, -64.2856), Vector2(-31, -64.2856)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Branch:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 1.7, 3.1, 3.8, 6, 7.4, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0919945, 0.0, 0.0, 0.0919945, 0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shadow:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6, 1.7, 3.1, 3.8, 6, 7.4, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-10.7143, 307.142), Vector2(-7.14285, 307.142), Vector2(-10.7143, 307.142), Vector2(-10.7143, 307.142), Vector2(-7.14285, 307.142), Vector2(-10.7143, 307.142), Vector2(-10.7143, 307.142)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ch4fx"]
+_data = {
+"idle": SubResource("Animation_54k78")
+}
+
+[sub_resource type="Curve" id="Curve_crt0k"]
+_data = [Vector2(0, 0.263158), 0.0, 0.312406, 0, 0, Vector2(0.851986, 0), -5.37599, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_uyabs"]
+offsets = PackedFloat32Array(0, 0.617391, 1)
+colors = PackedColorArray(0.980469, 0.675781, 0.257813, 1, 0.9375, 0.351563, 0.164063, 1, 0.937255, 0.352941, 0.164706, 0)
+
+[node name="ForestIsland" type="Control"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Terrain" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.82
+offset_top = 3.99994
+offset_right = 380.82
+offset_bottom = 402.64
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nhwba")
+expand_mode = 1
+
+[node name="Base" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -438.0
+offset_right = 577.0
+offset_bottom = 574.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.66, 0.66)
+pivot_offset = Vector2(577, 506)
+texture = ExtResource("2_2jm2b")
+
+[node name="Tree" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -238.0
+offset_right = -283.0
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shadow" type="TextureRect" parent="Tree"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 313.0
+offset_right = 265.0
+offset_bottom = 406.0
+rotation = 0.0358744
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("2_fart8")
+
+[node name="Trunk" type="TextureRect" parent="Tree"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 143.0
+offset_right = 86.0
+offset_bottom = 457.0
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("4_5r64l")
+
+[node name="Branch3" type="TextureRect" parent="Tree"]
+modulate = Color(0, 0.290196, 0.223529, 1)
+layout_mode = 0
+offset_left = -31.0
+offset_top = 117.0
+offset_right = 146.0
+offset_bottom = 307.0
+scale = Vector2(1.19, 1.19)
+pivot_offset = Vector2(88, 190)
+texture = ExtResource("2_2c3gl")
+
+[node name="Branch2" type="TextureRect" parent="Tree"]
+modulate = Color(0, 0.32549, 0.227451, 1)
+layout_mode = 0
+offset_left = -29.0
+offset_top = 23.0
+offset_right = 148.0
+offset_bottom = 213.0
+scale = Vector2(0.910001, 0.910001)
+pivot_offset = Vector2(88, 190)
+texture = ExtResource("2_2c3gl")
+
+[node name="Branch" type="TextureRect" parent="Tree"]
+modulate = Color(0, 0.378906, 0.269531, 1)
+layout_mode = 0
+offset_left = -31.0
+offset_top = -65.0
+offset_right = 146.0
+offset_bottom = 125.0
+scale = Vector2(0.66, 0.66)
+pivot_offset = Vector2(88, 190)
+texture = ExtResource("2_2c3gl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tree"]
+autoplay = "idle"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_fqb8s")
+}
+
+[node name="SmallTree" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.9999
+offset_top = -228.0
+offset_right = -80.9999
+offset_bottom = -228.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.840001, 0.840001)
+
+[node name="Shadow" type="TextureRect" parent="SmallTree"]
+layout_mode = 0
+offset_left = -10.7143
+offset_top = 307.142
+offset_right = 292.286
+offset_bottom = 400.142
+rotation = 0.0358744
+scale = Vector2(0.471354, 0.471354)
+texture = ExtResource("2_fart8")
+
+[node name="Trunk" type="TextureRect" parent="SmallTree"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 127.381
+offset_right = 86.0
+offset_bottom = 441.381
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("4_5r64l")
+
+[node name="Branch3" type="TextureRect" parent="SmallTree"]
+modulate = Color(0.0742188, 0.367188, 0, 1)
+layout_mode = 0
+offset_left = -31.0
+offset_top = 105.952
+offset_right = 146.0
+offset_bottom = 295.952
+rotation = -0.00102505
+scale = Vector2(1.14238, 1.14238)
+pivot_offset = Vector2(88, 190)
+texture = ExtResource("2_2c3gl")
+
+[node name="Branch2" type="TextureRect" parent="SmallTree"]
+modulate = Color(0.0898438, 0.40625, 0, 1)
+layout_mode = 0
+offset_left = -31.7337
+offset_top = 15.4762
+offset_right = 145.267
+offset_bottom = 205.476
+rotation = 0.00993632
+scale = Vector2(0.862384, 0.862384)
+pivot_offset = Vector2(88, 190)
+texture = ExtResource("2_2c3gl")
+
+[node name="Branch" type="TextureRect" parent="SmallTree"]
+modulate = Color(0.125, 0.464844, 0.0429688, 1)
+layout_mode = 0
+offset_left = -33.0941
+offset_top = -64.2856
+offset_right = 143.906
+offset_bottom = 125.714
+rotation = -0.0201273
+scale = Vector2(0.612381, 0.612381)
+pivot_offset = Vector2(88, 190)
+texture = ExtResource("2_2c3gl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SmallTree"]
+autoplay = "idle"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_ch4fx")
+}
+
+[node name="Lagoon" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = 46.0
+offset_right = -127.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.08, 1.08)
+pivot_offset = Vector2(281, 115)
+
+[node name="Border" type="TextureRect" parent="Lagoon"]
+modulate = Color(0.933594, 0.816406, 0.40625, 1)
+layout_mode = 0
+offset_left = 3.2222
+offset_top = 2.03705
+offset_right = 565.222
+offset_bottom = 232.037
+scale = Vector2(0.62, 0.62)
+pivot_offset = Vector2(281, 115)
+texture = ExtResource("6_jxb5a")
+
+[node name="Wave" type="TextureRect" parent="Lagoon"]
+modulate = Color(0.351563, 0.882813, 0.839844, 1)
+layout_mode = 0
+offset_left = 18.037
+offset_right = 580.037
+offset_bottom = 230.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(281, 115)
+texture = ExtResource("6_jxb5a")
+
+[node name="WaveTwo" type="TextureRect" parent="Lagoon"]
+modulate = Color(0.25, 0.8125, 0.878906, 1)
+layout_mode = 0
+offset_left = 43.963
+offset_top = 1.11121
+offset_right = 605.963
+offset_bottom = 231.111
+scale = Vector2(0.36, 0.36)
+pivot_offset = Vector2(281, 115)
+texture = ExtResource("6_jxb5a")
+
+[node name="WaveThree" type="TextureRect" parent="Lagoon"]
+modulate = Color(0.191406, 0.773438, 0.855469, 1)
+layout_mode = 0
+offset_left = 66.1851
+offset_top = 1.11108
+offset_right = 628.185
+offset_bottom = 231.111
+scale = Vector2(0.23, 0.23)
+pivot_offset = Vector2(281, 115)
+texture = ExtResource("6_jxb5a")
+
+[node name="Tent" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.0
+offset_top = 21.0001
+offset_right = 65.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.66, 0.66)
+pivot_offset = Vector2(203, 143)
+texture = ExtResource("6_1ynmg")
+
+[node name="Bonfire" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = 129.0
+offset_right = 143.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+
+[node name="Wood" type="TextureRect" parent="Bonfire"]
+layout_mode = 0
+offset_left = 2.04001
+offset_top = 83.4
+offset_right = 190.04
+offset_bottom = 163.4
+scale = Vector2(0.66, 0.66)
+pivot_offset = Vector2(94, 40)
+texture = ExtResource("8_jnppg")
+
+[node name="Flame" type="CPUParticles2D" parent="Bonfire"]
+position = Vector2(93.04, 97.4)
+amount = 4
+lifetime = 2.0
+speed_scale = 1.5
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("9_gh34q")
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+linear_accel_min = 29.58
+linear_accel_max = 29.58
+scale_amount_curve = SubResource("Curve_crt0k")
+color_ramp = SubResource("Gradient_uyabs")
+
+[node name="FrontElements" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RainOfLeaves" type="CPUParticles2D" parent="FrontElements"]
+position = Vector2(-192, 40)
+lifetime = 6.0
+randomness = 0.07
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("10_42qht")
+direction = Vector2(1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+linear_accel_min = 53.53
+linear_accel_max = 53.53
+radial_accel_min = 25.35
+radial_accel_max = 25.35
+angle_min = 75.0
+angle_max = 280.0
+scale_amount_min = 0.4
+scale_amount_max = 0.66
+color = Color(0.125, 0.464844, 0.0429688, 1)
