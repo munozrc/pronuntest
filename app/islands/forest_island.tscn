@@ -1,15 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://daeqcfxdm1n36"]
+[gd_scene load_steps=21 format=3 uid="uid://daeqcfxdm1n36"]
 
-[ext_resource type="Texture2D" uid="uid://dahvumw6vnuh4" path="res://assets/islands/forest_terrain.png" id="1_nhwba"]
+[ext_resource type="Texture2D" uid="uid://dahvumw6vnuh4" path="res://assets/environments/islands/forest_terrain.png" id="1_nhwba"]
+[ext_resource type="Script" path="res://islands/forest_island.gd" id="1_pxrij"]
 [ext_resource type="Texture2D" uid="uid://cy2om1j4mjpja" path="res://assets/tree/branch.png" id="2_2c3gl"]
 [ext_resource type="Texture2D" uid="uid://3fdlwtfymopj" path="res://assets/reference_forest_island.png" id="2_2jm2b"]
 [ext_resource type="Texture2D" uid="uid://bjnmi7mwxmtyw" path="res://assets/tree/shadow.png" id="2_fart8"]
 [ext_resource type="Texture2D" uid="uid://btgnl8kljf32c" path="res://assets/tree/trunk.png" id="4_5r64l"]
 [ext_resource type="Texture2D" uid="uid://cxaj2qiis8c0l" path="res://assets/tent.png" id="6_1ynmg"]
 [ext_resource type="Texture2D" uid="uid://bj6ows34h7dep" path="res://assets/lagoon.png" id="6_jxb5a"]
-[ext_resource type="Texture2D" uid="uid://bgw10p40rfqf3" path="res://assets/bonfire/wood_sticks.png" id="8_jnppg"]
-[ext_resource type="Texture2D" uid="uid://byjfdgg7b0s4x" path="res://assets/bonfire/fire.png" id="9_gh34q"]
+[ext_resource type="Texture2D" uid="uid://bgw10p40rfqf3" path="res://assets/environments/bonfire/wood_sticks.png" id="8_jnppg"]
+[ext_resource type="Texture2D" uid="uid://byjfdgg7b0s4x" path="res://assets/environments/bonfire/fire.png" id="9_gh34q"]
 [ext_resource type="Texture2D" uid="uid://dww2kk2vkv4gd" path="res://assets/tree/leaf.png" id="10_42qht"]
+[ext_resource type="FontFile" uid="uid://gprsqhbu2mb7" path="res://assets/fonts/Poppins-SemiBold.ttf" id="12_jtc50"]
 
 [sub_resource type="Animation" id="Animation_vwmkp"]
 resource_name = "idle"
@@ -183,6 +185,18 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.617391, 1)
 colors = PackedColorArray(0.980469, 0.675781, 0.257813, 1, 0.9375, 0.351563, 0.164063, 1, 0.937255, 0.352941, 0.164706, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp572"]
+bg_color = Color(1, 1, 1, 0.607843)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="FontVariation" id="FontVariation_ca8vo"]
+base_font = ExtResource("12_jtc50")
+spacing_top = -15
+spacing_bottom = -11
+
 [node name="ForestIsland" type="Control"]
 custom_minimum_size = Vector2(720, 1280)
 layout_mode = 3
@@ -192,6 +206,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+script = ExtResource("1_pxrij")
 
 [node name="Terrain" type="TextureRect" parent="."]
 layout_mode = 1
@@ -240,6 +255,7 @@ offset_right = -283.0
 offset_bottom = -238.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Shadow" type="TextureRect" parent="Tree"]
 layout_mode = 0
@@ -314,6 +330,7 @@ offset_bottom = -228.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.840001, 0.840001)
+mouse_filter = 2
 
 [node name="Shadow" type="TextureRect" parent="SmallTree"]
 layout_mode = 0
@@ -392,6 +409,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.08, 1.08)
 pivot_offset = Vector2(281, 115)
+mouse_filter = 2
 
 [node name="Border" type="TextureRect" parent="Lagoon"]
 modulate = Color(0.933594, 0.816406, 0.40625, 1)
@@ -468,6 +486,7 @@ offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(100, 100)
+mouse_filter = 2
 
 [node name="Wood" type="TextureRect" parent="Bonfire"]
 layout_mode = 0
@@ -497,7 +516,7 @@ linear_accel_max = 29.58
 scale_amount_curve = SubResource("Curve_crt0k")
 color_ramp = SubResource("Gradient_uyabs")
 
-[node name="FrontElements" type="Control" parent="."]
+[node name="ParticleContainer" type="Control" parent="."]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -505,8 +524,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="RainOfLeaves" type="CPUParticles2D" parent="FrontElements"]
+[node name="RainOfLeaves" type="CPUParticles2D" parent="ParticleContainer"]
 position = Vector2(-192, 40)
 lifetime = 6.0
 randomness = 0.07
@@ -526,3 +546,54 @@ angle_max = 280.0
 scale_amount_min = 0.4
 scale_amount_max = 0.66
 color = Color(0.125, 0.464844, 0.0429688, 1)
+
+[node name="Button" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -171.0
+offset_right = 358.0
+offset_bottom = 370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -410.0
+offset_right = 250.0
+offset_bottom = -270.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cp572")
+
+[node name="CenterContainer" type="CenterContainer" parent="TitleContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 0.000183105
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="TitleContainer/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+theme_override_fonts/font = SubResource("FontVariation_ca8vo")
+theme_override_font_sizes/font_size = 50
+text = "Discriminación
+Auditiva"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="Button" to="." method="_on_button_up"]

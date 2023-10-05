@@ -1,22 +1,23 @@
-[gd_scene load_steps=27 format=3 uid="uid://dsjice86tsans"]
+[gd_scene load_steps=28 format=3 uid="uid://dsjice86tsans"]
 
-[ext_resource type="Texture2D" uid="uid://du4lwl5g4tmdj" path="res://assets/islands/beach_terrain.png" id="1_itdfd"]
-[ext_resource type="Texture2D" uid="uid://nbe6fxx0037l" path="res://assets/sea/base_wave.png" id="2_adc7o"]
+[ext_resource type="Script" path="res://islands/beach_island.gd" id="1_446dm"]
+[ext_resource type="Texture2D" uid="uid://du4lwl5g4tmdj" path="res://assets/environments/islands/beach_terrain.png" id="1_itdfd"]
+[ext_resource type="Texture2D" uid="uid://nbe6fxx0037l" path="res://assets/environments/sea/base_wave.png" id="2_adc7o"]
 [ext_resource type="Texture2D" uid="uid://bc81q4qsttcwe" path="res://assets/reference_beach_island.png" id="2_fajsy"]
-[ext_resource type="Texture2D" uid="uid://kiyqf22xgxjj" path="res://assets/sea/wave.png" id="3_mrgyo"]
-[ext_resource type="Texture2D" uid="uid://cq8ajf8h7c3mj" path="res://assets/sea/sea_border.png" id="4_3dlh5"]
-[ext_resource type="Texture2D" uid="uid://b7ow7tx0p6tja" path="res://assets/palm/trunk.png" id="6_hfpmc"]
-[ext_resource type="Texture2D" uid="uid://cnbemkjnxo6x1" path="res://assets/palm/leaf_001.png" id="7_d1xwq"]
-[ext_resource type="Texture2D" uid="uid://bbt8ae1inxhf" path="res://assets/palm/leaf_002.png" id="8_gsjkg"]
-[ext_resource type="Texture2D" uid="uid://bpxhw74ulrvbw" path="res://assets/palm/leaf_003.png" id="9_7hw2v"]
-[ext_resource type="Texture2D" uid="uid://bff251qbcq00b" path="res://assets/palm/leaf_004.png" id="10_ytvdd"]
-[ext_resource type="Texture2D" uid="uid://dwslf5ium72r2" path="res://assets/palm/leaf_005.png" id="11_5sulo"]
-[ext_resource type="Texture2D" uid="uid://tl2f1u5x5fmy" path="res://assets/palm/leaf_006.png" id="12_gab6m"]
-[ext_resource type="Texture2D" uid="uid://i3trlrdk615u" path="res://assets/palm/coconut.png" id="13_iv7bh"]
-[ext_resource type="Texture2D" uid="uid://1qhllly46q1u" path="res://assets/beach_umbrella/umbrella.png" id="14_3ako6"]
-[ext_resource type="Texture2D" uid="uid://d4io3o0rk53ij" path="res://assets/beach_umbrella/stick.png" id="15_7182w"]
-[ext_resource type="Texture2D" uid="uid://h8c3qsdkrrwr" path="res://assets/beach_umbrella/shadow.png" id="15_blpnd"]
-[ext_resource type="Texture2D" uid="uid://dv0rosi4fp3jh" path="res://assets/beach_umbrella/umbrella_002.png" id="17_j27t0"]
+[ext_resource type="Texture2D" uid="uid://kiyqf22xgxjj" path="res://assets/environments/sea/wave.png" id="3_mrgyo"]
+[ext_resource type="Texture2D" uid="uid://cq8ajf8h7c3mj" path="res://assets/environments/sea/sea_border.png" id="4_3dlh5"]
+[ext_resource type="Texture2D" uid="uid://b7ow7tx0p6tja" path="res://assets/environments/palm/trunk.png" id="6_hfpmc"]
+[ext_resource type="Texture2D" uid="uid://cnbemkjnxo6x1" path="res://assets/environments/palm/leaf_001.png" id="7_d1xwq"]
+[ext_resource type="Texture2D" uid="uid://bbt8ae1inxhf" path="res://assets/environments/palm/leaf_002.png" id="8_gsjkg"]
+[ext_resource type="Texture2D" uid="uid://bpxhw74ulrvbw" path="res://assets/environments/palm/leaf_003.png" id="9_7hw2v"]
+[ext_resource type="Texture2D" uid="uid://bff251qbcq00b" path="res://assets/environments/palm/leaf_004.png" id="10_ytvdd"]
+[ext_resource type="Texture2D" uid="uid://dwslf5ium72r2" path="res://assets/environments/palm/leaf_005.png" id="11_5sulo"]
+[ext_resource type="Texture2D" uid="uid://tl2f1u5x5fmy" path="res://assets/environments/palm/leaf_006.png" id="12_gab6m"]
+[ext_resource type="Texture2D" uid="uid://i3trlrdk615u" path="res://assets/environments/palm/coconut.png" id="13_iv7bh"]
+[ext_resource type="Texture2D" uid="uid://1qhllly46q1u" path="res://assets/umbrella/umbrella.png" id="14_3ako6"]
+[ext_resource type="Texture2D" uid="uid://d4io3o0rk53ij" path="res://assets/umbrella/stick.png" id="15_7182w"]
+[ext_resource type="Texture2D" uid="uid://h8c3qsdkrrwr" path="res://assets/umbrella/shadow.png" id="15_blpnd"]
+[ext_resource type="Texture2D" uid="uid://dv0rosi4fp3jh" path="res://assets/umbrella/umbrella_002.png" id="17_j27t0"]
 
 [sub_resource type="Animation" id="Animation_rkqlj"]
 length = 0.001
@@ -284,6 +285,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_446dm")
 
 [node name="Terrain" type="TextureRect" parent="."]
 layout_mode = 1
@@ -842,3 +844,19 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_83bcd")
 }
+
+[node name="Button" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -117.0
+offset_right = 361.0
+offset_bottom = 404.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_up" from="Button" to="." method="_on_button_up"]

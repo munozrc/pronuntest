@@ -6,8 +6,8 @@ extends Control
 @onready var btn_sound_effect = $SliderControls/AudioStreamPlayer
 
 var current_island: int = 0
-var separation: float = 100.0
 var island_width: float = 720.0
+var separation: float = 100.0
 
 func _ready():
 	_show_slider_controls()
@@ -37,3 +37,11 @@ func _on_right_button_pressed():
 	
 	current_island+=1
 	_change_current_island()
+
+
+func _on_beach_island_selected():
+	print("Beach island selected")
+
+
+func _on_forest_island_selected():
+	print("Forest island selected")

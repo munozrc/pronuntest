@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://mjpqwy5i7pbp"]
 
-[ext_resource type="Script" path="res://screens/main_menu.gd" id="1_tks4m"]
-[ext_resource type="PackedScene" uid="uid://daeqcfxdm1n36" path="res://islands/forest_island.tscn" id="2_0s3oj"]
-[ext_resource type="PackedScene" uid="uid://dsjice86tsans" path="res://islands/beach_island.tscn" id="2_3b2n4"]
-[ext_resource type="Texture2D" uid="uid://ia5u3o6n0ufc" path="res://assets/buttons/button_settings.png" id="2_qdwrg"]
-[ext_resource type="Texture2D" uid="uid://ca4tq44se35gq" path="res://assets/cloud.png" id="3_i0k7w"]
-[ext_resource type="Texture2D" uid="uid://bblpi6s4c14vt" path="res://assets/buttons/arrow/arrow.png" id="4_pj2ar"]
-[ext_resource type="AudioStream" uid="uid://v5uqfv6cpasw" path="res://assets/sounds_effects/ui/abstract_001.mp3" id="7_lrctq"]
+[ext_resource type="Script" path="res://screens/main_menu.gd" id="1_l8jve"]
+[ext_resource type="PackedScene" uid="uid://daeqcfxdm1n36" path="res://islands/forest_island.tscn" id="2_6t7ng"]
+[ext_resource type="PackedScene" uid="uid://dsjice86tsans" path="res://islands/beach_island.tscn" id="3_67o3s"]
+[ext_resource type="Texture2D" uid="uid://ia5u3o6n0ufc" path="res://assets/buttons/button_settings.png" id="4_dkgij"]
+[ext_resource type="Texture2D" uid="uid://ca4tq44se35gq" path="res://assets/environments/cloud.png" id="5_qcwq5"]
+[ext_resource type="Texture2D" uid="uid://bblpi6s4c14vt" path="res://assets/buttons/arrow/arrow.png" id="6_ega13"]
+[ext_resource type="AudioStream" uid="uid://v5uqfv6cpasw" path="res://assets/sounds/ui/abstract_001.mp3" id="7_nxuv5"]
 
 [sub_resource type="Gradient" id="Gradient_imhir"]
 colors = PackedColorArray(0.400261, 0.831247, 0.936316, 1, 1, 1, 1, 1)
@@ -133,7 +133,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tks4m")
+script = ExtResource("1_l8jve")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -159,6 +159,7 @@ offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+mouse_force_pass_scroll_events = false
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
@@ -166,14 +167,13 @@ vertical_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 2
 theme_override_constants/separation = 100
 
-[node name="ForestIsland" parent="SlidingMenu/HBoxContainer" instance=ExtResource("2_0s3oj")]
+[node name="ForestIsland" parent="SlidingMenu/HBoxContainer" instance=ExtResource("2_6t7ng")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BeachIsland" parent="SlidingMenu/HBoxContainer" instance=ExtResource("2_3b2n4")]
+[node name="BeachIsland" parent="SlidingMenu/HBoxContainer" instance=ExtResource("3_67o3s")]
 layout_mode = 2
 
 [node name="Header" type="Control" parent="."]
@@ -202,18 +202,19 @@ alignment = 2
 [node name="TextureButton" type="TextureButton" parent="Header/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-texture_normal = ExtResource("2_qdwrg")
+texture_normal = ExtResource("4_dkgij")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="SliderControls" type="Control" parent="."]
 layout_mode = 1
-anchor_top = 0.678
+anchor_top = 0.802
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 158.16
+offset_top = -0.560059
 grow_horizontal = 2
 grow_vertical = 0
+mouse_force_pass_scroll_events = false
 
 [node name="Clouds" type="Control" parent="SliderControls"]
 layout_mode = 1
@@ -234,7 +235,7 @@ offset_left = -136.0
 offset_top = -359.895
 offset_right = 482.0
 offset_bottom = -0.895111
-texture = ExtResource("3_i0k7w")
+texture = ExtResource("5_qcwq5")
 expand_mode = 2
 
 [node name="Cloud4" type="TextureRect" parent="SliderControls/Clouds"]
@@ -244,7 +245,7 @@ offset_left = -335.0
 offset_top = -314.637
 offset_right = 162.0
 offset_bottom = -25.6375
-texture = ExtResource("3_i0k7w")
+texture = ExtResource("5_qcwq5")
 expand_mode = 2
 flip_h = true
 
@@ -254,7 +255,7 @@ offset_left = -46.0
 offset_top = -379.301
 offset_right = 706.0
 offset_bottom = 56.699
-texture = ExtResource("3_i0k7w")
+texture = ExtResource("5_qcwq5")
 expand_mode = 2
 
 [node name="Cloud" type="TextureRect" parent="SliderControls/Clouds"]
@@ -263,7 +264,7 @@ offset_left = -669.0
 offset_top = -377.0
 offset_right = 31.0
 offset_bottom = 29.0
-texture = ExtResource("3_i0k7w")
+texture = ExtResource("5_qcwq5")
 expand_mode = 2
 flip_h = true
 
@@ -290,7 +291,7 @@ alignment = 1
 [node name="LeftButton" type="TextureButton" parent="SliderControls/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(82.5, 168.3)
 layout_mode = 2
-texture_normal = ExtResource("4_pj2ar")
+texture_normal = ExtResource("6_ega13")
 ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
@@ -298,12 +299,15 @@ flip_h = true
 [node name="RightButton" type="TextureButton" parent="SliderControls/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(82.5, 168.3)
 layout_mode = 2
-texture_normal = ExtResource("4_pj2ar")
+texture_normal = ExtResource("6_ega13")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SliderControls"]
-stream = ExtResource("7_lrctq")
+stream = ExtResource("7_nxuv5")
+volume_db = 8.0
 
+[connection signal="selected" from="SlidingMenu/HBoxContainer/ForestIsland" to="." method="_on_forest_island_selected"]
+[connection signal="selected" from="SlidingMenu/HBoxContainer/BeachIsland" to="." method="_on_beach_island_selected"]
 [connection signal="pressed" from="SliderControls/CenterContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="SliderControls/CenterContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]
