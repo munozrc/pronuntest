@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnqrappec8wn6"]
+
+[ext_resource type="Script" path="res://screens/activities/01/entities/slot.gd" id="1_klfmc"]
+[ext_resource type="Texture2D" uid="uid://wk88laqc3fy8" path="res://assets/images/box_slot.png" id="2_lcqcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5n30"]
+size = Vector2(202, 201)
+
+[node name="Slot" type="Node2D" node_paths=PackedStringArray("area")]
+script = ExtResource("1_klfmc")
+area = NodePath("Area2D")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("2_lcqcm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_s5n30")

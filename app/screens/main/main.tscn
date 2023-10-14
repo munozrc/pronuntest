@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cki5h5l8gxper"]
+
+[ext_resource type="PackedScene" uid="uid://w04g8t3bky7w" path="res://screens/main/islands/forest.tscn" id="1_q34wy"]
+[ext_resource type="PackedScene" uid="uid://dp2086gmcm157" path="res://screens/main/islands/beach.tscn" id="2_on1rx"]
+
+[sub_resource type="Gradient" id="Gradient_yr0k5"]
+colors = PackedColorArray(0.331627, 0.58946, 1, 1, 0.766155, 0.826503, 0.999998, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8f2sq"]
+gradient = SubResource("Gradient_yr0k5")
+fill_from = Vector2(0.495726, 0)
+fill_to = Vector2(0.521368, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_8f2sq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 640)
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Forest" parent="ScrollContainer/HBoxContainer" instance=ExtResource("1_q34wy")]
+layout_mode = 2
+
+[node name="Beach" parent="ScrollContainer/HBoxContainer" instance=ExtResource("2_on1rx")]
+layout_mode = 2

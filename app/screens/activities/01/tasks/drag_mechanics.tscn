@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://10x1ajc8vajd"]
+
+[ext_resource type="Script" path="res://screens/activities/01/tasks/drag_mechanics.gd" id="1_mdabv"]
+[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/01/entities/slot.tscn" id="2_ww2tw"]
+[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/01/entities/box.tscn" id="3_mhgdr"]
+[ext_resource type="AudioStream" uid="uid://wgo7pdu1y0cx" path="res://assets/voices/phonemes/a.mp3" id="4_38aif"]
+[ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="5_qindy"]
+
+[node name="DragMechanics" type="Control" node_paths=PackedStringArray("next_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mdabv")
+next_button = NodePath("NextButton")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot" parent="Container" instance=ExtResource("2_ww2tw")]
+position = Vector2(360, 348)
+content = "a"
+
+[node name="Box" parent="Container" instance=ExtResource("3_mhgdr")]
+position = Vector2(360, 860)
+audio = ExtResource("4_38aif")
+content = "a"
+
+[node name="NextButton" parent="." instance=ExtResource("5_qindy")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 69.0
+offset_top = 1141.0
+offset_right = 651.0
+offset_bottom = 1231.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="dropped" from="Container/Slot" to="." method="_on_slot_dropped"]
+[connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]

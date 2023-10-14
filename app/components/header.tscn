@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://d35deq2tyjx53"]
+
+[ext_resource type="Texture2D" uid="uid://cpuudtwv4y23j" path="res://assets/icons/close.png" id="1_kkumi"]
+[ext_resource type="Script" path="res://components/header.gd" id="1_yggyy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exrpo"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv4r1"]
+bg_color = Color(0.392157, 0.74902, 0.266667, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Header" type="Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_yggyy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -50.0
+offset_right = 349.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_kkumi")
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(570, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_exrpo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cv4r1")
+show_percentage = false
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

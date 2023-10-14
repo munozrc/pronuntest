@@ -1,0 +1,164 @@
+[gd_scene load_steps=10 format=3 uid="uid://blxorb77bph4y"]
+
+[ext_resource type="Script" path="res://screens/activities/01/tasks/presentation.gd" id="1_y4se1"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="2_fbqh6"]
+[ext_resource type="AudioStream" uid="uid://sttihkipy0tn" path="res://assets/voices/statements/vamos_a_trabajar_el_sonido_de_la_letra.mp3" id="3_7c7rj"]
+[ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="3_m2i8x"]
+[ext_resource type="AudioStream" uid="uid://wgo7pdu1y0cx" path="res://assets/voices/phonemes/a.mp3" id="4_yqiy4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xaqwo"]
+font = ExtResource("2_fbqh6")
+font_size = 300
+font_color = Color(0.133333, 0.133333, 0.133333, 1)
+shadow_size = 4
+shadow_color = Color(0.231373, 0.231373, 0.231373, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Animation" id="Animation_woaws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phoneme:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(258.5, 430.467)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phoneme:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m7hm4"]
+resource_name = "intro"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_next_button"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Narrator")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0485723,
+"start_offset": 0.142792,
+"stream": ExtResource("3_7c7rj")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0194289,
+"stream": ExtResource("4_yqiy4")
+}],
+"times": PackedFloat32Array(0.1, 2.5)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Phoneme:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(258.5, -340), Vector2(258.5, 430.467), Vector2(258.5, 380), Vector2(258.5, 430.467), Vector2(258.5, 400), Vector2(258.5, 430.467)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Phoneme:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_orken"]
+_data = {
+"RESET": SubResource("Animation_woaws"),
+"intro": SubResource("Animation_m7hm4")
+}
+
+[node name="Presentation" type="Control" node_paths=PackedStringArray("next_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y4se1")
+next_button = NodePath("NextButton")
+
+[node name="Phoneme" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 258.5
+offset_top = 430.467
+offset_right = 461.5
+offset_bottom = 853.468
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(101, 211)
+text = "a"
+label_settings = SubResource("LabelSettings_xaqwo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_orken")
+}
+
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+mix_target = 2
+bus = &"Narrator"
+
+[node name="NextButton" parent="." instance=ExtResource("3_m2i8x")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 69.0
+offset_top = 1141.0
+offset_right = 651.0
+offset_bottom = 1231.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]
