@@ -21,12 +21,14 @@ func _ready():
 	self.area.mouse_exited.connect(self._on_mouse_exited)
 	self._origin = global_position
 
+
 func _physics_process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var new_pos = mouse_pos if self._is_selected else self._origin
 	var speed = 25 if self._is_selected else 10
 	
 	global_position = lerp(global_position, new_pos, speed * delta)
+
 
 func _input(event):
 	if (
