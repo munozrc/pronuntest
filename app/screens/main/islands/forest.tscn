@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://w04g8t3bky7w"]
+[gd_scene load_steps=9 format=3 uid="uid://w04g8t3bky7w"]
 
 [ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="1_spgkh"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="2_3yxlg"]
 [ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="3_i1ias"]
 [ext_resource type="Texture2D" uid="uid://bdixv7a8g4hgm" path="res://assets/images/temp/reference_forest_island.png" id="4_ylhbt"]
 [ext_resource type="Texture2D" uid="uid://cax4qxduexg4n" path="res://assets/images/tent.png" id="5_glp0s"]
+[ext_resource type="Texture2D" uid="uid://bev34h8lg7g0b" path="res://assets/images/lagoon.png" id="6_qlald"]
+[ext_resource type="Texture2D" uid="uid://bp8k7jeg81kwa" path="res://assets/images/bonfire/wood_sticks.png" id="7_ynxvk"]
+[ext_resource type="Texture2D" uid="uid://dyj4hmarag43o" path="res://assets/images/bonfire/fire.png" id="8_f3g6r"]
 
 [node name="Forest" type="Control"]
 custom_minimum_size = Vector2(720, 0)
@@ -71,7 +74,41 @@ position = Vector2(-2, -82)
 scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("3_i1ias")
 
+[node name="Lagoon" type="Sprite2D" parent="Terrain"]
+self_modulate = Color(0.933594, 0.816406, 0.40625, 1)
+position = Vector2(442, 134)
+scale = Vector2(0.539131, 0.539131)
+texture = ExtResource("6_qlald")
+
+[node name="BigWave" type="Sprite2D" parent="Terrain/Lagoon"]
+self_modulate = Color(0.351563, 0.882813, 0.839844, 1)
+position = Vector2(21.2534, -2.36072)
+scale = Vector2(0.843108, 0.843108)
+texture = ExtResource("6_qlald")
+
+[node name="MiddleWave" type="Sprite2D" parent="Terrain/Lagoon"]
+self_modulate = Color(0.25, 0.8125, 0.878906, 1)
+position = Vector2(63.0645, -1.85486)
+scale = Vector2(0.569618, 0.569618)
+texture = ExtResource("6_qlald")
+
 [node name="Tent" type="Sprite2D" parent="Terrain"]
 position = Vector2(184, 125)
 scale = Vector2(0.633741, 0.633741)
 texture = ExtResource("5_glp0s")
+
+[node name="Bonfire" type="Sprite2D" parent="Terrain"]
+position = Vector2(343, 205)
+scale = Vector2(0.56875, 0.56875)
+texture = ExtResource("7_ynxvk")
+
+[node name="BigFlame" type="Sprite2D" parent="Terrain/Bonfire"]
+modulate = Color(0.941406, 0.351563, 0.164063, 1)
+position = Vector2(-7.03296, -65.0549)
+texture = ExtResource("8_f3g6r")
+
+[node name="SmallFlame" type="Sprite2D" parent="Terrain/Bonfire"]
+modulate = Color(0.984375, 0.679688, 0.257813, 1)
+position = Vector2(-7.03296, -40.9883)
+scale = Vector2(0.476811, 0.476811)
+texture = ExtResource("8_f3g6r")
