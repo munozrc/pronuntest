@@ -83,7 +83,7 @@ grow_vertical = 2
 
 [node name="SmallLeftCloud" type="Sprite2D" parent="Controls/Clouds"]
 modulate = Color(1, 1, 1, 0.431373)
-position = Vector2(-205, -11.5)
+position = Vector2(-200, -59.5)
 scale = Vector2(0.504889, 0.504889)
 texture = ExtResource("3_88213")
 flip_h = true
@@ -96,20 +96,20 @@ texture = ExtResource("3_88213")
 
 [node name="SmallRightCloud" type="Sprite2D" parent="Controls/Clouds"]
 modulate = Color(1, 1, 1, 0.431373)
-position = Vector2(81, -53.5)
+position = Vector2(19, -39.5)
 scale = Vector2(0.345142, 0.345142)
 texture = ExtResource("3_88213")
 
 [node name="MiddleRightCloud2" type="Sprite2D" parent="Controls/Clouds"]
 modulate = Color(1, 1, 1, 0.431373)
-position = Vector2(403, -28.5)
+position = Vector2(331, -75.5)
 scale = Vector2(0.345142, 0.345142)
 texture = ExtResource("3_88213")
 flip_h = true
 
 [node name="BigRightCloud" type="Sprite2D" parent="Controls/Clouds"]
 modulate = Color(1, 1, 1, 0.717647)
-position = Vector2(292, 7.49994)
+position = Vector2(282, -11.5001)
 scale = Vector2(0.563352, 0.563352)
 texture = ExtResource("3_88213")
 flip_h = true
