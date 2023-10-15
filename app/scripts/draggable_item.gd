@@ -3,6 +3,7 @@ extends Node2D
 
 
 signal selected
+signal released
 
 
 @export var area: Area2D
@@ -21,9 +22,6 @@ func _ready():
 	self._origin = global_position
 
 func _physics_process(delta):
-	if not self.is_active:
-		return
-	
 	var mouse_pos = get_global_mouse_position()
 	var new_pos = mouse_pos if self._is_selected else self._origin
 	var speed = 25 if self._is_selected else 10
@@ -40,6 +38,7 @@ func _input(event):
 	
 	if event.is_released():
 		self._is_selected = false
+		self.released.emit()
 		return
 	
 	self._is_selected = true
@@ -52,6 +51,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	self._is_draggable = false
+
 
 func set_origin(pos: Vector2):
 	self._is_selected = false

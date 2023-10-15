@@ -1,13 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://10x1ajc8vajd"]
+[gd_scene load_steps=18 format=3 uid="uid://10x1ajc8vajd"]
 
 [ext_resource type="Script" path="res://screens/activities/01/tasks/drag_mechanics.gd" id="1_mdabv"]
 [ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/01/entities/slot.tscn" id="2_ww2tw"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="3_eeki1"]
 [ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/01/entities/box.tscn" id="3_mhgdr"]
 [ext_resource type="AudioStream" uid="uid://wgo7pdu1y0cx" path="res://assets/voices/phonemes/a.mp3" id="4_38aif"]
 [ext_resource type="Texture2D" uid="uid://crcfqo0l8t2j4" path="res://assets/images/hand.png" id="5_6nk80"]
 [ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="5_qindy"]
 [ext_resource type="AudioStream" uid="uid://btp88p0jvxrgk" path="res://assets/voices/statements/mueve_el_sonido_correcto_sobre_la_letra.mp3" id="6_45yer"]
 [ext_resource type="Texture2D" uid="uid://ir0je8t15kph" path="res://assets/images/hand_dots.png" id="6_e8r18"]
+
+[sub_resource type="FontVariation" id="FontVariation_q7jub"]
+base_font = ExtResource("3_eeki1")
 
 [sub_resource type="Animation" id="Animation_yof38"]
 tracks/0/type = "value"
@@ -287,6 +291,16 @@ grow_vertical = 2
 position = Vector2(360, 398)
 content = "a"
 
+[node name="Phoneme" type="Label" parent="Container/Slot"]
+offset_left = -56.0
+offset_top = -123.0
+offset_right = 52.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = SubResource("FontVariation_q7jub")
+theme_override_font_sizes/font_size = 160
+text = "a"
+
 [node name="Box" parent="Container" instance=ExtResource("3_mhgdr")]
 position = Vector2(360, 860)
 audio = ExtResource("4_38aif")
@@ -311,7 +325,7 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="Container/Hand"]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="NextButton" parent="." instance=ExtResource("5_qindy")]
 layout_mode = 0
@@ -337,6 +351,7 @@ libraries = {
 bus = &"Narrator"
 
 [connection signal="dropped" from="Container/Slot" to="." method="_on_slot_dropped"]
+[connection signal="released" from="Container/Box" to="." method="_on_box_released"]
 [connection signal="selected" from="Container/Box" to="." method="_on_box_selected"]
 [connection signal="timeout" from="Container/Hand/Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]
