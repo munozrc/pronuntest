@@ -1,12 +1,272 @@
-[gd_scene load_steps=6 format=3 uid="uid://10x1ajc8vajd"]
+[gd_scene load_steps=16 format=3 uid="uid://10x1ajc8vajd"]
 
 [ext_resource type="Script" path="res://screens/activities/01/tasks/drag_mechanics.gd" id="1_mdabv"]
 [ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/01/entities/slot.tscn" id="2_ww2tw"]
 [ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/01/entities/box.tscn" id="3_mhgdr"]
 [ext_resource type="AudioStream" uid="uid://wgo7pdu1y0cx" path="res://assets/voices/phonemes/a.mp3" id="4_38aif"]
+[ext_resource type="Texture2D" uid="uid://crcfqo0l8t2j4" path="res://assets/images/hand.png" id="5_6nk80"]
 [ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="5_qindy"]
+[ext_resource type="AudioStream" uid="uid://btp88p0jvxrgk" path="res://assets/voices/statements/mueve_el_sonido_correcto_sobre_la_letra.mp3" id="6_45yer"]
+[ext_resource type="Texture2D" uid="uid://ir0je8t15kph" path="res://assets/images/hand_dots.png" id="6_e8r18"]
 
-[node name="DragMechanics" type="Control" node_paths=PackedStringArray("next_button")]
+[sub_resource type="Animation" id="Animation_yof38"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(361, 858)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.427, 0.427)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dots:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iykwf"]
+resource_name = "drag"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 0.7, 1.2, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(449, 959), Vector2(361, 858), Vector2(361, 858), Vector2(361, 858), Vector2(361, 858), Vector2(361, 694), Vector2(361, 694), Vector2(361, 858)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dots:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uedp5"]
+resource_name = "hidden"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sfixn"]
+_data = {
+"RESET": SubResource("Animation_yof38"),
+"drag": SubResource("Animation_iykwf"),
+"hidden": SubResource("Animation_uedp5")
+}
+
+[sub_resource type="Animation" id="Animation_10hf3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Box:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/Box:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/Slot:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/Slot:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2gi4i"]
+resource_name = "intro"
+length = 3.6
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"activate_items"
+}]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/Box:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.3, 0.7)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/Box:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.3, 0.7)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/Slot:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/Slot:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.1, 0.5)
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Narrator")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0572501,
+"stream": ExtResource("6_45yer")
+}, {
+"end_offset": 0.0477319,
+"start_offset": 0.0250469,
+"stream": ExtResource("4_38aif")
+}],
+"times": PackedFloat32Array(0.7, 3.2)
+}
+tracks/5/use_blend = true
+tracks/6/type = "animation"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Container/Hand/HandAnimator")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": PackedStringArray("hidden", "drag"),
+"times": PackedFloat32Array(0, 1.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1e64"]
+_data = {
+"RESET": SubResource("Animation_10hf3"),
+"intro": SubResource("Animation_2gi4i")
+}
+
+[node name="DragMechanics" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +274,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mdabv")
-next_button = NodePath("NextButton")
 
 [node name="Container" type="Control" parent="."]
 layout_mode = 1
@@ -25,13 +284,34 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Slot" parent="Container" instance=ExtResource("2_ww2tw")]
-position = Vector2(360, 348)
+position = Vector2(360, 398)
 content = "a"
 
 [node name="Box" parent="Container" instance=ExtResource("3_mhgdr")]
 position = Vector2(360, 860)
 audio = ExtResource("4_38aif")
 content = "a"
+
+[node name="Hand" type="Sprite2D" parent="Container"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(361, 858)
+rotation = -0.770379
+scale = Vector2(0.427, 0.427)
+texture = ExtResource("5_6nk80")
+offset = Vector2(94.962, 179.601)
+
+[node name="Dots" type="Sprite2D" parent="Container/Hand"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(3.20157, -117.636)
+texture = ExtResource("6_e8r18")
+
+[node name="HandAnimator" type="AnimationPlayer" parent="Container/Hand"]
+libraries = {
+"": SubResource("AnimationLibrary_sfixn")
+}
+
+[node name="Timer" type="Timer" parent="Container/Hand"]
+wait_time = 2.0
 
 [node name="NextButton" parent="." instance=ExtResource("5_qindy")]
 layout_mode = 0
@@ -47,5 +327,16 @@ offset_bottom = 1231.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_k1e64")
+}
+
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+bus = &"Narrator"
+
 [connection signal="dropped" from="Container/Slot" to="." method="_on_slot_dropped"]
+[connection signal="selected" from="Container/Box" to="." method="_on_box_selected"]
+[connection signal="timeout" from="Container/Hand/Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]
