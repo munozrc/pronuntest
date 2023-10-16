@@ -1,7 +1,12 @@
 extends DraggableItem
 
 
-@export var audio: AudioStream
+@export var audio: AudioStream:
+	get:
+		return audio
+	set(value):
+		audio = value
+		$Dialog.stream = value
 
 
 func _ready():

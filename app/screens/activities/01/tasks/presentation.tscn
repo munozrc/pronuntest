@@ -179,29 +179,18 @@ label_settings = SubResource("LabelSettings_xaqwo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NextButton" parent="." instance=ExtResource("3_m2i8x")]
+layout_mode = 1
+
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+mix_target = 2
+bus = &"Narrator"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"
 libraries = {
 "": SubResource("AnimationLibrary_orken")
 }
 
-[node name="Narrator" type="AudioStreamPlayer" parent="."]
-mix_target = 2
-bus = &"Narrator"
-
-[node name="NextButton" parent="." instance=ExtResource("3_m2i8x")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

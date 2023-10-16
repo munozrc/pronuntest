@@ -74,6 +74,33 @@ position = Vector2(-2, -82)
 scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("3_i1ias")
 
+[node name="SmallTree" type="Node2D" parent="Terrain"]
+position = Vector2(285, -80)
+scale = Vector2(0.785, 0.785)
+
+[node name="Trunk" type="Sprite2D" parent="Terrain/SmallTree"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("2_3yxlg")
+
+[node name="BaseBranch" type="Sprite2D" parent="Terrain/SmallTree"]
+modulate = Color(0.0742188, 0.367188, 0, 1)
+position = Vector2(-2, 24)
+scale = Vector2(0.974576, 0.974576)
+texture = ExtResource("3_i1ias")
+
+[node name="MiddleBranch" type="Sprite2D" parent="Terrain/SmallTree"]
+modulate = Color(0.0898438, 0.40625, 0, 1)
+position = Vector2(-1, -34)
+scale = Vector2(0.769421, 0.769421)
+texture = ExtResource("3_i1ias")
+
+[node name="TopBranch" type="Sprite2D" parent="Terrain/SmallTree"]
+modulate = Color(0.125, 0.464844, 0.0429688, 1)
+position = Vector2(-2, -82)
+scale = Vector2(0.547276, 0.547276)
+texture = ExtResource("3_i1ias")
+
 [node name="Lagoon" type="Sprite2D" parent="Terrain"]
 self_modulate = Color(0.933594, 0.816406, 0.40625, 1)
 position = Vector2(442, 134)

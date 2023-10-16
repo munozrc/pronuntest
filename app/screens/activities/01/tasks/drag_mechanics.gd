@@ -17,11 +17,7 @@ func _on_slot_dropped():
 	$Container/Hand/Timer.stop()
 	$Container/Box.is_active = false
 	$Container/Slot.is_active = false
-	print("Finished")
-
-
-func _on_next_button_up():
-	pass
+	$Container/Slot.start_animation()
 
 
 func _on_timer_timeout():
@@ -36,3 +32,12 @@ func _on_box_selected():
 func _on_box_released():
 	if $Container/Slot.is_active:
 		$Container/Hand/Timer.start()
+
+
+func _on_animation_finished(anim_name):
+	if anim_name == "outro":
+		self.completed.emit()
+
+
+func _on_next_button_up():
+	$AnimationPlayer.play("outro")
