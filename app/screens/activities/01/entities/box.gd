@@ -17,3 +17,4 @@ func _ready():
 
 func _on_selected():
 	$Dialog.play()
+	self.get_parent().move_child(self, -1)
