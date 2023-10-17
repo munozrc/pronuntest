@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://w04g8t3bky7w"]
+[gd_scene load_steps=15 format=3 uid="uid://w04g8t3bky7w"]
 
 [ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="1_spgkh"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="2_3yxlg"]
@@ -7,8 +7,26 @@
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="5_fptcv"]
 [ext_resource type="Texture2D" uid="uid://cax4qxduexg4n" path="res://assets/images/tent.png" id="5_glp0s"]
 [ext_resource type="Texture2D" uid="uid://bev34h8lg7g0b" path="res://assets/images/lagoon.png" id="6_qlald"]
+[ext_resource type="Shader" path="res://shaders/wave.gdshader" id="7_t5hiy"]
 [ext_resource type="Texture2D" uid="uid://bp8k7jeg81kwa" path="res://assets/images/bonfire/wood_sticks.png" id="7_ynxvk"]
 [ext_resource type="Texture2D" uid="uid://dyj4hmarag43o" path="res://assets/images/bonfire/fire.png" id="8_f3g6r"]
+[ext_resource type="Texture2D" uid="uid://bojure2e7vq8j" path="res://assets/images/lagoon_water.png" id="8_r0u2c"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rbg2u"]
+noise_type = 0
+fractal_type = 0
+fractal_ping_pong_strength = 1.535
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wgqir"]
+seamless = true
+noise = SubResource("FastNoiseLite_rbg2u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lrfx3"]
+shader = ExtResource("7_t5hiy")
+shader_parameter/intensity = -0.03
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset_speed = Vector2(0.11, 0.045)
+shader_parameter/noise = SubResource("NoiseTexture2D_wgqir")
 
 [node name="Forest" type="Control"]
 custom_minimum_size = Vector2(720, 0)
@@ -120,22 +138,17 @@ scale = Vector2(0.539131, 0.539131)
 texture = ExtResource("6_qlald")
 
 [node name="BigWave" type="Sprite2D" parent="Terrain/Lagoon"]
+visible = false
 self_modulate = Color(0.351563, 0.882813, 0.839844, 1)
 position = Vector2(21.2534, -2.36072)
 scale = Vector2(0.843108, 0.843108)
 texture = ExtResource("6_qlald")
 
-[node name="MiddleWave" type="Sprite2D" parent="Terrain/Lagoon"]
-self_modulate = Color(0.25, 0.8125, 0.878906, 1)
-position = Vector2(63.0645, -1.85486)
-scale = Vector2(0.569618, 0.569618)
-texture = ExtResource("6_qlald")
-
-[node name="SmallWave" type="Sprite2D" parent="Terrain/Lagoon"]
-self_modulate = Color(0.191406, 0.773438, 0.855469, 1)
-position = Vector2(102.016, 0)
-scale = Vector2(0.325132, 0.325132)
-texture = ExtResource("6_qlald")
+[node name="WaterEffect" type="Sprite2D" parent="Terrain/Lagoon"]
+material = SubResource("ShaderMaterial_lrfx3")
+position = Vector2(15.7661, -4.17339)
+scale = Vector2(1.1907, 1.24228)
+texture = ExtResource("8_r0u2c")
 
 [node name="Tent" type="Sprite2D" parent="Terrain"]
 position = Vector2(184, 125)
