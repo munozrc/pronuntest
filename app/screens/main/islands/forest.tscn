@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://w04g8t3bky7w"]
+[gd_scene load_steps=10 format=3 uid="uid://w04g8t3bky7w"]
 
 [ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="1_spgkh"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="2_3yxlg"]
 [ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="3_i1ias"]
 [ext_resource type="Texture2D" uid="uid://bdixv7a8g4hgm" path="res://assets/images/temp/reference_forest_island.png" id="4_ylhbt"]
+[ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="5_fptcv"]
 [ext_resource type="Texture2D" uid="uid://cax4qxduexg4n" path="res://assets/images/tent.png" id="5_glp0s"]
 [ext_resource type="Texture2D" uid="uid://bev34h8lg7g0b" path="res://assets/images/lagoon.png" id="6_qlald"]
 [ext_resource type="Texture2D" uid="uid://bp8k7jeg81kwa" path="res://assets/images/bonfire/wood_sticks.png" id="7_ynxvk"]
@@ -51,6 +52,11 @@ expand_mode = 1
 [node name="Tree" type="Node2D" parent="Terrain"]
 position = Vector2(133, -67)
 
+[node name="Shadow" type="Sprite2D" parent="Terrain/Tree"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("5_fptcv")
+
 [node name="Trunk" type="Sprite2D" parent="Terrain/Tree"]
 position = Vector2(-1, 52)
 scale = Vector2(0.642857, 0.642857)
@@ -77,6 +83,12 @@ texture = ExtResource("3_i1ias")
 [node name="SmallTree" type="Node2D" parent="Terrain"]
 position = Vector2(285, -80)
 scale = Vector2(0.785, 0.785)
+
+[node name="Shadow" type="Sprite2D" parent="Terrain/SmallTree"]
+position = Vector2(-1.27386, 150.319)
+rotation = 0.0270321
+scale = Vector2(0.554791, 0.554791)
+texture = ExtResource("5_fptcv")
 
 [node name="Trunk" type="Sprite2D" parent="Terrain/SmallTree"]
 position = Vector2(-1, 52)
@@ -117,6 +129,12 @@ texture = ExtResource("6_qlald")
 self_modulate = Color(0.25, 0.8125, 0.878906, 1)
 position = Vector2(63.0645, -1.85486)
 scale = Vector2(0.569618, 0.569618)
+texture = ExtResource("6_qlald")
+
+[node name="SmallWave" type="Sprite2D" parent="Terrain/Lagoon"]
+self_modulate = Color(0.191406, 0.773438, 0.855469, 1)
+position = Vector2(102.016, 0)
+scale = Vector2(0.325132, 0.325132)
 texture = ExtResource("6_qlald")
 
 [node name="Tent" type="Sprite2D" parent="Terrain"]
