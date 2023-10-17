@@ -394,25 +394,21 @@ libraries = {
 [node name="Timer" type="Timer" parent="Container/Hand"]
 wait_time = 1.5
 
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+bus = &"Narrator"
+
+[node name="NextButton" parent="." instance=ExtResource("5_qindy")]
+layout_mode = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"
 libraries = {
 "": SubResource("AnimationLibrary_k1e64")
 }
 
-[node name="Narrator" type="AudioStreamPlayer" parent="."]
-bus = &"Narrator"
-
-[node name="NextButton" parent="." instance=ExtResource("5_qindy")]
-layout_mode = 1
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
-
 [connection signal="dropped" from="Container/Slot" to="." method="_on_slot_dropped"]
 [connection signal="released" from="Container/Box" to="." method="_on_box_released"]
 [connection signal="selected" from="Container/Box" to="." method="_on_box_selected"]
 [connection signal="timeout" from="Container/Hand/Timer" to="." method="_on_timer_timeout"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

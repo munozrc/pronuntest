@@ -30,3 +30,14 @@ func _ready():
 func activate_items():
 	for i in range(boxs.size()):
 		boxs[i].is_active = true
+
+
+func disable_items():
+	for i in range(boxs.size()):
+		boxs[i].is_active = false
+
+
+func _on_slot_dropped():
+	$NextButton.show_button()
+	$Container/Slot.start_animation()
+	self.disable_items()

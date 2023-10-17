@@ -278,3 +278,5 @@ libraries = {
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
 mix_target = 2
 bus = &"Narrator"
+
+[connection signal="dropped" from="Container/Slot" to="." method="_on_slot_dropped"]
