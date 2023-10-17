@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://w04g8t3bky7w"]
+[gd_scene load_steps=26 format=3 uid="uid://w04g8t3bky7w"]
 
 [ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="1_spgkh"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="2_3yxlg"]
@@ -11,6 +11,322 @@
 [ext_resource type="Texture2D" uid="uid://bp8k7jeg81kwa" path="res://assets/images/bonfire/wood_sticks.png" id="7_ynxvk"]
 [ext_resource type="Texture2D" uid="uid://dyj4hmarag43o" path="res://assets/images/bonfire/fire.png" id="8_f3g6r"]
 [ext_resource type="Texture2D" uid="uid://bojure2e7vq8j" path="res://assets/images/lagoon_water.png" id="8_r0u2c"]
+
+[sub_resource type="Animation" id="Animation_rnswp"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 151), Vector2(7, 151), Vector2(-10, 151), Vector2(-10, 151), Vector2(7, 151), Vector2(-10, 151), Vector2(1, 151), Vector2(7, 151)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0824525, -0.0349066, -0.0349066, 0.0824525, -0.0349066, 0.0, 0.0824525]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.159495, -0.0872665, -0.0872665, 0.159495, -0.0872665, 0.0, 0.159495]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.999994, 36), Vector2(6, 36), Vector2(-4, 36), Vector2(-4, 36), Vector2(6, 36), Vector2(-4, 36), Vector2(0.999994, 36), Vector2(6, 36)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.229909, -0.0890118, -0.0890118, 0.229909, -0.0890118, 0.0, 0.229909]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, -30), Vector2(15, -30), Vector2(-12, -30), Vector2(-12, -30), Vector2(15, -30), Vector2(-12, -30), Vector2(-2, -30), Vector2(15, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_cdqc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 151)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.999994, 36)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_woi4l"]
+_data = {
+"RESET": SubResource("Animation_cdqc3"),
+"idle": SubResource("Animation_rnswp")
+}
+
+[sub_resource type="Animation" id="Animation_q0wrt"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.27386, 150.319), Vector2(7.64328, 150.319), Vector2(-7.64331, 150.319), Vector2(-7.64331, 150.319), Vector2(-1.27386, 150.319), Vector2(7.64328, 150.319), Vector2(-7.64331, 150.319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0673865, -0.0917272, -0.0917272, 0.0, 0.0673865, -0.0917272]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0627894, -0.188196, -0.188196, 0.0, 0.0627894, -0.188196]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.54776, 36.9427), Vector2(2.54776, 36.9427), Vector2(-14.0128, 36.9427), Vector2(-14.0128, 36.9427), Vector2(-2.54776, 36.9427), Vector2(2.54776, 36.9427), Vector2(-14.0128, 36.9427)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0904531, -0.303449, -0.303449, 0.0, 0.0904531, -0.303449]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.54778, -31.8471), Vector2(7.64331, -31.8472), Vector2(-28.0255, -31.8472), Vector2(-28.0255, -31.8472), Vector2(-2.54778, -31.8471), Vector2(7.64331, -31.8472), Vector2(-28.0255, -31.8472)]
+}
+
+[sub_resource type="Animation" id="Animation_uw2c1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.27386, 150.319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.54776, 36.9427)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.54778, -31.8471)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6p47"]
+_data = {
+"RESET": SubResource("Animation_uw2c1"),
+"idle": SubResource("Animation_q0wrt")
+}
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rbg2u"]
 noise_type = 0
@@ -27,6 +343,33 @@ shader_parameter/intensity = -0.03
 shader_parameter/tiling = Vector2(1, 1)
 shader_parameter/offset_speed = Vector2(0.11, 0.045)
 shader_parameter/noise = SubResource("NoiseTexture2D_wgqir")
+
+[sub_resource type="Curve" id="Curve_iifhy"]
+_data = [Vector2(0.00471698, 0.0421052), 0.0, 2.41754, 0, 0, Vector2(1, 1), -0.0223158, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qch12"]
+offsets = PackedFloat32Array(0, 0.19337, 0.823204, 1)
+colors = PackedColorArray(0.980392, 0.67451, 0.258824, 0, 0.980469, 0.675781, 0.257813, 1, 0.942879, 0.394955, 0.176822, 1, 0.937255, 0.352941, 0.164706, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fwj8x"]
+gradient = SubResource("Gradient_qch12")
+
+[sub_resource type="CurveTexture" id="CurveTexture_huxaw"]
+curve = SubResource("Curve_iifhy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ukhbg"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 10.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_huxaw")
+color_ramp = SubResource("GradientTexture1D_fwj8x")
+attractor_interaction_enabled = false
 
 [node name="Forest" type="Control"]
 custom_minimum_size = Vector2(720, 0)
@@ -82,21 +425,30 @@ texture = ExtResource("2_3yxlg")
 
 [node name="BaseBranch" type="Sprite2D" parent="Terrain/Tree"]
 modulate = Color(0, 0.289063, 0.222656, 1)
-position = Vector2(-2, 24)
+position = Vector2(-3.00001, 113)
 scale = Vector2(0.974576, 0.974576)
 texture = ExtResource("3_i1ias")
+offset = Vector2(1.02609, -91.3218)
 
 [node name="MiddleBranch" type="Sprite2D" parent="Terrain/Tree"]
 modulate = Color(0, 0.324219, 0.226563, 1)
-position = Vector2(-1, -34)
+position = Vector2(0.999994, 36)
 scale = Vector2(0.769421, 0.769421)
 texture = ExtResource("3_i1ias")
+offset = Vector2(-2.59935, -90.9775)
 
 [node name="TopBranch" type="Sprite2D" parent="Terrain/Tree"]
 modulate = Color(0, 0.378906, 0.269531, 1)
-position = Vector2(-2, -82)
+position = Vector2(-2, -30)
 scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("3_i1ias")
+offset = Vector2(0, -95.0161)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="Terrain/Tree"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_woi4l")
+}
 
 [node name="SmallTree" type="Node2D" parent="Terrain"]
 position = Vector2(285, -80)
@@ -115,21 +467,30 @@ texture = ExtResource("2_3yxlg")
 
 [node name="BaseBranch" type="Sprite2D" parent="Terrain/SmallTree"]
 modulate = Color(0.0742188, 0.367188, 0, 1)
-position = Vector2(-2, 24)
+position = Vector2(-1.27389, 115.924)
 scale = Vector2(0.974576, 0.974576)
 texture = ExtResource("3_i1ias")
+offset = Vector2(-0.745056, -94.3216)
 
 [node name="MiddleBranch" type="Sprite2D" parent="Terrain/SmallTree"]
 modulate = Color(0.0898438, 0.40625, 0, 1)
-position = Vector2(-1, -34)
+position = Vector2(-2.54776, 36.9427)
 scale = Vector2(0.769421, 0.769421)
 texture = ExtResource("3_i1ias")
+offset = Vector2(2.0116, -92.2027)
 
 [node name="TopBranch" type="Sprite2D" parent="Terrain/SmallTree"]
 modulate = Color(0.125, 0.464844, 0.0429688, 1)
-position = Vector2(-2, -82)
+position = Vector2(-2.54778, -31.8471)
 scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("3_i1ias")
+offset = Vector2(1.00092, -91.6409)
+
+[node name="SmallTreeAnimator" type="AnimationPlayer" parent="Terrain/SmallTree"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_a6p47")
+}
 
 [node name="Lagoon" type="Sprite2D" parent="Terrain"]
 self_modulate = Color(0.933594, 0.816406, 0.40625, 1)
@@ -160,13 +521,27 @@ position = Vector2(343, 205)
 scale = Vector2(0.56875, 0.56875)
 texture = ExtResource("7_ynxvk")
 
-[node name="BigFlame" type="Sprite2D" parent="Terrain/Bonfire"]
-modulate = Color(0.941406, 0.351563, 0.164063, 1)
-position = Vector2(-7.03296, -65.0549)
+[node name="Flame" type="CPUParticles2D" parent="Terrain/Bonfire"]
+position = Vector2(-7.03296, -29.89)
+amount = 4
+lifetime = 1.3
+fixed_fps = 30
+local_coords = true
+draw_order = 1
 texture = ExtResource("8_f3g6r")
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_iifhy")
+color_ramp = SubResource("Gradient_qch12")
 
-[node name="SmallFlame" type="Sprite2D" parent="Terrain/Bonfire"]
-modulate = Color(0.984375, 0.679688, 0.257813, 1)
-position = Vector2(-7.03296, -40.9883)
-scale = Vector2(0.476811, 0.476811)
+[node name="ParticlesBackup" type="GPUParticles2D" parent="Terrain/Bonfire"]
+visible = false
+position = Vector2(-7.03296, -29.89)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_ukhbg")
 texture = ExtResource("8_f3g6r")
+lifetime = 1.3
+local_coords = true
