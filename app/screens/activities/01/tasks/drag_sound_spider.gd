@@ -39,10 +39,12 @@ func disable_items():
 
 func _on_slot_dropped():
 	$NextButton.show_button()
-	$Container/Slot.start_animation()
 	self.disable_items()
 
 
+func _on_slot_failed():
+	pass
+
+
 func _on_next_button_up():
-#	$AnimationPlayer.play("outro")
 	pass

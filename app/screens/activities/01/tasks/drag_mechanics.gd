@@ -9,29 +9,28 @@ func _ready():
 func activate_items():
 	$Container/Box.is_active = true
 	$Container/Slot.is_active = true
-	$Container/Hand/Timer.start()
+	$Hand/Timer.start()
 
 
 func _on_slot_dropped():
 	$NextButton.show_button()
-	$Container/Hand/Timer.stop()
+	$Hand/Timer.stop()
 	$Container/Box.is_active = false
 	$Container/Slot.is_active = false
-	$Container/Slot.start_animation()
 
 
 func _on_timer_timeout():
-	$Container/Hand/HandAnimator.play("drag")
+	$Hand/HandAnimator.play("drag")
 
 
 func _on_box_selected():
-	$Container/Hand/HandAnimator.play("hidden")
-	$Container/Hand/Timer.stop()
+	$Hand/HandAnimator.play("hidden")
+	$Hand/Timer.stop()
 
 
 func _on_box_released():
 	if $Container/Slot.is_active:
-		$Container/Hand/Timer.start()
+		$Hand/Timer.start()
 
 
 func _on_animation_finished(anim_name):

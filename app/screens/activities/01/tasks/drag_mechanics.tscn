@@ -280,7 +280,7 @@ tracks/5/use_blend = true
 tracks/6/type = "animation"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Container/Hand/HandAnimator")
+tracks/6/path = NodePath("Hand/HandAnimator")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -373,7 +373,7 @@ position = Vector2(360, 860)
 audio = ExtResource("4_38aif")
 content = "a"
 
-[node name="Hand" type="Sprite2D" parent="Container"]
+[node name="Hand" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(361, 858)
 rotation = -0.770379
@@ -381,17 +381,17 @@ scale = Vector2(0.427, 0.427)
 texture = ExtResource("5_6nk80")
 offset = Vector2(94.962, 179.601)
 
-[node name="Dots" type="Sprite2D" parent="Container/Hand"]
+[node name="Dots" type="Sprite2D" parent="Hand"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(3.20157, -117.636)
 texture = ExtResource("6_e8r18")
 
-[node name="HandAnimator" type="AnimationPlayer" parent="Container/Hand"]
+[node name="HandAnimator" type="AnimationPlayer" parent="Hand"]
 libraries = {
 "": SubResource("AnimationLibrary_sfixn")
 }
 
-[node name="Timer" type="Timer" parent="Container/Hand"]
+[node name="Timer" type="Timer" parent="Hand"]
 wait_time = 1.5
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
@@ -409,6 +409,6 @@ libraries = {
 [connection signal="dropped" from="Container/Slot" to="." method="_on_slot_dropped"]
 [connection signal="released" from="Container/Box" to="." method="_on_box_released"]
 [connection signal="selected" from="Container/Box" to="." method="_on_box_selected"]
-[connection signal="timeout" from="Container/Hand/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Hand/Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_up" from="NextButton" to="." method="_on_next_button_up"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
