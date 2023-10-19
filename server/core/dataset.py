@@ -69,16 +69,30 @@ def split_audio_dataset():
 def get_audio_metadata(pathname: str):
     root, filename = os.path.split(pathname)
     sound = os.path.basename(root).split("-")[1]
-    pronun = "noise"
 
-    if sound not in ["noise"]:
-        condition = filename.split("_")[3]
-        pronun = "correct" if condition == "N" else "incorrect"
+    if sound == "noise":
+        return {
+            "sound": "noise",
+            "pronunciation": "noise",
+            "condition": None,
+            "gender": None,
+            "age": None,
+        }
 
-    return {"sound": sound, "pronunciation": pronun, "spectrogram": None}
+    parts = filename.split("_")
+    condition = parts[3]
+    pronun = "correct" if condition == "N" else "incorrect"
+
+    return {
+        "sound": sound,
+        "pronunciation": pronun,
+        "condition": condition,
+        "gender": parts[1],
+        "age": int(parts[2]),
+    }
 
 
-def create_dataset_file(folder: str, output: str):
+def create_dataset_file(folder: str, output: str, extract_features=True):
     print(f"\n[*] Reading audio recordings from folder: {folder}...")
     recordings = enumerate_recordings(folder)
     num_files = len(recordings)
@@ -88,18 +102,15 @@ def create_dataset_file(folder: str, output: str):
     for index, pathname in recordings:
         print(f"[{index}/{num_files}] Preprocessing file: {pathname}")
         metadata = get_audio_metadata(pathname)
-        recording = prep.read_audio(pathname)
-        metadata["spectrogram"] = prep.get_spectrogram(recording)
+        if extract_features:
+            recording = prep.read_audio(pathname)
+            metadata["spectrogram"] = prep.get_spectrogram(recording)
         rows.append(metadata)
 
     print("[*] Exporting dataset...")
     df = pd.DataFrame(rows)
     df.to_json(output, orient="records")
-
     print(f"[*] Dataset exported successfully in {output}")
-    count = df.groupby(["sound", "pronunciation"]).size().reset_index(name="count")
-    print(count)
-    shutil.rmtree(folder)
 
 
 def apply_data_augmentation():
@@ -154,3 +165,5 @@ if __name__ == "__main__":
 
     create_dataset_file("data/test", "data/test.json")
     create_dataset_file("data/train", "data/train.json")
+    shutil.rmtree("data/train")
+    # create_dataset_file("data/raw", "data/raw.json", False)

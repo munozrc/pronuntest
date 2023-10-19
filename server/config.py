@@ -4,6 +4,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    SERVER_NAME = "192.168.0.12:4000"
 
 
 config = {"development": DevelopmentConfig}

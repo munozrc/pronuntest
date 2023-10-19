@@ -22,7 +22,6 @@ def predict():
 
     return jsonify(
         {
-            "status": "succesfully",
             "pronunciation": "correct",
             "phoneme": phoneme,
         }
