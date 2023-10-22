@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dok8myynbj3m6"
-path="res://.godot/imported/lock.png-cd61d1b6a8d3b728b92f945f76edc892.ctex"
+uid="uid://bhtehbhbjfloj"
+path="res://.godot/imported/unlocked.png-f20e9564c21254c08e81c646d2bad26d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/activity_button/lock.png"
-dest_files=["res://.godot/imported/lock.png-cd61d1b6a8d3b728b92f945f76edc892.ctex"]
+source_file="res://assets/ui/activity_button/unlocked.png"
+dest_files=["res://.godot/imported/unlocked.png-f20e9564c21254c08e81c646d2bad26d.ctex"]
 
 [params]
 

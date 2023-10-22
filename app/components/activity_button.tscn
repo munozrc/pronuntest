@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8ml3g3sks86w"]
+[gd_scene load_steps=17 format=3 uid="uid://br23rsitmom8f"]
 
-[ext_resource type="Texture2D" uid="uid://dkg1gbic32vlc" path="res://assets/images/player/body.png" id="1_ou0h1"]
-[ext_resource type="Script" path="res://entities/player.gd" id="1_riqtj"]
-[ext_resource type="Texture2D" uid="uid://coodfp3wkyy5g" path="res://assets/images/player/hand.png" id="2_kgick"]
-[ext_resource type="Texture2D" uid="uid://cn8neirqiaxah" path="res://assets/images/player/eyes.png" id="2_mrdtg"]
-[ext_resource type="Texture2D" uid="uid://t48xa6udbsb6" path="res://assets/images/player/shadow.png" id="4_o0qvd"]
-[ext_resource type="Texture2D" uid="uid://cbqnk8u4hhv5o" path="res://assets/images/player/hair_right.png" id="5_yjd3t"]
-[ext_resource type="Texture2D" uid="uid://s71oa0dntqh0" path="res://assets/images/player/hair_left.png" id="6_totvs"]
+[ext_resource type="Script" path="res://components/activity_button.gd" id="1_wtisg"]
+[ext_resource type="Texture2D" uid="uid://b2qan52u6i16x" path="res://assets/ui/activity_button/completed.png" id="1_yr5jg"]
+[ext_resource type="Texture2D" uid="uid://dok8myynbj3m6" path="res://assets/ui/activity_button/locked.png" id="2_5ochq"]
+[ext_resource type="Texture2D" uid="uid://bhtehbhbjfloj" path="res://assets/ui/activity_button/unlocked.png" id="3_2rfxm"]
+[ext_resource type="Texture2D" uid="uid://t48xa6udbsb6" path="res://assets/images/player/shadow.png" id="4_2pkyv"]
+[ext_resource type="Texture2D" uid="uid://cbqnk8u4hhv5o" path="res://assets/images/player/hair_right.png" id="5_pwvgl"]
+[ext_resource type="Texture2D" uid="uid://s71oa0dntqh0" path="res://assets/images/player/hair_left.png" id="6_561ls"]
+[ext_resource type="Texture2D" uid="uid://dkg1gbic32vlc" path="res://assets/images/player/body.png" id="7_7i2tg"]
+[ext_resource type="Texture2D" uid="uid://cn8neirqiaxah" path="res://assets/images/player/eyes.png" id="8_j6cl5"]
+[ext_resource type="Texture2D" uid="uid://coodfp3wkyy5g" path="res://assets/images/player/hand.png" id="9_v3jfj"]
 
 [sub_resource type="Animation" id="Animation_30trb"]
 length = 0.001
@@ -299,40 +302,76 @@ _data = {
 "idle": SubResource("Animation_fuo6s")
 }
 
-[node name="Player" type="Node2D"]
-script = ExtResource("1_riqtj")
+[node name="ActivityButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 126.0
+offset_bottom = 124.0
+pivot_offset = Vector2(63, 62)
+script = ExtResource("1_wtisg")
 
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
+[node name="CompletedButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 126.0
+offset_bottom = 124.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("1_yr5jg")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Shadow" type="Bone2D" parent="Skeleton2D"]
+[node name="LockedButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 124.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("2_5ochq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UnlockedButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 124.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("3_2rfxm")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Skeleton2D" type="Skeleton2D" parent="UnlockedButton"]
+position = Vector2(63, -15)
+scale = Vector2(0.8, 0.8)
+
+[node name="Shadow" type="Bone2D" parent="UnlockedButton/Skeleton2D"]
 position = Vector2(0, 89)
 rest = Transform2D(1, 0, 0, 1, 0, 89)
 auto_calculate_length_and_angle = false
 length = 1.0
 bone_angle = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Shadow"]
+[node name="Sprite2D" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Shadow"]
 modulate = Color(1, 1, 1, 0.45098)
-texture = ExtResource("4_o0qvd")
+texture = ExtResource("4_2pkyv")
 
-[node name="Body" type="Bone2D" parent="Skeleton2D"]
+[node name="Body" type="Bone2D" parent="UnlockedButton/Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
-[node name="Hair" type="Bone2D" parent="Skeleton2D/Body"]
+[node name="Hair" type="Bone2D" parent="UnlockedButton/Skeleton2D/Body"]
 position = Vector2(0, -75)
 rest = Transform2D(1, 0, 0, 1, 0, -75)
 
-[node name="HairLeft" type="Bone2D" parent="Skeleton2D/Body/Hair"]
+[node name="HairLeft" type="Bone2D" parent="UnlockedButton/Skeleton2D/Body/Hair"]
 position = Vector2(22, 6)
 rest = Transform2D(1, 0, 0, 1, 22, 6)
 auto_calculate_length_and_angle = false
 length = 25.0
 bone_angle = -46.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/Hair/HairLeft"]
-texture = ExtResource("5_yjd3t")
+[node name="Sprite2D" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Body/Hair/HairLeft"]
+texture = ExtResource("5_pwvgl")
 
-[node name="HairRight" type="Bone2D" parent="Skeleton2D/Body/Hair"]
+[node name="HairRight" type="Bone2D" parent="UnlockedButton/Skeleton2D/Body/Hair"]
 position = Vector2(2, -10)
 scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, 2, -10)
@@ -340,44 +379,43 @@ auto_calculate_length_and_angle = false
 length = 30.0
 bone_angle = -80.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/Hair/HairRight"]
-texture = ExtResource("6_totvs")
+[node name="Sprite2D" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Body/Hair/HairRight"]
+texture = ExtResource("6_561ls")
 
-[node name="BodySprite" type="Sprite2D" parent="Skeleton2D/Body"]
-texture = ExtResource("1_ou0h1")
+[node name="BodySprite" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Body"]
+texture = ExtResource("7_7i2tg")
 
-[node name="EyesSprite" type="Sprite2D" parent="Skeleton2D/Body"]
+[node name="EyesSprite" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Body"]
 position = Vector2(-7, -22)
-texture = ExtResource("2_mrdtg")
+texture = ExtResource("8_j6cl5")
 
-[node name="HandLeft" type="Bone2D" parent="Skeleton2D/Body"]
+[node name="HandLeft" type="Bone2D" parent="UnlockedButton/Skeleton2D/Body"]
 position = Vector2(135, 28)
 rest = Transform2D(1, 0, 0, 1, 135, 28)
 auto_calculate_length_and_angle = false
 length = 1.0
 bone_angle = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/HandLeft"]
-texture = ExtResource("2_kgick")
+[node name="Sprite2D" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Body/HandLeft"]
+texture = ExtResource("9_v3jfj")
 
-[node name="HandRight" type="Bone2D" parent="Skeleton2D/Body"]
+[node name="HandRight" type="Bone2D" parent="UnlockedButton/Skeleton2D/Body"]
 position = Vector2(-135, 26)
 rest = Transform2D(1, 0, 0, 1, -135, 26)
 auto_calculate_length_and_angle = false
 length = 1.0
 bone_angle = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/HandRight"]
-texture = ExtResource("2_kgick")
+[node name="Sprite2D" type="Sprite2D" parent="UnlockedButton/Skeleton2D/Body/HandRight"]
+texture = ExtResource("9_v3jfj")
 
-[node name="SingleAnimator" type="AnimationPlayer" parent="."]
+[node name="SingleAnimator" type="AnimationPlayer" parent="UnlockedButton"]
 libraries = {
 "": SubResource("AnimationLibrary_x8fkk")
 }
 
-[node name="GlobalAnimator" type="AnimationPlayer" parent="."]
+[node name="GlobalAnimator" type="AnimationPlayer" parent="UnlockedButton"]
 root_node = NodePath("../Skeleton2D")
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_nh01p")
 }

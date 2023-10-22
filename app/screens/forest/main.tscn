@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=21 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest/main.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
@@ -9,10 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c1smp1vncbpgq" path="res://assets/images/grass.png" id="6_y4e68"]
 [ext_resource type="Shader" path="res://shaders/wave.gdshader" id="7_m70vk"]
 [ext_resource type="Texture2D" uid="uid://dncd1wqqnnjbk" path="res://assets/images/water.png" id="8_02wtv"]
-[ext_resource type="Texture2D" uid="uid://b2qan52u6i16x" path="res://assets/ui/activity_button/completed.png" id="9_1isvv"]
-[ext_resource type="Texture2D" uid="uid://bhtehbhbjfloj" path="res://assets/ui/activity_button/current.png" id="10_b8wic"]
-[ext_resource type="Texture2D" uid="uid://dok8myynbj3m6" path="res://assets/ui/activity_button/lock.png" id="11_2golt"]
-[ext_resource type="PackedScene" uid="uid://c8ml3g3sks86w" path="res://entities/player.tscn" id="13_6htr5"]
+[ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="10_a5ag7"]
 
 [sub_resource type="Gradient" id="Gradient_mftu1"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -655,61 +652,34 @@ libraries = {
 "": SubResource("AnimationLibrary_a6p47")
 }
 
-[node name="OneButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
-layout_mode = 0
-offset_left = 142.0
-offset_top = 1066.0
-offset_right = 268.0
-offset_bottom = 1190.0
-pivot_offset = Vector2(63, 63)
-texture_normal = ExtResource("9_1isvv")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="OneButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
+layout_mode = 1
+offset_left = 161.0
+offset_top = 1062.0
+offset_right = 287.0
+offset_bottom = 1186.0
+state = 1
 
-[node name="TwoButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 814.0
-offset_right = 544.0
-offset_bottom = 938.0
-pivot_offset = Vector2(63, 63)
-texture_normal = ExtResource("10_b8wic")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="TwoButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
+offset_left = 429.0
+offset_top = 831.0
+offset_right = 555.0
+offset_bottom = 955.0
 
-[node name="ThreeButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
-layout_mode = 0
-offset_left = 145.0
-offset_top = 505.0
-offset_right = 271.0
-offset_bottom = 629.0
-pivot_offset = Vector2(63, 63)
-texture_normal = ExtResource("11_2golt")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="ThreeButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
+offset_left = 155.0
+offset_top = 508.0
+offset_right = 281.0
+offset_bottom = 632.0
 
-[node name="FourButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
-layout_mode = 0
-offset_left = 444.0
-offset_top = 296.0
-offset_right = 570.0
-offset_bottom = 420.0
-pivot_offset = Vector2(63, 63)
-texture_normal = ExtResource("11_2golt")
-ignore_texture_size = true
-stretch_mode = 5
+[node name="FourButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
+offset_left = 440.0
+offset_top = 290.0
+offset_right = 566.0
+offset_bottom = 414.0
 
-[node name="FiveButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
-layout_mode = 0
-offset_left = 133.0
-offset_top = 84.0
-offset_right = 259.0
-offset_bottom = 208.0
-pivot_offset = Vector2(63, 63)
-texture_normal = ExtResource("11_2golt")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Player" parent="ScrollContainer/Control/Container" instance=ExtResource("13_6htr5")]
-position = Vector2(481, 805)
-scale = Vector2(0.760001, 0.760001)
+[node name="FiveButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
+offset_left = 159.0
+offset_top = 83.0
+offset_right = 285.0
+offset_bottom = 207.0
