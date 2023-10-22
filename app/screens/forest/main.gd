@@ -2,5 +2,5 @@ extends Control
 
 
 func _ready():
-	var max_scroll_value = $ScrollContainer/VBoxContainer.size.y
-	$ScrollContainer.scroll_vertical = max_scroll_value
+	var max_height = $ScrollContainer/Control.size.x
+	$ScrollContainer.scroll_vertical = max_height

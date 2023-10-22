@@ -333,7 +333,7 @@ noise_type = 0
 fractal_type = 0
 fractal_ping_pong_strength = 1.535
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wgqir"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vftld"]
 seamless = true
 noise = SubResource("FastNoiseLite_rbg2u")
 
@@ -342,7 +342,7 @@ shader = ExtResource("7_t5hiy")
 shader_parameter/intensity = -0.03
 shader_parameter/tiling = Vector2(1, 1)
 shader_parameter/offset_speed = Vector2(0.11, 0.045)
-shader_parameter/noise = SubResource("NoiseTexture2D_wgqir")
+shader_parameter/noise = SubResource("NoiseTexture2D_vftld")
 
 [sub_resource type="Curve" id="Curve_iifhy"]
 _data = [Vector2(0.00471698, 0.0421052), 0.0, 2.41754, 0, 0, Vector2(1, 1), -0.0223158, 0.0, 0, 0]

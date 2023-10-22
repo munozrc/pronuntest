@@ -1,0 +1,384 @@
+[gd_scene load_steps=14 format=3 uid="uid://c8ml3g3sks86w"]
+
+[ext_resource type="Texture2D" uid="uid://dkg1gbic32vlc" path="res://assets/images/player/body.png" id="1_ou0h1"]
+[ext_resource type="Script" path="res://entities/player.gd" id="1_riqtj"]
+[ext_resource type="Texture2D" uid="uid://coodfp3wkyy5g" path="res://assets/images/player/hand.png" id="2_kgick"]
+[ext_resource type="Texture2D" uid="uid://cn8neirqiaxah" path="res://assets/images/player/eyes.png" id="2_mrdtg"]
+[ext_resource type="Texture2D" uid="uid://t48xa6udbsb6" path="res://assets/images/player/shadow.png" id="4_o0qvd"]
+[ext_resource type="Texture2D" uid="uid://cbqnk8u4hhv5o" path="res://assets/images/player/hair_right.png" id="5_yjd3t"]
+[ext_resource type="Texture2D" uid="uid://s71oa0dntqh0" path="res://assets/images/player/hair_left.png" id="6_totvs"]
+
+[sub_resource type="Animation" id="Animation_2rpjh"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Body:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Shadow:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.16, 1.16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Body/Hair:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -75), Vector2(0, -71)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/Body/Hair/HairLeft:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.141254]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/Body/Hair/HairRight:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.335338]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/Body/HandLeft:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(135, 28), Vector2(135, 19)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton2D/Body/HandRight:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-135, 26), Vector2(-135, 17)]
+}
+
+[sub_resource type="Animation" id="Animation_30trb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Body/Hair:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -75)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/Body/Hair/HairLeft:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/Body/Hair/HairRight:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/Body/HandLeft:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(135, 28)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton2D/Body/HandRight:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-135, 26)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton2D/Body:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_33ecu"]
+resource_name = "greeting"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Body:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Body:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-7.45058e-08, 5), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Body/HandRight:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-135, 26), Vector2(-144.579, -28.3245), Vector2(-139.543, 0.234974), Vector2(-144.579, -28.3245), Vector2(-139.543, 0.234974), Vector2(-135, 26)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/Body/Hair/HairLeft:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.0217202, -0.0217202, 0.146411, -0.0217202]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/Body/Hair/HairRight:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.0154007, -0.0154007, 0.269285, -0.0154007]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/Shadow:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.02469, 1.02469), Vector2(1.21544, 1.21544), Vector2(1.02469, 1.02469)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8fkk"]
+_data = {
+"RESET": SubResource("Animation_30trb"),
+"greeting": SubResource("Animation_33ecu"),
+"idle": SubResource("Animation_2rpjh")
+}
+
+[sub_resource type="Animation" id="Animation_fuo6s"]
+resource_name = "idle"
+length = 7.5
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SingleAnimator")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("idle", "greeting", "idle", "idle"),
+"times": PackedFloat32Array(0, 2, 3.5, 5.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh01p"]
+_data = {
+"idle": SubResource("Animation_fuo6s")
+}
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_riqtj")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Shadow" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(0, 89)
+rest = Transform2D(1, 0, 0, 1, 0, 89)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Shadow"]
+modulate = Color(1, 1, 1, 0.45098)
+texture = ExtResource("4_o0qvd")
+
+[node name="Body" type="Bone2D" parent="Skeleton2D"]
+scale = Vector2(1, 1)
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Hair" type="Bone2D" parent="Skeleton2D/Body"]
+position = Vector2(0, -75)
+rest = Transform2D(1, 0, 0, 1, 0, -75)
+
+[node name="HairLeft" type="Bone2D" parent="Skeleton2D/Body/Hair"]
+position = Vector2(22, 6)
+rest = Transform2D(1, 0, 0, 1, 22, 6)
+auto_calculate_length_and_angle = false
+length = 25.0
+bone_angle = -46.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/Hair/HairLeft"]
+texture = ExtResource("5_yjd3t")
+
+[node name="HairRight" type="Bone2D" parent="Skeleton2D/Body/Hair"]
+position = Vector2(2, -10)
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, 2, -10)
+auto_calculate_length_and_angle = false
+length = 30.0
+bone_angle = -80.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/Hair/HairRight"]
+texture = ExtResource("6_totvs")
+
+[node name="BodySprite" type="Sprite2D" parent="Skeleton2D/Body"]
+texture = ExtResource("1_ou0h1")
+
+[node name="EyesSprite" type="Sprite2D" parent="Skeleton2D/Body"]
+position = Vector2(-7, -22)
+texture = ExtResource("2_mrdtg")
+
+[node name="HandLeft" type="Bone2D" parent="Skeleton2D/Body"]
+position = Vector2(135, 28)
+rest = Transform2D(1, 0, 0, 1, 135, 28)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/HandLeft"]
+texture = ExtResource("2_kgick")
+
+[node name="HandRight" type="Bone2D" parent="Skeleton2D/Body"]
+position = Vector2(-135, 26)
+rest = Transform2D(1, 0, 0, 1, -135, 26)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Body/HandRight"]
+texture = ExtResource("2_kgick")
+
+[node name="SingleAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x8fkk")
+}
+
+[node name="GlobalAnimator" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Skeleton2D")
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_nh01p")
+}

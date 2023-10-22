@@ -1,6 +1,355 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=24 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest/main.gd" id="1_qtjli"]
+[ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
+[ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="3_6p8yc"]
+[ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="4_vpskh"]
+[ext_resource type="Texture2D" uid="uid://sguuoxtqn6h5" path="res://assets/images/temp/Screenshot 2023-10-18 010321.png" id="5_0xci6"]
+[ext_resource type="Texture2D" uid="uid://bev34h8lg7g0b" path="res://assets/images/lagoon.png" id="6_h1aft"]
+[ext_resource type="Texture2D" uid="uid://c1smp1vncbpgq" path="res://assets/images/grass.png" id="6_y4e68"]
+[ext_resource type="Shader" path="res://shaders/wave.gdshader" id="7_m70vk"]
+[ext_resource type="Texture2D" uid="uid://dncd1wqqnnjbk" path="res://assets/images/water.png" id="8_02wtv"]
+[ext_resource type="Texture2D" uid="uid://b2qan52u6i16x" path="res://assets/ui/activity_button/completed.png" id="9_1isvv"]
+[ext_resource type="Texture2D" uid="uid://bhtehbhbjfloj" path="res://assets/ui/activity_button/current.png" id="10_b8wic"]
+[ext_resource type="Texture2D" uid="uid://dok8myynbj3m6" path="res://assets/ui/activity_button/lock.png" id="11_2golt"]
+[ext_resource type="PackedScene" uid="uid://c8ml3g3sks86w" path="res://entities/player.tscn" id="13_6htr5"]
+
+[sub_resource type="Gradient" id="Gradient_mftu1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_obkus"]
+noise_type = 3
+seed = 1
+frequency = 0.009
+fractal_gain = 0.09
+fractal_ping_pong_strength = 0.955
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wgqir"]
+seamless = true
+noise = SubResource("FastNoiseLite_obkus")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_idy0f"]
+shader = ExtResource("7_m70vk")
+shader_parameter/intensity = 0.033
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset_speed = Vector2(0.09, 0)
+shader_parameter/noise = SubResource("NoiseTexture2D_wgqir")
+
+[sub_resource type="Animation" id="Animation_cdqc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 151)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.999994, 36)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_rnswp"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 151), Vector2(7, 151), Vector2(-10, 151), Vector2(-10, 151), Vector2(7, 151), Vector2(-10, 151), Vector2(1, 151), Vector2(7, 151)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0824525, -0.0349066, -0.0349066, 0.0824525, -0.0349066, 0.0, 0.0824525]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.159495, -0.0872665, -0.0872665, 0.159495, -0.0872665, 0.0, 0.159495]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.999994, 36), Vector2(6, 36), Vector2(-4, 36), Vector2(-4, 36), Vector2(6, 36), Vector2(-4, 36), Vector2(0.999994, 36), Vector2(6, 36)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.229909, -0.0890118, -0.0890118, 0.229909, -0.0890118, 0.0, 0.229909]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, -30), Vector2(15, -30), Vector2(-12, -30), Vector2(-12, -30), Vector2(15, -30), Vector2(-12, -30), Vector2(-2, -30), Vector2(15, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_woi4l"]
+_data = {
+"RESET": SubResource("Animation_cdqc3"),
+"idle": SubResource("Animation_rnswp")
+}
+
+[sub_resource type="Animation" id="Animation_uw2c1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.27386, 150.319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.54776, 36.9427)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.54778, -31.8471)]
+}
+
+[sub_resource type="Animation" id="Animation_q0wrt"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.27386, 150.319), Vector2(7.64328, 150.319), Vector2(-7.64331, 150.319), Vector2(-7.64331, 150.319), Vector2(-1.27386, 150.319), Vector2(7.64328, 150.319), Vector2(-7.64331, 150.319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0673865, -0.0917272, -0.0917272, 0.0, 0.0673865, -0.0917272]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0627894, -0.188196, -0.188196, 0.0, 0.0627894, -0.188196]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.54776, 36.9427), Vector2(2.54776, 36.9427), Vector2(-14.0128, 36.9427), Vector2(-14.0128, 36.9427), Vector2(-2.54776, 36.9427), Vector2(2.54776, 36.9427), Vector2(-14.0128, 36.9427)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0904531, -0.303449, -0.303449, 0.0, 0.0904531, -0.303449]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TopBranch:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.54778, -31.8471), Vector2(7.64331, -31.8472), Vector2(-28.0255, -31.8472), Vector2(-28.0255, -31.8472), Vector2(-2.54778, -31.8471), Vector2(7.64331, -31.8472), Vector2(-28.0255, -31.8472)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6p47"]
+_data = {
+"RESET": SubResource("Animation_uw2c1"),
+"idle": SubResource("Animation_q0wrt")
+}
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -10,6 +359,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtjli")
+
+[node name="Screenshot2023-10-18010321" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(383.5, 620.64)
+scale = Vector2(3.03082, 3.03082)
+texture = ExtResource("5_0xci6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false
@@ -22,7 +377,339 @@ grow_vertical = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="Control" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(720, 1548)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.623529, 0.780392, 0.196078, 1)
+
+[node name="Container" type="Control" parent="ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -1280.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="Path" type="Line2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(314, 1050)
+points = PackedVector2Array(-99, 78, 175, 78, 175, -175, -100, -484, -100, -686, 189, -686, 189, -902, -111, -902)
+width = 60.0
+gradient = SubResource("Gradient_mftu1")
+joint_mode = 2
+round_precision = 32
+
+[node name="Lagoon" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+self_modulate = Color(0.933594, 0.816406, 0.40625, 1)
+position = Vector2(651.461, 584)
+scale = Vector2(1.07665, 1.29565)
+texture = ExtResource("6_h1aft")
+
+[node name="WaterEffect" type="Sprite2D" parent="ScrollContainer/Control/Container/Lagoon"]
+material = SubResource("ShaderMaterial_idy0f")
+position = Vector2(2.87863, -2.31552)
+scale = Vector2(0.538092, 0.52633)
+texture = ExtResource("8_02wtv")
+
+[node name="Grass" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(169, 260.5)
+scale = Vector2(0.766667, 0.766667)
+texture = ExtResource("6_y4e68")
+
+[node name="Grass2" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(67, 653)
+scale = Vector2(0.766667, 0.766667)
+texture = ExtResource("6_y4e68")
+
+[node name="Grass3" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(582, 787)
+scale = Vector2(0.766667, 0.766667)
+texture = ExtResource("6_y4e68")
+
+[node name="Grass4" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(529, 1246)
+scale = Vector2(0.766667, 0.766667)
+texture = ExtResource("6_y4e68")
+
+[node name="Tree2" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(729, 767)
+scale = Vector2(1.48, 1.48)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+modulate = Color(0, 0.289063, 0.222656, 1)
+position = Vector2(-3.00001, 113)
+scale = Vector2(0.974576, 0.974576)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.02609, -91.3218)
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+modulate = Color(0, 0.324219, 0.226563, 1)
+position = Vector2(0.999994, 36)
+scale = Vector2(0.769421, 0.769421)
+texture = ExtResource("4_vpskh")
+offset = Vector2(-2.59935, -90.9775)
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+modulate = Color(0, 0.378906, 0.269531, 1)
+position = Vector2(-2, -30)
+scale = Vector2(0.547276, 0.547276)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0, -95.0161)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree2"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_woi4l")
+}
+
+[node name="Tree3" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(602, 39)
+scale = Vector2(1.32, 1.32)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+modulate = Color(0, 0.289063, 0.222656, 1)
+position = Vector2(-3.00001, 113)
+scale = Vector2(0.974576, 0.974576)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.02609, -91.3218)
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+modulate = Color(0, 0.324219, 0.226563, 1)
+position = Vector2(0.999994, 36)
+scale = Vector2(0.769421, 0.769421)
+texture = ExtResource("4_vpskh")
+offset = Vector2(-2.59935, -90.9775)
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+modulate = Color(0, 0.378906, 0.269531, 1)
+position = Vector2(-2, -30)
+scale = Vector2(0.547276, 0.547276)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0, -95.0161)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree3"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_woi4l")
+}
+
+[node name="SmallTree" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(293, 769)
+scale = Vector2(1.145, 1.145)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+position = Vector2(-1.27386, 150.319)
+rotation = 0.0270321
+scale = Vector2(0.554791, 0.554791)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+modulate = Color(0.0742188, 0.367188, 0, 1)
+position = Vector2(-1.27389, 115.924)
+scale = Vector2(0.974576, 0.974576)
+texture = ExtResource("4_vpskh")
+offset = Vector2(-0.745056, -94.3216)
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+modulate = Color(0.0898438, 0.40625, 0, 1)
+position = Vector2(-2.54776, 36.9427)
+scale = Vector2(0.769421, 0.769421)
+texture = ExtResource("4_vpskh")
+offset = Vector2(2.0116, -92.2027)
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+modulate = Color(0.125, 0.464844, 0.0429688, 1)
+position = Vector2(-2.54778, -31.8471)
+scale = Vector2(0.547276, 0.547276)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.00092, -91.6409)
+
+[node name="SmallTreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/SmallTree"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_a6p47")
+}
+
+[node name="SmallTree2" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(73, 1168)
+scale = Vector2(0.705, 0.705)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
+position = Vector2(-1.27386, 150.319)
+rotation = 0.0270321
+scale = Vector2(0.554791, 0.554791)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
+modulate = Color(0.0742188, 0.367188, 0, 1)
+position = Vector2(-1.27389, 115.924)
+scale = Vector2(0.974576, 0.974576)
+texture = ExtResource("4_vpskh")
+offset = Vector2(-0.745056, -94.3216)
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
+modulate = Color(0.0898438, 0.40625, 0, 1)
+position = Vector2(-2.54776, 36.9427)
+scale = Vector2(0.769421, 0.769421)
+texture = ExtResource("4_vpskh")
+offset = Vector2(2.0116, -92.2027)
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
+modulate = Color(0.125, 0.464844, 0.0429688, 1)
+position = Vector2(-2.54778, -31.8471)
+scale = Vector2(0.547276, 0.547276)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.00092, -91.6409)
+
+[node name="SmallTreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/SmallTree2"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_a6p47")
+}
+
+[node name="SmallTree3" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(31.9999, 370)
+scale = Vector2(1.145, 1.145)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
+position = Vector2(-1.27386, 150.319)
+rotation = 0.0270321
+scale = Vector2(0.554791, 0.554791)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
+modulate = Color(0.0742188, 0.367188, 0, 1)
+position = Vector2(-1.27389, 115.924)
+scale = Vector2(0.974576, 0.974576)
+texture = ExtResource("4_vpskh")
+offset = Vector2(-0.745056, -94.3216)
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
+modulate = Color(0.0898438, 0.40625, 0, 1)
+position = Vector2(-2.54776, 36.9427)
+scale = Vector2(0.769421, 0.769421)
+texture = ExtResource("4_vpskh")
+offset = Vector2(2.0116, -92.2027)
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
+modulate = Color(0.125, 0.464844, 0.0429688, 1)
+position = Vector2(-2.54778, -31.8471)
+scale = Vector2(0.547276, 0.547276)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.00092, -91.6409)
+
+[node name="SmallTreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/SmallTree3"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_a6p47")
+}
+
+[node name="OneButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 1066.0
+offset_right = 268.0
+offset_bottom = 1190.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("9_1isvv")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TwoButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 814.0
+offset_right = 544.0
+offset_bottom = 938.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("10_b8wic")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ThreeButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 505.0
+offset_right = 271.0
+offset_bottom = 629.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("11_2golt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="FourButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 296.0
+offset_right = 570.0
+offset_bottom = 420.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("11_2golt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="FiveButton" type="TextureButton" parent="ScrollContainer/Control/Container"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 84.0
+offset_right = 259.0
+offset_bottom = 208.0
+pivot_offset = Vector2(63, 63)
+texture_normal = ExtResource("11_2golt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Player" parent="ScrollContainer/Control/Container" instance=ExtResource("13_6htr5")]
+position = Vector2(481, 805)
+scale = Vector2(0.760001, 0.760001)
