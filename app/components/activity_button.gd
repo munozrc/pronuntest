@@ -1,6 +1,9 @@
 extends Control
 
 
+signal pressed(activity: PackedScene)
+
+
 enum STATE_BUTTON { completed, unlocked, locked }
 
 
@@ -38,4 +41,4 @@ func _on_button_pressed():
 		printerr("Activity is required to change")
 		return
 	
-	get_tree().change_scene_to_packed(activity)
+	self.pressed.emit(activity)

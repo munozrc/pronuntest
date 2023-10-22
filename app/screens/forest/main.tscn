@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=23 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest/main.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
@@ -10,6 +10,8 @@
 [ext_resource type="Shader" path="res://shaders/wave.gdshader" id="7_m70vk"]
 [ext_resource type="Texture2D" uid="uid://dncd1wqqnnjbk" path="res://assets/images/water.png" id="8_02wtv"]
 [ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="10_a5ag7"]
+[ext_resource type="PackedScene" uid="uid://dw2vlfpt8ur2s" path="res://screens/activities/01/main.tscn" id="11_pc6fl"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="12_i10dq"]
 
 [sub_resource type="Gradient" id="Gradient_mftu1"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -658,6 +660,7 @@ offset_left = 161.0
 offset_top = 1062.0
 offset_right = 287.0
 offset_bottom = 1186.0
+activity = ExtResource("11_pc6fl")
 state = 1
 
 [node name="TwoButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
@@ -683,3 +686,5 @@ offset_left = 159.0
 offset_top = 83.0
 offset_right = 285.0
 offset_bottom = 207.0
+
+[node name="TransitionComponent" parent="." instance=ExtResource("12_i10dq")]
