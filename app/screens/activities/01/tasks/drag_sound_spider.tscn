@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://hj5wk2jqg5kc"]
+[gd_scene load_steps=13 format=3 uid="uid://hj5wk2jqg5kc"]
 
-[ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="1_1u11l"]
 [ext_resource type="Script" path="res://screens/activities/01/tasks/drag_sound_spider.gd" id="1_wbrdq"]
 [ext_resource type="Texture2D" uid="uid://d3v4w8j25fg13" path="res://assets/images/spider.png" id="2_cwf04"]
 [ext_resource type="Texture2D" uid="uid://dxs7u1xdonj0a" path="res://assets/images/spiderweb.png" id="2_gv5re"]
@@ -341,12 +340,12 @@ position = Vector2(224, 920)
 [node name="Box2" parent="Container" instance=ExtResource("4_wxgts")]
 position = Vector2(500, 920)
 
-[node name="Header" parent="." instance=ExtResource("1_1u11l")]
-layout_mode = 1
-offset_bottom = 110.0
-
 [node name="NextButton" parent="." instance=ExtResource("4_uhoi2")]
 layout_mode = 1
+offset_left = 69.0
+offset_top = 1141.0
+offset_right = 651.0
+offset_bottom = 1231.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"
