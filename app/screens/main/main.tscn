@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cki5h5l8gxper"]
+[gd_scene load_steps=13 format=3 uid="uid://cki5h5l8gxper"]
 
 [ext_resource type="PackedScene" uid="uid://w04g8t3bky7w" path="res://screens/main/islands/forest.tscn" id="1_q34wy"]
 [ext_resource type="Script" path="res://screens/main/main.gd" id="1_qio5r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cd8pvwfo5oxot" path="res://assets/ui/arrow.png" id="3_4xpxh"]
 [ext_resource type="Texture2D" uid="uid://cead0ie4std05" path="res://assets/images/clouds/cloud.png" id="3_88213"]
 [ext_resource type="Texture2D" uid="uid://c5dawqtpe2nn7" path="res://assets/ui/arrow_pressed.png" id="4_jr7mt"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="7_udwlo"]
 
 [sub_resource type="Gradient" id="Gradient_yr0k5"]
 colors = PackedColorArray(0.331627, 0.58946, 1, 1, 0.766155, 0.826503, 0.999998, 1)
@@ -14,6 +15,69 @@ colors = PackedColorArray(0.331627, 0.58946, 1, 1, 0.766155, 0.826503, 0.999998,
 gradient = SubResource("Gradient_yr0k5")
 fill_from = Vector2(0.495726, 0)
 fill_to = Vector2(0.521368, 1)
+
+[sub_resource type="Animation" id="Animation_4q45h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SmallLeftCloud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, -59.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigLeftCloud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-274, 8.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallRightCloud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, -39.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleRightCloud2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(331, -75.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BigRightCloud:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(282, -11.5001)]
+}
 
 [sub_resource type="Animation" id="Animation_iml3t"]
 resource_name = "idle"
@@ -78,69 +142,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(282, -11.5001), Vector2(282, -24.5)]
-}
-
-[sub_resource type="Animation" id="Animation_4q45h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SmallLeftCloud:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-200, -59.5)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BigLeftCloud:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-274, 8.5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("SmallRightCloud:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(19, -39.5)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MiddleRightCloud2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(331, -75.5)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("BigRightCloud:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(282, -11.5001)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t3vmq"]
@@ -291,3 +292,6 @@ texture_normal = ExtResource("3_4xpxh")
 texture_pressed = ExtResource("4_jr7mt")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="TransitionComponent" parent="." instance=ExtResource("7_udwlo")]
+autoplay = "fade_out"

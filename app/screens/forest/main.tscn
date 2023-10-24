@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=22 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest/main.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
@@ -34,320 +34,194 @@ shader_parameter/tiling = Vector2(1, 1)
 shader_parameter/offset_speed = Vector2(0.09, 0)
 shader_parameter/noise = SubResource("NoiseTexture2D_wgqir")
 
-[sub_resource type="Animation" id="Animation_cdqc3"]
+[sub_resource type="Animation" id="Animation_0olgr"]
+resource_name = "idle"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.5, 7.1, 9, 12, 20.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0637731, 0.0, 0.0, -0.10505, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 3.5, 8.3, 9.7, 12, 20.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.104673, 0.0, 0.0, -0.135408, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TreeSkeleton/BaseBranchBone2D:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 9, 10.2, 12, 20.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0409079, 0.0, 0.0, -0.0701607, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TreeSkeleton/Shadow:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 9, 10.2, 12, 20.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 151), Vector2(1, 151), Vector2(5, 151), Vector2(1, 151), Vector2(1, 151), Vector2(-5, 151), Vector2(1, 151), Vector2(1, 151)]
+}
+
+[sub_resource type="Animation" id="Animation_62d0d"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Shadow:position")
+tracks/0/path = NodePath("TreeSkeleton/BaseBranchBone2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TreeSkeleton/Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 151)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BaseBranch:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MiddleBranch:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MiddleBranch:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.999994, 36)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TopBranch:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TopBranch:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, -30)]
-}
 
-[sub_resource type="Animation" id="Animation_rnswp"]
-resource_name = "idle"
-length = 12.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shadow:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 151), Vector2(7, 151), Vector2(-10, 151), Vector2(-10, 151), Vector2(7, 151), Vector2(-10, 151), Vector2(1, 151), Vector2(7, 151)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BaseBranch:rotation")
-tracks/1/interp = 4
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0824525, -0.0349066, -0.0349066, 0.0824525, -0.0349066, 0.0, 0.0824525]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MiddleBranch:rotation")
-tracks/2/interp = 4
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.159495, -0.0872665, -0.0872665, 0.159495, -0.0872665, 0.0, 0.159495]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MiddleBranch:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.999994, 36), Vector2(6, 36), Vector2(-4, 36), Vector2(-4, 36), Vector2(6, 36), Vector2(-4, 36), Vector2(0.999994, 36), Vector2(6, 36)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TopBranch:rotation")
-tracks/4/interp = 4
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.229909, -0.0890118, -0.0890118, 0.229909, -0.0890118, 0.0, 0.229909]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TopBranch:position")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.5, 4.2, 5.5, 7.1, 7.9, 9.5, 11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-2, -30), Vector2(15, -30), Vector2(-12, -30), Vector2(-12, -30), Vector2(15, -30), Vector2(-12, -30), Vector2(-2, -30), Vector2(15, -30)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_woi4l"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d8mrp"]
 _data = {
-"RESET": SubResource("Animation_cdqc3"),
-"idle": SubResource("Animation_rnswp")
+"RESET": SubResource("Animation_62d0d"),
+"idle": SubResource("Animation_0olgr")
 }
 
-[sub_resource type="Animation" id="Animation_uw2c1"]
-length = 0.001
-tracks/0/type = "value"
+[sub_resource type="Animation" id="Animation_sgipq"]
+resource_name = "idle"
+length = 26.0
+loop_mode = 1
+tracks/0/type = "animation"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Shadow:position")
+tracks/0/path = NodePath("ScrollContainer/Control/Container/Tree/TreeAnimator")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1.27386, 150.319)]
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
 }
-tracks/1/type = "value"
+tracks/1/type = "animation"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BaseBranch:rotation")
+tracks/1/path = NodePath("ScrollContainer/Control/Container/Tree2/TreeAnimator")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(1)
 }
-tracks/2/type = "value"
+tracks/2/type = "animation"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MiddleBranch:rotation")
+tracks/2/path = NodePath("ScrollContainer/Control/Container/Tree3/TreeAnimator")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(2)
 }
-tracks/3/type = "value"
+tracks/3/type = "animation"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("MiddleBranch:position")
+tracks/3/path = NodePath("ScrollContainer/Control/Container/Tree4/TreeAnimator")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2.54776, 36.9427)]
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(1)
 }
-tracks/4/type = "value"
+tracks/4/type = "animation"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TopBranch:rotation")
+tracks/4/path = NodePath("ScrollContainer/Control/Container/Tree5/TreeAnimator")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
 }
-tracks/5/type = "value"
+tracks/5/type = "animation"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("TopBranch:position")
+tracks/5/path = NodePath("ScrollContainer/Control/Container/Tree6/TreeAnimator")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2.54778, -31.8471)]
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(1)
+}
+tracks/6/type = "animation"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ScrollContainer/Control/Container/Tree7/TreeAnimator")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(2.1)
 }
 
-[sub_resource type="Animation" id="Animation_q0wrt"]
-resource_name = "idle"
-length = 12.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shadow:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-1.27386, 150.319), Vector2(7.64328, 150.319), Vector2(-7.64331, 150.319), Vector2(-7.64331, 150.319), Vector2(-1.27386, 150.319), Vector2(7.64328, 150.319), Vector2(-7.64331, 150.319)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BaseBranch:rotation")
-tracks/1/interp = 4
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0673865, -0.0917272, -0.0917272, 0.0, 0.0673865, -0.0917272]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MiddleBranch:rotation")
-tracks/2/interp = 4
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0627894, -0.188196, -0.188196, 0.0, 0.0627894, -0.188196]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MiddleBranch:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-2.54776, 36.9427), Vector2(2.54776, 36.9427), Vector2(-14.0128, 36.9427), Vector2(-14.0128, 36.9427), Vector2(-2.54776, 36.9427), Vector2(2.54776, 36.9427), Vector2(-14.0128, 36.9427)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TopBranch:rotation")
-tracks/4/interp = 4
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0904531, -0.303449, -0.303449, 0.0, 0.0904531, -0.303449]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TopBranch:position")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.4, 4.4, 5.9, 7.9, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-2.54778, -31.8471), Vector2(7.64331, -31.8472), Vector2(-28.0255, -31.8472), Vector2(-28.0255, -31.8472), Vector2(-2.54778, -31.8471), Vector2(7.64331, -31.8472), Vector2(-28.0255, -31.8472)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6p47"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3rqt"]
 _data = {
-"RESET": SubResource("Animation_uw2c1"),
-"idle": SubResource("Animation_q0wrt")
+"idle": SubResource("Animation_sgipq")
 }
 
 [node name="Main" type="Control"]
@@ -361,7 +235,7 @@ script = ExtResource("1_qtjli")
 
 [node name="Screenshot2023-10-18010321" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(383.5, 620.64)
+position = Vector2(383.5, 894)
 scale = Vector2(3.03082, 3.03082)
 texture = ExtResource("5_0xci6")
 
@@ -446,219 +320,413 @@ position = Vector2(529, 1246)
 scale = Vector2(0.766667, 0.766667)
 texture = ExtResource("6_y4e68")
 
-[node name="Tree2" type="Node2D" parent="ScrollContainer/Control/Container"]
-position = Vector2(729, 767)
-scale = Vector2(1.48, 1.48)
+[node name="Grass5" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(464, 54)
+scale = Vector2(0.766667, 0.766667)
+texture = ExtResource("6_y4e68")
 
-[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+[node name="Grass6" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(334, 490)
+scale = Vector2(0.766667, 0.766667)
+texture = ExtResource("6_y4e68")
+
+[node name="Tree" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(68, 1157)
+scale = Vector2(0.6, 0.6)
+
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton"]
 position = Vector2(1, 151)
 scale = Vector2(0.516129, 0.516129)
 texture = ExtResource("2_cbw0e")
 
-[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton"]
 position = Vector2(-1, 52)
 scale = Vector2(0.642857, 0.642857)
 texture = ExtResource("3_6p8yc")
 
-[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
-modulate = Color(0, 0.289063, 0.222656, 1)
-position = Vector2(-3.00001, 113)
-scale = Vector2(0.974576, 0.974576)
-texture = ExtResource("4_vpskh")
-offset = Vector2(1.02609, -91.3218)
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974574, 0.974574)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
 
-[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
-modulate = Color(0, 0.324219, 0.226563, 1)
-position = Vector2(0.999994, 36)
-scale = Vector2(0.769421, 0.769421)
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0.0742188, 0.367188, 0, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(-2.59935, -90.9775)
+offset = Vector2(1.02609, -94.4)
 
-[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2"]
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0.0898438, 0.40625, 0, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
+modulate = Color(0.125, 0.464844, 0.0429688, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.55667, -94.9185)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree"]
+libraries = {
+"": SubResource("AnimationLibrary_d8mrp")
+}
+
+[node name="Tree2" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(619, 1089)
+scale = Vector2(0.719999, 0.719999)
+
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree2"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974572, 0.974572)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0, 0.290196, 0.223529, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.02609, -94.4)
+
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0, 0.32549, 0.227451, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree2/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
 modulate = Color(0, 0.378906, 0.269531, 1)
-position = Vector2(-2, -30)
-scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("4_vpskh")
-offset = Vector2(0, -95.0161)
+offset = Vector2(1.55667, -94.9185)
 
 [node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree2"]
-autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_woi4l")
+"": SubResource("AnimationLibrary_d8mrp")
 }
 
 [node name="Tree3" type="Node2D" parent="ScrollContainer/Control/Container"]
-position = Vector2(602, 39)
-scale = Vector2(1.32, 1.32)
+position = Vector2(81, 908)
+scale = Vector2(0.720002, 0.720002)
 
-[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree3"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton"]
 position = Vector2(1, 151)
 scale = Vector2(0.516129, 0.516129)
 texture = ExtResource("2_cbw0e")
 
-[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton"]
 position = Vector2(-1, 52)
 scale = Vector2(0.642857, 0.642857)
 texture = ExtResource("3_6p8yc")
 
-[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
-modulate = Color(0, 0.289063, 0.222656, 1)
-position = Vector2(-3.00001, 113)
-scale = Vector2(0.974576, 0.974576)
-texture = ExtResource("4_vpskh")
-offset = Vector2(1.02609, -91.3218)
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974574, 0.974574)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
 
-[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
-modulate = Color(0, 0.324219, 0.226563, 1)
-position = Vector2(0.999994, 36)
-scale = Vector2(0.769421, 0.769421)
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0, 0.290196, 0.223529, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(-2.59935, -90.9775)
+offset = Vector2(1.02609, -94.4)
 
-[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3"]
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0, 0.32549, 0.227451, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree3/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
 modulate = Color(0, 0.378906, 0.269531, 1)
-position = Vector2(-2, -30)
-scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("4_vpskh")
-offset = Vector2(0, -95.0161)
+offset = Vector2(1.55667, -94.9185)
 
 [node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree3"]
-autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_woi4l")
+"": SubResource("AnimationLibrary_d8mrp")
 }
 
-[node name="SmallTree" type="Node2D" parent="ScrollContainer/Control/Container"]
-position = Vector2(293, 769)
-scale = Vector2(1.145, 1.145)
+[node name="Tree4" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(292, 768)
+scale = Vector2(1.24, 1.24)
 
-[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
-position = Vector2(-1.27386, 150.319)
-rotation = 0.0270321
-scale = Vector2(0.554791, 0.554791)
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree4"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
 texture = ExtResource("2_cbw0e")
 
-[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton"]
 position = Vector2(-1, 52)
 scale = Vector2(0.642857, 0.642857)
 texture = ExtResource("3_6p8yc")
 
-[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
-modulate = Color(0.0742188, 0.367188, 0, 1)
-position = Vector2(-1.27389, 115.924)
-scale = Vector2(0.974576, 0.974576)
-texture = ExtResource("4_vpskh")
-offset = Vector2(-0.745056, -94.3216)
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974572, 0.974572)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
 
-[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
-modulate = Color(0.0898438, 0.40625, 0, 1)
-position = Vector2(-2.54776, 36.9427)
-scale = Vector2(0.769421, 0.769421)
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0.0742188, 0.367188, 0, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(2.0116, -92.2027)
+offset = Vector2(1.02609, -94.4)
 
-[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree"]
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0.0898438, 0.40625, 0, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree4/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
 modulate = Color(0.125, 0.464844, 0.0429688, 1)
-position = Vector2(-2.54778, -31.8471)
-scale = Vector2(0.547276, 0.547276)
 texture = ExtResource("4_vpskh")
-offset = Vector2(1.00092, -91.6409)
+offset = Vector2(1.55667, -94.9185)
 
-[node name="SmallTreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/SmallTree"]
-autoplay = "idle"
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree4"]
 libraries = {
-"": SubResource("AnimationLibrary_a6p47")
+"": SubResource("AnimationLibrary_d8mrp")
 }
 
-[node name="SmallTree2" type="Node2D" parent="ScrollContainer/Control/Container"]
-position = Vector2(73, 1168)
-scale = Vector2(0.705, 0.705)
+[node name="Tree5" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(722, 788)
+scale = Vector2(1.28, 1.28)
 
-[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
-position = Vector2(-1.27386, 150.319)
-rotation = 0.0270321
-scale = Vector2(0.554791, 0.554791)
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree5"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
 texture = ExtResource("2_cbw0e")
 
-[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton"]
 position = Vector2(-1, 52)
 scale = Vector2(0.642857, 0.642857)
 texture = ExtResource("3_6p8yc")
 
-[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
-modulate = Color(0.0742188, 0.367188, 0, 1)
-position = Vector2(-1.27389, 115.924)
-scale = Vector2(0.974576, 0.974576)
-texture = ExtResource("4_vpskh")
-offset = Vector2(-0.745056, -94.3216)
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974574, 0.974574)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
 
-[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
-modulate = Color(0.0898438, 0.40625, 0, 1)
-position = Vector2(-2.54776, 36.9427)
-scale = Vector2(0.769421, 0.769421)
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0, 0.290196, 0.223529, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(2.0116, -92.2027)
+offset = Vector2(1.02609, -94.4)
 
-[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree2"]
-modulate = Color(0.125, 0.464844, 0.0429688, 1)
-position = Vector2(-2.54778, -31.8471)
-scale = Vector2(0.547276, 0.547276)
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0, 0.32549, 0.227451, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(1.00092, -91.6409)
+offset = Vector2(0.000946045, -94.8673)
 
-[node name="SmallTreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/SmallTree2"]
-autoplay = "idle"
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree5/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
+modulate = Color(0, 0.378906, 0.269531, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.55667, -94.9185)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree5"]
 libraries = {
-"": SubResource("AnimationLibrary_a6p47")
+"": SubResource("AnimationLibrary_d8mrp")
 }
 
-[node name="SmallTree3" type="Node2D" parent="ScrollContainer/Control/Container"]
-position = Vector2(31.9999, 370)
-scale = Vector2(1.145, 1.145)
+[node name="Tree6" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(29, 373)
+scale = Vector2(1.16, 1.16)
 
-[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
-position = Vector2(-1.27386, 150.319)
-rotation = 0.0270321
-scale = Vector2(0.554791, 0.554791)
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree6"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
 texture = ExtResource("2_cbw0e")
 
-[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton"]
 position = Vector2(-1, 52)
 scale = Vector2(0.642857, 0.642857)
 texture = ExtResource("3_6p8yc")
 
-[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
-modulate = Color(0.0742188, 0.367188, 0, 1)
-position = Vector2(-1.27389, 115.924)
-scale = Vector2(0.974576, 0.974576)
-texture = ExtResource("4_vpskh")
-offset = Vector2(-0.745056, -94.3216)
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974574, 0.974574)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
 
-[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
-modulate = Color(0.0898438, 0.40625, 0, 1)
-position = Vector2(-2.54776, 36.9427)
-scale = Vector2(0.769421, 0.769421)
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0.0745098, 0.368627, 0, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(2.0116, -92.2027)
+offset = Vector2(1.02609, -94.4)
 
-[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/SmallTree3"]
-modulate = Color(0.125, 0.464844, 0.0429688, 1)
-position = Vector2(-2.54778, -31.8471)
-scale = Vector2(0.547276, 0.547276)
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0.0901961, 0.407843, 0, 1)
 texture = ExtResource("4_vpskh")
-offset = Vector2(1.00092, -91.6409)
+offset = Vector2(0.000946045, -94.8673)
 
-[node name="SmallTreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/SmallTree3"]
-autoplay = "idle"
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree6/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
+modulate = Color(0.12549, 0.466667, 0.0431373, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.55667, -94.9185)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree6"]
 libraries = {
-"": SubResource("AnimationLibrary_a6p47")
+"": SubResource("AnimationLibrary_d8mrp")
+}
+
+[node name="Tree7" type="Node2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(600, 41)
+scale = Vector2(1.32, 1.32)
+
+[node name="TreeSkeleton" type="Skeleton2D" parent="ScrollContainer/Control/Container/Tree7"]
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("2_cbw0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("3_6p8yc")
+
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton"]
+position = Vector2(0, 116)
+scale = Vector2(0.974574, 0.974574)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton/BaseBranchBone2D"]
+self_modulate = Color(0, 0.290196, 0.223529, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.02609, -94.4)
+
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0, 0.32549, 0.227451, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/Control/Container/Tree7/TreeSkeleton/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
+modulate = Color(0, 0.378906, 0.269531, 1)
+texture = ExtResource("4_vpskh")
+offset = Vector2(1.55667, -94.9185)
+
+[node name="TreeAnimator" type="AnimationPlayer" parent="ScrollContainer/Control/Container/Tree7"]
+libraries = {
+"": SubResource("AnimationLibrary_d8mrp")
 }
 
 [node name="OneButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
 layout_mode = 1
-offset_left = 161.0
+offset_left = 142.0
 offset_top = 1062.0
-offset_right = 287.0
+offset_right = 268.0
 offset_bottom = 1186.0
 activity = ExtResource("11_pc6fl")
 state = 1
@@ -682,9 +750,17 @@ offset_right = 566.0
 offset_bottom = 414.0
 
 [node name="FiveButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
-offset_left = 159.0
+offset_left = 134.0
 offset_top = 83.0
-offset_right = 285.0
+offset_right = 260.0
 offset_bottom = 207.0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/Control/Container"]
+root_node = NodePath("../../../..")
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_r3rqt")
+}
+
 [node name="TransitionComponent" parent="." instance=ExtResource("12_i10dq")]
+autoplay = "fade_out"

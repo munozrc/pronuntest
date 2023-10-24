@@ -16,6 +16,6 @@ func _ready():
 
 
 func _on_button_pressed(activity: PackedScene):
-	$TransitionComponent.play("cloud_in")
+	$TransitionComponent.play("fade_in")
 	await $TransitionComponent.animation_finished
 	get_tree().change_scene_to_packed(activity)

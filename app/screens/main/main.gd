@@ -3,6 +3,9 @@ extends Control
 
 @onready var left_button: TextureButton = $Controls/MarginContainer/HBoxContainer/LeftButton
 @onready var right_button: TextureButton = $Controls/MarginContainer/HBoxContainer/RightButton
+@onready var islands: Array[Island] = [
+	$ScrollContainer/HBoxContainer/Forest
+]
 
 
 var width_island := 720.0
@@ -18,6 +21,9 @@ func _ready():
 	right_button.pressed.connect(self._on_right_pressed)
 	
 	current_island = 0
+	
+	for island in islands:
+		island.selected.connect(_on_island_selected)
 
 
 func _move_to():
@@ -39,3 +45,15 @@ func _on_left_pressed():
 func _on_right_pressed():
 	if current_island < 1:
 		current_island += 1
+
+
+func _on_island_selected():
+	if current_island > islands.size():
+		printerr("Island scene is required")
+		return
+	
+	$TransitionComponent.play("fade_in")
+	await $TransitionComponent.animation_finished
+	
+	var target = islands[current_island].scene
+	get_tree().change_scene_to_packed(target)
