@@ -24,6 +24,11 @@ func _ready():
 	buttons["unlocked"].pressed.connect(self._on_button_pressed)
 
 
+func change_state(new_state: String):
+	state = STATE_BUTTON.get(new_state)
+	_enable_current_button()
+
+
 func _enable_current_button():
 	for key in buttons:
 		var button: TextureButton = buttons[key]

@@ -17,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_vyqpx")
 taks = Array[PackedScene]([ExtResource("2_a5ib7"), ExtResource("3_ja62y"), ExtResource("4_bderk")])
 container = NodePath("TaskContainer")
+island = "forest"
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,4 +44,5 @@ offset_bottom = 110.0
 [node name="TransitionComponent" parent="." instance=ExtResource("6_cto1o")]
 autoplay = "cloud_out"
 
+[connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="close" from="Header" to="." method="_on_header_close"]

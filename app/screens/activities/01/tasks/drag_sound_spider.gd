@@ -47,4 +47,6 @@ func _on_slot_failed():
 
 
 func _on_next_button_up():
-	pass
+	$AnimationPlayer.play("outro")
+	await $AnimationPlayer.animation_finished
+	self.completed.emit()
