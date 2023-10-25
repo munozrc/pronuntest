@@ -12,10 +12,6 @@ var app_state = {
 			{
 				"state": "unlocked",
 				"score": 0
-			},
-			{
-				"state": "locked",
-				"score": 0
 			}
 		]
 	}
