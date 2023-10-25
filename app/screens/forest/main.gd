@@ -11,7 +11,7 @@ func _ready():
 	var max_height = $ScrollContainer/Control.size.x
 	$ScrollContainer.scroll_vertical = max_height
 	
-	var activities: Array = GLOBAL.app_state["forest"]["activities"]
+	var activities: Array = GLOBAL.activities["forest"]
 	var max_activites: int = activities.size()
 	var index := 0
 	
