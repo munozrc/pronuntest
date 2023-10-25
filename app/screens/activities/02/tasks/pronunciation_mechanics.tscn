@@ -143,10 +143,6 @@ stretch_mode = 0
 
 [node name="NextButton" parent="." instance=ExtResource("2_p8qsi")]
 layout_mode = 1
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
 
 [node name="PredictionComponent" type="HTTPRequest" parent="."]
 script = ExtResource("2_uetdv")
@@ -155,14 +151,3 @@ script = ExtResource("2_uetdv")
 stream = SubResource("AudioStreamMicrophone_lgnta")
 autoplay = true
 bus = &"Record"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 510.0
-offset_top = 852.0
-offset_right = 668.0
-offset_bottom = 981.0
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
