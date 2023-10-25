@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=24 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest/main.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dncd1wqqnnjbk" path="res://assets/images/water.png" id="8_02wtv"]
 [ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="10_a5ag7"]
 [ext_resource type="PackedScene" uid="uid://dw2vlfpt8ur2s" path="res://screens/activities/01/main.tscn" id="11_pc6fl"]
+[ext_resource type="Texture2D" uid="uid://dsnvnol214iw" path="res://assets/ui/button_square.png" id="12_cvnux"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="12_i10dq"]
+[ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="13_04426"]
 
 [sub_resource type="Gradient" id="Gradient_mftu1"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -281,7 +283,7 @@ mouse_filter = 1
 
 [node name="Path" type="Line2D" parent="ScrollContainer/Control/Container"]
 position = Vector2(314, 1050)
-points = PackedVector2Array(-99, 78, 175, 78, 175, -175, -100, -484, -100, -686, 189, -686, 189, -902, -111, -902)
+points = PackedVector2Array(-99, 78, 175, 78, 175, -175, -100, -484, -100, -686, 189, -686)
 width = 60.0
 gradient = SubResource("Gradient_mftu1")
 joint_mode = 2
@@ -749,6 +751,7 @@ offset_right = 566.0
 offset_bottom = 414.0
 
 [node name="FiveButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
+visible = false
 offset_left = 134.0
 offset_top = 83.0
 offset_right = 260.0
@@ -761,5 +764,50 @@ libraries = {
 "": SubResource("AnimationLibrary_r3rqt")
 }
 
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 161.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonBack" type="TextureButton" parent="Header/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_cvnux")
+
+[node name="TextureRect" type="TextureRect" parent="Header/MarginContainer/HBoxContainer/ButtonBack"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.5
+offset_right = 28.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_04426")
+
 [node name="TransitionComponent" parent="." instance=ExtResource("12_i10dq")]
 autoplay = "fade_out"
+
+[connection signal="button_up" from="Header/MarginContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back"]

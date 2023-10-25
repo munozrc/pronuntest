@@ -29,3 +29,9 @@ func _on_button_pressed(activity: PackedScene):
 	$TransitionComponent.play("fade_in")
 	await $TransitionComponent.animation_finished
 	get_tree().change_scene_to_packed(activity)
+
+
+func _on_button_back():
+	$TransitionComponent.play("fade_in")
+	await $TransitionComponent.animation_finished
+	get_tree().change_scene_to_file("res://screens/main/main.tscn")
