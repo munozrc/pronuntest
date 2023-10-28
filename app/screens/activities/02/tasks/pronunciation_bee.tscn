@@ -1,0 +1,167 @@
+[gd_scene load_steps=7 format=3 uid="uid://bok8e0yrbhl7u"]
+
+[ext_resource type="Script" path="res://screens/activities/02/tasks/pronunciation_bee.gd" id="1_30wo1"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="1_cro8y"]
+[ext_resource type="Script" path="res://scripts/prediction_component.gd" id="2_54adj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cef3x"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na1gx"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_dwyhg"]
+
+[node name="PronunciationBee" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_30wo1")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Letter" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cef3x")
+
+[node name="Label" type="Label" parent="HBoxContainer/Letter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -78.0
+offset_right = 34.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cro8y")
+theme_override_font_sizes/font_size = 100
+text = "c"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter2" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_na1gx")
+
+[node name="Label" type="Label" parent="HBoxContainer/Letter2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -90.0
+offset_right = 40.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_cro8y")
+theme_override_font_sizes/font_size = 100
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter3" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cef3x")
+
+[node name="Label" type="Label" parent="HBoxContainer/Letter3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -78.0
+offset_right = 34.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cro8y")
+theme_override_font_sizes/font_size = 100
+text = "s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter4" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_na1gx")
+
+[node name="Label" type="Label" parent="HBoxContainer/Letter4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -90.0
+offset_right = 40.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_cro8y")
+theme_override_font_sizes/font_size = 100
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PredictionComponent" type="HTTPRequest" parent="."]
+script = ExtResource("2_54adj")
+endpoint = "word/aa"
+
+[node name="RecordButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 942.0
+offset_right = 573.0
+offset_bottom = 1051.0
+theme_override_font_sizes/font_size = 36
+text = "Grabar"
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_dwyhg")
+autoplay = true
+bus = &"Record"

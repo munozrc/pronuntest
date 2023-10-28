@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp2086gmcm157"]
+[gd_scene load_steps=17 format=3 uid="uid://dp2086gmcm157"]
 
 [ext_resource type="Texture2D" uid="uid://ch1lqknhul2i0" path="res://assets/images/terrains/beach_terrain.png" id="1_qxcyq"]
+[ext_resource type="Texture2D" uid="uid://j10nv25tcg6s" path="res://assets/images/temp/reference_beach_island.png" id="2_oq262"]
+[ext_resource type="Texture2D" uid="uid://cir1jp80ijtyi" path="res://assets/images/palm/trunk.png" id="3_ssxh8"]
+[ext_resource type="Texture2D" uid="uid://dk0sarijcpxa0" path="res://assets/images/palm/leaf_001.png" id="4_pw6ds"]
+[ext_resource type="Texture2D" uid="uid://d4md687g4musb" path="res://assets/images/sea/wave.png" id="5_p8e8r"]
+[ext_resource type="Texture2D" uid="uid://deqlf87sirkb0" path="res://assets/images/sea/sea_border.png" id="5_t7ufq"]
+[ext_resource type="Texture2D" uid="uid://rhrs02ed7844" path="res://assets/images/sea/base_wave.png" id="6_vdk0r"]
+[ext_resource type="Texture2D" uid="uid://be3lxv78acj75" path="res://assets/images/palm/leaf_002.png" id="7_bd50p"]
+[ext_resource type="Texture2D" uid="uid://cbu2xmfmy0lwm" path="res://assets/images/palm/leaf_003.png" id="8_3fuh2"]
+[ext_resource type="Texture2D" uid="uid://cs57usnftd4fy" path="res://assets/images/palm/leaf_004.png" id="9_g4bp8"]
+[ext_resource type="Texture2D" uid="uid://co3c3bnfedcl8" path="res://assets/images/palm/leaf_005.png" id="10_y40c3"]
+[ext_resource type="Texture2D" uid="uid://ddnevmaiwpex8" path="res://assets/images/palm/leaf_006.png" id="11_nuv4m"]
+[ext_resource type="Texture2D" uid="uid://ds2ujwpmfspjp" path="res://assets/images/umbrella/stick.png" id="13_yxesg"]
+[ext_resource type="Texture2D" uid="uid://c02tjct3fkv8a" path="res://assets/images/umbrella/shadow.png" id="14_dn7ta"]
+[ext_resource type="Texture2D" uid="uid://betxl6u2vt1k2" path="res://assets/images/umbrella/fabric.png" id="15_fr00o"]
+[ext_resource type="Texture2D" uid="uid://bjv0y73d4bnhj" path="res://assets/images/umbrella/fabric_02.png" id="16_5tsge"]
 
 [node name="Beach" type="Control"]
 custom_minimum_size = Vector2(720, 0)
@@ -11,6 +26,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+
+[node name="BeachReference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(359.119, 706.5)
+scale = Vector2(0.539459, 0.539459)
+texture = ExtResource("2_oq262")
 
 [node name="Terrain" type="TextureRect" parent="."]
 layout_mode = 1
@@ -28,3 +49,100 @@ grow_vertical = 2
 pivot_offset = Vector2(311, 162)
 texture = ExtResource("1_qxcyq")
 expand_mode = 1
+
+[node name="Wave" type="Sprite2D" parent="Terrain"]
+position = Vector2(229, 133)
+scale = Vector2(0.538721, 0.53872)
+texture = ExtResource("5_p8e8r")
+
+[node name="Water" type="Sprite2D" parent="Terrain/Wave"]
+position = Vector2(-106.937, 1.78845)
+scale = Vector2(1, 1)
+texture = ExtResource("6_vdk0r")
+
+[node name="BorderSea" type="Sprite2D" parent="Terrain"]
+position = Vector2(171.852, 214)
+scale = Vector2(0.538721, 0.538721)
+texture = ExtResource("5_t7ufq")
+
+[node name="Palm" type="Node2D" parent="Terrain"]
+position = Vector2(419, -28)
+scale = Vector2(0.54001, 0.54001)
+
+[node name="Trunk" type="Sprite2D" parent="Terrain/Palm"]
+position = Vector2(-5.5358, -9.25989)
+texture = ExtResource("3_ssxh8")
+
+[node name="Leaf" type="Sprite2D" parent="Terrain/Palm"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(-77.7764, -146.294)
+texture = ExtResource("4_pw6ds")
+offset = Vector2(27, -60)
+
+[node name="Leaf2" type="Sprite2D" parent="Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("7_bd50p")
+offset = Vector2(-58.1836, -19.26)
+
+[node name="Leaf3" type="Sprite2D" parent="Terrain/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("8_3fuh2")
+offset = Vector2(-52.628, 52.9609)
+
+[node name="Leaf4" type="Sprite2D" parent="Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("9_g4bp8")
+offset = Vector2(-22.9989, 56.6646)
+
+[node name="Leaf5" type="Sprite2D" parent="Terrain/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-77.7763, -148.145)
+texture = ExtResource("10_y40c3")
+offset = Vector2(60.3329, -24.8154)
+
+[node name="Leaf6" type="Sprite2D" parent="Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("11_nuv4m")
+offset = Vector2(60.3329, 12.2209)
+
+[node name="Umbrella" type="Node2D" parent="Terrain"]
+position = Vector2(395, 95)
+scale = Vector2(0.551332, 0.551332)
+
+[node name="Shadow" type="Sprite2D" parent="Terrain/Umbrella"]
+position = Vector2(-18.1379, 48.9723)
+scale = Vector2(0.912, 0.912)
+texture = ExtResource("14_dn7ta")
+
+[node name="Stick" type="Sprite2D" parent="Terrain/Umbrella"]
+position = Vector2(-14.5104, 52.6)
+texture = ExtResource("13_yxesg")
+offset = Vector2(15, -43)
+
+[node name="Fabric" type="Sprite2D" parent="Terrain/Umbrella"]
+position = Vector2(17, -49)
+texture = ExtResource("15_fr00o")
+offset = Vector2(-10, 24)
+
+[node name="Umbrella2" type="Node2D" parent="Terrain"]
+position = Vector2(455, 152)
+scale = Vector2(0.551332, 0.551332)
+
+[node name="Shadow" type="Sprite2D" parent="Terrain/Umbrella2"]
+position = Vector2(-18.138, 48.9723)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("14_dn7ta")
+
+[node name="Stick" type="Sprite2D" parent="Terrain/Umbrella2"]
+position = Vector2(-14.5104, 52.6)
+texture = ExtResource("13_yxesg")
+offset = Vector2(15, -43)
+
+[node name="Fabric" type="Sprite2D" parent="Terrain/Umbrella2"]
+position = Vector2(18.1378, -54.4137)
+texture = ExtResource("16_5tsge")
+offset = Vector2(-10, 24)
