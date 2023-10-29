@@ -28,13 +28,13 @@ func _next_task(index := -1):
 		task.completed.disconnect(_on_task_completed)
 		task.queue_free()
 	
-	if current_task + 1 >= taks.size():
+	current_task = index if index != -1 else current_task + 1
+	
+	if current_task >= taks.size():
 		finished.emit()
 		return
 	
-	current_task = index if index != -1 else current_task + 1
 	var task: Task = taks[current_task].instantiate()
-	
 	task.completed.connect(_on_task_completed)
 	container.add_child(task)
 
