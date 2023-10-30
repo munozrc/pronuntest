@@ -15,6 +15,8 @@ var activities = {
 	]
 }
 
+var current_island := 0
+
 
 func set_activity_completed(island: String, index: int):
 	activities[island][index]["state"] = "completed"

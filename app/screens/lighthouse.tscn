@@ -1,0 +1,177 @@
+[gd_scene load_steps=12 format=3 uid="uid://dcqws3k1gphsm"]
+
+[ext_resource type="Texture2D" uid="uid://dsnvnol214iw" path="res://assets/ui/button_square.png" id="1_jk7me"]
+[ext_resource type="Script" path="res://screens/lighthouse.gd" id="1_tdgal"]
+[ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="2_i5wy3"]
+[ext_resource type="Texture2D" uid="uid://bbaha4kfq46n5" path="res://assets/images/temp/ligthhouse_reference.png" id="3_amjxd"]
+[ext_resource type="Texture2D" uid="uid://du6up8147nb4w" path="res://assets/images/terrains/lighthouse.png" id="4_7soqc"]
+[ext_resource type="Texture2D" uid="uid://cvhia3kei2bff" path="res://assets/images/terrains/mini_island.png" id="5_v0mjd"]
+[ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="6_0erwl"]
+[ext_resource type="Texture2D" uid="uid://c8l3rgh0ejxky" path="res://assets/images/terrains/mini_island_02.png" id="6_jlwts"]
+[ext_resource type="Texture2D" uid="uid://b8hn8i2iqla0w" path="res://assets/images/terrains/mini_island_03.png" id="7_i1i3w"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="10_lneig"]
+
+[sub_resource type="Gradient" id="Gradient_svpcw"]
+colors = PackedColorArray(1, 1, 1, 0.627451, 1, 1, 1, 1)
+
+[node name="Lighthouse" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tdgal")
+
+[node name="Reference" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -151.0
+offset_top = -264.0
+offset_right = 896.0
+offset_bottom = 1503.0
+texture = ExtResource("3_amjxd")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.410156, 0.8125, 0.960938, 1)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -1280.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LighthouseIsland" type="Sprite2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(-98.5, 120.437)
+scale = Vector2(0.673516, 0.673516)
+texture = ExtResource("4_7soqc")
+metadata/_edit_lock_ = true
+
+[node name="MiniIsland" type="Sprite2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(752, 57)
+scale = Vector2(0.673516, 0.673516)
+texture = ExtResource("5_v0mjd")
+metadata/_edit_lock_ = true
+
+[node name="MiniIsland2" type="Sprite2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(740, 748)
+scale = Vector2(0.673516, 0.673516)
+texture = ExtResource("6_jlwts")
+metadata/_edit_lock_ = true
+
+[node name="MiniIsland3" type="Sprite2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(232, 1239)
+scale = Vector2(0.673516, 0.673516)
+texture = ExtResource("7_i1i3w")
+metadata/_edit_lock_ = true
+
+[node name="Path" type="Line2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(314, 1050)
+points = PackedVector2Array(222, 2, -73, -253, 224, -626, -64, -878)
+width = 60.0
+gradient = SubResource("Gradient_svpcw")
+joint_mode = 2
+round_precision = 32
+
+[node name="ButtonOne" parent="ScrollContainer/Control/Control" instance=ExtResource("6_0erwl")]
+offset_left = 470.0
+offset_top = 990.0
+offset_right = 596.0
+offset_bottom = 1114.0
+
+[node name="ButtonTwo" parent="ScrollContainer/Control/Control" instance=ExtResource("6_0erwl")]
+offset_left = 179.0
+offset_top = 739.0
+offset_right = 305.0
+offset_bottom = 863.0
+
+[node name="ButtonThree" parent="ScrollContainer/Control/Control" instance=ExtResource("6_0erwl")]
+offset_left = 473.0
+offset_top = 362.0
+offset_right = 599.0
+offset_bottom = 486.0
+
+[node name="ButtonFour" parent="ScrollContainer/Control/Control" instance=ExtResource("6_0erwl")]
+offset_left = 188.0
+offset_top = 116.0
+offset_right = 314.0
+offset_bottom = 240.0
+
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 187.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonBack" type="TextureButton" parent="Header/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_jk7me")
+
+[node name="TextureRect" type="TextureRect" parent="Header/MarginContainer/HBoxContainer/ButtonBack"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i5wy3")
+
+[node name="TransitionComponent" parent="." instance=ExtResource("10_lneig")]
+autoplay = "fade_out"
+
+[connection signal="pressed" from="Header/MarginContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

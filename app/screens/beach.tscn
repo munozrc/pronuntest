@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://wkm4qb35hy2b"]
+
+[ext_resource type="Texture2D" uid="uid://dw1lnhbmtqlbj" path="res://assets/images/temp/beach_menu_lighthouse.png" id="1_8a2pf"]
+[ext_resource type="Texture2D" uid="uid://di5xtvoxpuq2k" path="res://assets/images/terrains/beach_menu_terrain.png" id="1_lwgto"]
+[ext_resource type="Script" path="res://screens/beach.gd" id="1_nb33m"]
+[ext_resource type="Texture2D" uid="uid://cf3v328csm7xk" path="res://assets/images/terrains/wave_sea_menu.png" id="2_qyd4a"]
+[ext_resource type="Texture2D" uid="uid://d4loy1tqn6isd" path="res://assets/images/terrains/sea_menu.png" id="3_lahsp"]
+[ext_resource type="Texture2D" uid="uid://dsnvnol214iw" path="res://assets/ui/button_square.png" id="5_2lwr4"]
+[ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="5_dfjvi"]
+[ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="6_q27s1"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="8_rxced"]
+
+[sub_resource type="Gradient" id="Gradient_nyxp8"]
+colors = PackedColorArray(1, 1, 1, 0.627451, 1, 1, 1, 1)
+
+[node name="Beach" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nb33m")
+
+[node name="Reference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(360.5, 642.411)
+scale = Vector2(3.03929, 3.03929)
+texture = ExtResource("1_8a2pf")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackgroundColor" type="ColorRect" parent="ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.917969, 0.910156, 0.339844, 1)
+
+[node name="Container" type="Control" parent="ScrollContainer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -1280.0
+offset_right = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Terrain" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(361.312, 639.499)
+scale = Vector2(0.664433, 0.664433)
+texture = ExtResource("1_lwgto")
+
+[node name="Wave" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(345.251, 1204.74)
+scale = Vector2(0.579187, 0.579187)
+texture = ExtResource("2_qyd4a")
+
+[node name="Sea" type="Sprite2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(352, 1228)
+scale = Vector2(0.644624, 0.644624)
+texture = ExtResource("3_lahsp")
+
+[node name="Path" type="Line2D" parent="ScrollContainer/Control/Container"]
+position = Vector2(314, 1050)
+points = PackedVector2Array(172, 89, -114, -157, 113, -475, -106, -742, 172, -947)
+width = 60.0
+gradient = SubResource("Gradient_nyxp8")
+joint_mode = 2
+round_precision = 32
+
+[node name="ButtonOne" parent="ScrollContainer/Control/Container" instance=ExtResource("5_dfjvi")]
+offset_left = 424.0
+offset_top = 1081.0
+offset_right = 550.0
+offset_bottom = 1205.0
+
+[node name="ButtonTwo" parent="ScrollContainer/Control/Container" instance=ExtResource("5_dfjvi")]
+offset_left = 140.0
+offset_top = 835.0
+offset_right = 266.0
+offset_bottom = 959.0
+
+[node name="ButtonThree" parent="ScrollContainer/Control/Container" instance=ExtResource("5_dfjvi")]
+offset_left = 362.0
+offset_top = 513.0
+offset_right = 488.0
+offset_bottom = 637.0
+
+[node name="ButtonFour" parent="ScrollContainer/Control/Container" instance=ExtResource("5_dfjvi")]
+offset_left = 145.0
+offset_top = 239.0
+offset_right = 271.0
+offset_bottom = 363.0
+
+[node name="ButtonFive" parent="ScrollContainer/Control/Container" instance=ExtResource("5_dfjvi")]
+offset_left = 422.0
+offset_top = 47.0
+offset_right = 548.0
+offset_bottom = 171.0
+
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 185.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonBack" type="TextureButton" parent="Header/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_2lwr4")
+
+[node name="TextureRect" type="TextureRect" parent="Header/MarginContainer/HBoxContainer/ButtonBack"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.5
+offset_right = 28.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_q27s1")
+
+[node name="TransitionComponent" parent="." instance=ExtResource("8_rxced")]
+autoplay = "fade_out"
+
+[connection signal="pressed" from="Header/MarginContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_a1q2v"]
 [ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="1_spgkh"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="2_3yxlg"]
-[ext_resource type="PackedScene" uid="uid://bcp4b3pfsi6m1" path="res://screens/forest/main.tscn" id="2_famuy"]
+[ext_resource type="PackedScene" uid="uid://bcp4b3pfsi6m1" path="res://screens/forest.tscn" id="2_famuy"]
 [ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="3_i1ias"]
 [ext_resource type="Texture2D" uid="uid://bdixv7a8g4hgm" path="res://assets/images/temp/reference_forest_island.png" id="4_ylhbt"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="5_fptcv"]
@@ -19,7 +19,7 @@ noise_type = 0
 fractal_type = 0
 fractal_ping_pong_strength = 1.535
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vftld"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6j2oi"]
 seamless = true
 noise = SubResource("FastNoiseLite_rbg2u")
 
@@ -28,7 +28,7 @@ shader = ExtResource("7_t5hiy")
 shader_parameter/intensity = -0.03
 shader_parameter/tiling = Vector2(1, 1)
 shader_parameter/offset_speed = Vector2(0.11, 0.045)
-shader_parameter/noise = SubResource("NoiseTexture2D_vftld")
+shader_parameter/noise = SubResource("NoiseTexture2D_6j2oi")
 
 [sub_resource type="Curve" id="Curve_iifhy"]
 _data = [Vector2(0.00471698, 0.0421052), 0.0, 2.41754, 0, 0, Vector2(1, 1), -0.0223158, 0.0, 0, 0]
@@ -38,10 +38,10 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.19337, 0.823204, 1)
 colors = PackedColorArray(0.980392, 0.67451, 0.258824, 0, 0.980469, 0.675781, 0.257813, 1, 0.942879, 0.394955, 0.176822, 1, 0.937255, 0.352941, 0.164706, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fwj8x"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5i0kx"]
 gradient = SubResource("Gradient_qch12")
 
-[sub_resource type="CurveTexture" id="CurveTexture_huxaw"]
+[sub_resource type="CurveTexture" id="CurveTexture_6qon6"]
 curve = SubResource("Curve_iifhy")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ukhbg"]
@@ -53,8 +53,8 @@ initial_velocity_min = 30.0
 initial_velocity_max = 30.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_curve = SubResource("CurveTexture_huxaw")
-color_ramp = SubResource("GradientTexture1D_fwj8x")
+scale_curve = SubResource("CurveTexture_6qon6")
+color_ramp = SubResource("GradientTexture1D_5i0kx")
 attractor_interaction_enabled = false
 
 [sub_resource type="Animation" id="Animation_2kmde"]

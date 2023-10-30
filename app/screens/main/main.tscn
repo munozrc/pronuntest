@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cki5h5l8gxper"]
+[gd_scene load_steps=14 format=3 uid="uid://cki5h5l8gxper"]
 
 [ext_resource type="PackedScene" uid="uid://w04g8t3bky7w" path="res://screens/main/islands/forest.tscn" id="1_q34wy"]
 [ext_resource type="Script" path="res://screens/main/main.gd" id="1_qio5r"]
@@ -6,15 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://cd8pvwfo5oxot" path="res://assets/ui/arrow.png" id="3_4xpxh"]
 [ext_resource type="Texture2D" uid="uid://cead0ie4std05" path="res://assets/images/clouds/cloud.png" id="3_88213"]
 [ext_resource type="Texture2D" uid="uid://c5dawqtpe2nn7" path="res://assets/ui/arrow_pressed.png" id="4_jr7mt"]
+[ext_resource type="PackedScene" uid="uid://bmud555hagxes" path="res://screens/main/islands/lighthouse.tscn" id="4_n5jm1"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="7_udwlo"]
 
-[sub_resource type="Gradient" id="Gradient_yr0k5"]
-colors = PackedColorArray(0.331627, 0.58946, 1, 1, 0.766155, 0.826503, 0.999998, 1)
+[sub_resource type="Gradient" id="Gradient_ruic7"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8f2sq"]
-gradient = SubResource("Gradient_yr0k5")
-fill_from = Vector2(0.495726, 0)
-fill_to = Vector2(0.521368, 1)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eypkm"]
+gradient = SubResource("Gradient_ruic7")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [sub_resource type="Animation" id="Animation_4q45h"]
 length = 0.001
@@ -159,14 +160,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qio5r")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_8f2sq")
+color = Color(0, 0.654902, 0.952941, 1)
+
+[node name="BackgroundGradient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_eypkm")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false
@@ -195,6 +205,9 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="Beach" parent="ScrollContainer/HBoxContainer" instance=ExtResource("2_on1rx")]
+layout_mode = 2
+
+[node name="Lighthouse" parent="ScrollContainer/HBoxContainer" instance=ExtResource("4_n5jm1")]
 layout_mode = 2
 
 [node name="Controls" type="Control" parent="."]

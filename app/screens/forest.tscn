@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bcp4b3pfsi6m1"]
 
-[ext_resource type="Script" path="res://screens/forest/main.gd" id="1_qtjli"]
+[ext_resource type="Script" path="res://screens/forest.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="3_6p8yc"]
 [ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="4_vpskh"]
