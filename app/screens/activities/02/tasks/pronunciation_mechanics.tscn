@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdejg1jnooprl"]
+[gd_scene load_steps=11 format=3 uid="uid://cdejg1jnooprl"]
 
 [ext_resource type="Script" path="res://screens/activities/02/tasks/pronunciation_mechanics.gd" id="1_sjowt"]
 [ext_resource type="Texture2D" uid="uid://egqqe6djklih" path="res://assets/images/player/yellow.png" id="2_40psf"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/prediction_component.gd" id="2_uetdv"]
 [ext_resource type="Texture2D" uid="uid://bb3sqbr251bwp" path="res://assets/images/wooden_platform.png" id="3_y31xh"]
 [ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="4_qi13f"]
-[ext_resource type="Texture2D" uid="uid://diahj4kk2g3ww" path="res://assets/images/shapes/circle.png" id="5_07naf"]
+[ext_resource type="PackedScene" uid="uid://c8kqfmnhflg6m" path="res://components/record_button.tscn" id="7_q2ey4"]
 
 [sub_resource type="Animation" id="Animation_kf0l6"]
 length = 0.001
@@ -69,8 +69,6 @@ _data = {
 "jump": SubResource("Animation_lyai3")
 }
 
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_lgnta"]
-
 [node name="PronunciationMechanics" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -87,6 +85,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PredictionComponent" type="HTTPRequest" parent="."]
+script = ExtResource("2_uetdv")
 
 [node name="Container" type="Control" parent="."]
 layout_mode = 1
@@ -130,36 +131,22 @@ libraries = {
 "": SubResource("AnimationLibrary_l7eig")
 }
 
-[node name="RecordButton" type="TextureButton" parent="Container"]
-self_modulate = Color(0.133333, 0.133333, 0.133333, 1)
+[node name="RecordButton" parent="." instance=ExtResource("7_q2ey4")]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = 258.0
-offset_right = 85.0
-offset_bottom = 428.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -361.0
+offset_right = 120.0
+offset_bottom = -121.0
 grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(85, 85)
-texture_normal = ExtResource("5_07naf")
-ignore_texture_size = true
-stretch_mode = 0
+grow_vertical = 0
+max_duration = 3.0
 
 [node name="NextButton" parent="." instance=ExtResource("2_p8qsi")]
 layout_mode = 1
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
 
-[node name="PredictionComponent" type="HTTPRequest" parent="."]
-script = ExtResource("2_uetdv")
-
-[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMicrophone_lgnta")
-autoplay = true
-bus = &"Record"
+[connection signal="finished" from="RecordButton" to="." method="_on_record_finished"]

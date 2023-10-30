@@ -1,33 +1,17 @@
 extends Task
 
 
-@onready var predict: PredictionComponent = $PredictionComponent
-
-
-var record_bus_index: int
-var record_effect: AudioEffectRecord
-
-
 func _ready():
-	record_bus_index = AudioServer.get_bus_index("Record")
-	record_effect = AudioServer.get_bus_effect(record_bus_index, 0)
-	
-	$Container/RecordButton.button_down.connect(_on_record_pressed)
-	$Container/RecordButton.button_up.connect(_on_record_released)
-	
-	predict.request_completed.connect(_on_request_completed)
+	$PredictionComponent.request_completed.connect(_on_request_completed)
+	$RecordButton.save_path = $PredictionComponent.recording
 
 
-func _on_record_pressed():
-	record_effect.set_recording_active(true)
+func enable_interactions():
+	$RecordButton.enable = true
 
 
-func _on_record_released():
-	record_effect.set_recording_active(false)
-	
-	var recording: AudioStreamWAV = record_effect.get_recording()
-	recording.save_to_wav($PredictionComponent.recording)
-	predict.send_audio()
+func disable_insteractions():
+	$RecordButton.enable = false
 
 
 func _on_request_completed(_result, response_code, _headers, body):
@@ -42,7 +26,17 @@ func _on_request_completed(_result, response_code, _headers, body):
 	print("Percentage = " + str(percentage) + "%\n")
 	
 	if phoneme != "a":
+		enable_interactions()
+		$Container/Player/PlayerAnimator.play("RESET")
 		return
 	
 	$Container/Player/PlayerAnimator.play("jump")
 	$NextButton.show_button()
+	
+	var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+	tween.tween_property($RecordButton, "modulate", Color(255, 255, 255, 0), 1)
+
+
+func _on_record_finished():
+	$PredictionComponent.send_audio()
+	disable_insteractions()
