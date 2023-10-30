@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8kqfmnhflg6m"]
+
+[ext_resource type="Texture2D" uid="uid://dxvke3nrx5ivc" path="res://assets/images/shapes/ellipse.png" id="1_2rhkl"]
+[ext_resource type="Script" path="res://components/record_button.gd" id="1_npqcw"]
+[ext_resource type="Texture2D" uid="uid://btckdp5dgmtnx" path="res://assets/icons/mic.png" id="2_knlr6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y08u"]
+bg_color = Color(1, 0.309804, 0.309804, 1)
+corner_radius_top_left = 175
+corner_radius_top_right = 175
+corner_radius_bottom_right = 175
+corner_radius_bottom_left = 175
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nw1nr"]
+bg_color = Color(1, 0.309804, 0.309804, 1)
+corner_radius_top_left = 175
+corner_radius_top_right = 175
+corner_radius_bottom_right = 175
+corner_radius_bottom_left = 175
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idstk"]
+bg_color = Color(1, 0.309804, 0.309804, 1)
+corner_radius_top_left = 175
+corner_radius_top_right = 175
+corner_radius_bottom_right = 175
+corner_radius_bottom_left = 175
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfys7"]
+bg_color = Color(0.996094, 0.308594, 0.308594, 1)
+corner_radius_top_left = 175
+corner_radius_top_right = 175
+corner_radius_bottom_right = 175
+corner_radius_bottom_left = 175
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60ng1"]
+bg_color = Color(1, 0.309804, 0.309804, 1)
+corner_radius_top_left = 175
+corner_radius_top_right = 175
+corner_radius_bottom_right = 175
+corner_radius_bottom_left = 175
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_b37lo"]
+
+[node name="RecordButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 240.0
+pivot_offset = Vector2(120, 120)
+script = ExtResource("1_npqcw")
+
+[node name="Progressbar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 4
+texture_under = ExtResource("1_2rhkl")
+texture_progress = ExtResource("1_2rhkl")
+tint_under = Color(0.741176, 0.741176, 0.741176, 1)
+tint_progress = Color(1, 0.309804, 0.309804, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 80)
+theme_override_styles/normal = SubResource("StyleBoxFlat_3y08u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nw1nr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_idstk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kfys7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_60ng1")
+icon = ExtResource("2_knlr6")
+icon_alignment = 1
+
+[node name="RecordAudioStream" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_b37lo")
+volume_db = 8.0
+autoplay = true
+bus = &"Record"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_up"]
