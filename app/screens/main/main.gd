@@ -19,6 +19,7 @@ var islands_sky: Array[Color] = [
 
 var width_island := 720.0
 var current_island := 0
+var cloud_position := Vector2.ZERO
 
 
 func _ready():
@@ -40,6 +41,7 @@ func _move_to(time := 0.3):
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_property($ScrollContainer, "scroll_horizontal", new_pos, time)
 	tween.parallel().tween_property($BackgroundColor, "color", background_color, time)
+	tween.parallel().tween_property($Clouds, "position", cloud_position, 0.3)
 
 	left_button.modulate.a = 1.0 if current_island > 0 else 0.5
 	right_button.modulate.a = 1.0 if current_island < 2 else 0.5
@@ -48,12 +50,14 @@ func _move_to(time := 0.3):
 func _on_left_pressed():
 	if current_island > 0:
 		current_island -= 1
+		cloud_position = $Clouds.position - Vector2.LEFT * 12
 		_move_to()
 
 
 func _on_right_pressed():
 	if current_island < 2:
 		current_island += 1
+		cloud_position = $Clouds.position - Vector2.RIGHT * 12
 		_move_to()
 
 
