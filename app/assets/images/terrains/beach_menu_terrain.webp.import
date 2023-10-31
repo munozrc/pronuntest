@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di5xtvoxpuq2k"
-path="res://.godot/imported/beach_menu_terrain.png-ffa20c124ebb7c978a0fc8268288dadd.ctex"
+uid="uid://1xkh0ggb5f2e"
+path="res://.godot/imported/beach_menu_terrain.webp-eeea4d3cc5ae0ab6f55de102767d2c0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/terrains/beach_menu_terrain.png"
-dest_files=["res://.godot/imported/beach_menu_terrain.png-ffa20c124ebb7c978a0fc8268288dadd.ctex"]
+source_file="res://assets/images/terrains/beach_menu_terrain.webp"
+dest_files=["res://.godot/imported/beach_menu_terrain.webp-eeea4d3cc5ae0ab6f55de102767d2c0a.ctex"]
 
 [params]
 

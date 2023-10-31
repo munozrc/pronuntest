@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://wkm4qb35hy2b"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lnhbmtqlbj" path="res://assets/images/temp/beach_menu_lighthouse.png" id="1_8a2pf"]
-[ext_resource type="Texture2D" uid="uid://di5xtvoxpuq2k" path="res://assets/images/terrains/beach_menu_terrain.png" id="1_lwgto"]
 [ext_resource type="Script" path="res://screens/beach.gd" id="1_nb33m"]
 [ext_resource type="Texture2D" uid="uid://cf3v328csm7xk" path="res://assets/images/terrains/wave_sea_menu.png" id="2_qyd4a"]
 [ext_resource type="Texture2D" uid="uid://d4loy1tqn6isd" path="res://assets/images/terrains/sea_menu.png" id="3_lahsp"]
 [ext_resource type="Texture2D" uid="uid://dsnvnol214iw" path="res://assets/ui/button_square.png" id="5_2lwr4"]
 [ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="5_dfjvi"]
 [ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="6_q27s1"]
+[ext_resource type="Texture2D" uid="uid://1xkh0ggb5f2e" path="res://assets/images/terrains/beach_menu_terrain.webp" id="7_kt4s5"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="8_rxced"]
 
 [sub_resource type="Gradient" id="Gradient_nyxp8"]
@@ -67,9 +67,8 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Terrain" type="Sprite2D" parent="ScrollContainer/Control/Container"]
-position = Vector2(361.312, 639.499)
-scale = Vector2(0.664433, 0.664433)
-texture = ExtResource("1_lwgto")
+position = Vector2(360, 640)
+texture = ExtResource("7_kt4s5")
 
 [node name="Wave" type="Sprite2D" parent="ScrollContainer/Control/Container"]
 position = Vector2(345.251, 1204.74)
