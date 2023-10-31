@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dp2086gmcm157"]
+[gd_scene load_steps=38 format=3 uid="uid://dp2086gmcm157"]
 
 [ext_resource type="Texture2D" uid="uid://ch1lqknhul2i0" path="res://assets/images/terrains/beach_terrain.png" id="1_qxcyq"]
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_x1a4p"]
@@ -495,6 +495,130 @@ _data = {
 "idle": SubResource("Animation_a2bhe")
 }
 
+[sub_resource type="Animation" id="Animation_u8xxj"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-18.1379, 48.9723), Vector2(-12.6965, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.15708]
+}
+
+[sub_resource type="Animation" id="Animation_ddete"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18.1379, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dsqo"]
+_data = {
+"RESET": SubResource("Animation_ddete"),
+"idle": SubResource("Animation_u8xxj")
+}
+
+[sub_resource type="Animation" id="Animation_lsiry"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-18.138, 48.9723), Vector2(-7.25513, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.204772]
+}
+
+[sub_resource type="Animation" id="Animation_j5p6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18.138, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.204772]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crivx"]
+_data = {
+"RESET": SubResource("Animation_j5p6l"),
+"idle": SubResource("Animation_lsiry")
+}
+
 [sub_resource type="Animation" id="Animation_7gn6b"]
 resource_name = "idle"
 length = 4.0
@@ -526,6 +650,26 @@ tracks/2/path = NodePath("Palm3/AnimationPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "animation"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Umbrella/AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Umbrella2/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "clips": PackedStringArray("idle"),
 "times": PackedFloat32Array(0)
 }
@@ -775,6 +919,11 @@ position = Vector2(17, -49)
 texture = ExtResource("15_fr00o")
 offset = Vector2(-10, 24)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Terrain/Umbrella"]
+libraries = {
+"": SubResource("AnimationLibrary_0dsqo")
+}
+
 [node name="Umbrella2" type="Node2D" parent="Terrain"]
 position = Vector2(455, 152)
 scale = Vector2(0.551332, 0.551332)
@@ -791,8 +940,14 @@ offset = Vector2(15, -43)
 
 [node name="Fabric" type="Sprite2D" parent="Terrain/Umbrella2"]
 position = Vector2(18.1378, -54.4137)
+rotation = 0.204772
 texture = ExtResource("16_5tsge")
 offset = Vector2(-10, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Terrain/Umbrella2"]
+libraries = {
+"": SubResource("AnimationLibrary_crivx")
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Terrain"]
 autoplay = "idle"
