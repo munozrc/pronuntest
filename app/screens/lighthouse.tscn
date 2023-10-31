@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcqws3k1gphsm"]
+[gd_scene load_steps=28 format=3 uid="uid://dcqws3k1gphsm"]
 
 [ext_resource type="Texture2D" uid="uid://dsnvnol214iw" path="res://assets/ui/button_square.png" id="1_jk7me"]
 [ext_resource type="Script" path="res://screens/lighthouse.gd" id="1_tdgal"]
@@ -9,10 +9,364 @@
 [ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="6_0erwl"]
 [ext_resource type="Texture2D" uid="uid://c8l3rgh0ejxky" path="res://assets/images/terrains/mini_island_02.png" id="6_jlwts"]
 [ext_resource type="Texture2D" uid="uid://b8hn8i2iqla0w" path="res://assets/images/terrains/mini_island_03.png" id="7_i1i3w"]
+[ext_resource type="Texture2D" uid="uid://cir1jp80ijtyi" path="res://assets/images/palm/trunk.png" id="8_1qyfx"]
+[ext_resource type="Texture2D" uid="uid://dk0sarijcpxa0" path="res://assets/images/palm/leaf_001.png" id="9_hjck2"]
+[ext_resource type="Texture2D" uid="uid://be3lxv78acj75" path="res://assets/images/palm/leaf_002.png" id="10_27lvd"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="10_lneig"]
+[ext_resource type="Texture2D" uid="uid://cbu2xmfmy0lwm" path="res://assets/images/palm/leaf_003.png" id="11_hmyrs"]
+[ext_resource type="Texture2D" uid="uid://cs57usnftd4fy" path="res://assets/images/palm/leaf_004.png" id="12_c8vgy"]
+[ext_resource type="Texture2D" uid="uid://co3c3bnfedcl8" path="res://assets/images/palm/leaf_005.png" id="13_y5qj1"]
+[ext_resource type="Texture2D" uid="uid://ddnevmaiwpex8" path="res://assets/images/palm/leaf_006.png" id="14_hb680"]
+[ext_resource type="Texture2D" uid="uid://c7x1a8hsyafll" path="res://assets/images/palm/trunk_02.png" id="15_0vv5n"]
 
 [sub_resource type="Gradient" id="Gradient_svpcw"]
 colors = PackedColorArray(1, 1, 1, 0.627451, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_wvv03"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm/Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm/Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Palm/Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Palm/Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Palm/Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_elrjl"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.16114]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm/Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.218325]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm/Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.197243]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Palm/Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.322361]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Palm/Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.201064]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Palm/Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.155196]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwy1h"]
+_data = {
+"RESET": SubResource("Animation_wvv03"),
+"idle": SubResource("Animation_elrjl")
+}
+
+[sub_resource type="Animation" id="Animation_issda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.93296]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.108362]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.62396]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.917365]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.156087]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.8594]
+}
+
+[sub_resource type="Animation" id="Animation_sdd7j"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.93296, 2.1559]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.108362, 0.39989]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.62396, 1.74449]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.917365, 0.704755]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.156087, 0.407249]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.8594, 2.51866]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ar54u"]
+_data = {
+"RESET": SubResource("Animation_issda"),
+"idle": SubResource("Animation_sdd7j")
+}
+
+[sub_resource type="Animation" id="Animation_f64x8"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm3/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svoo2"]
+_data = {
+"idle": SubResource("Animation_f64x8")
+}
 
 [node name="Lighthouse" type="Control"]
 layout_mode = 3
@@ -127,6 +481,122 @@ offset_left = 188.0
 offset_top = 116.0
 offset_right = 314.0
 offset_bottom = 240.0
+
+[node name="Palm" type="Node2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(678, 667)
+scale = Vector2(1.02423, 1.02423)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+position = Vector2(-5.5358, -9.25989)
+texture = ExtResource("8_1qyfx")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(-77.7764, -146.294)
+texture = ExtResource("9_hjck2")
+offset = Vector2(27, -60)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("10_27lvd")
+offset = Vector2(-58.1836, -19.26)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("11_hmyrs")
+offset = Vector2(-52.628, 52.9609)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("12_c8vgy")
+offset = Vector2(-22.9989, 56.6646)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-77.7763, -148.145)
+texture = ExtResource("13_y5qj1")
+offset = Vector2(60.3329, -24.8154)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("14_hb680")
+offset = Vector2(60.3329, 12.2209)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/Control/Control/Palm"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_pwy1h")
+}
+
+[node name="Palm3" type="Node2D" parent="ScrollContainer/Control/Control"]
+position = Vector2(105, 1104)
+scale = Vector2(1.48128, 1.48128)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+texture = ExtResource("15_0vv5n")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(69.9212, -103.216)
+rotation = 1.93296
+scale = Vector2(0.537347, 0.537347)
+texture = ExtResource("9_hjck2")
+offset = Vector2(-44.4976, 60.1912)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(71.3795, -103.799)
+rotation = 0.108362
+scale = Vector2(0.667684, 0.667684)
+texture = ExtResource("10_27lvd")
+offset = Vector2(-58.9695, -19.9148)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(68.5172, -105.553)
+rotation = 1.62396
+scale = Vector2(0.524903, 0.524903)
+texture = ExtResource("11_hmyrs")
+offset = Vector2(50.1383, -55.5837)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(68.5174, -103.702)
+rotation = 0.917365
+scale = Vector2(0.703745, 0.703745)
+texture = ExtResource("12_c8vgy")
+offset = Vector2(-20.1625, 53.975)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(70.3691, -105.554)
+rotation = 0.156087
+scale = Vector2(0.673657, 0.673658)
+texture = ExtResource("13_y5qj1")
+offset = Vector2(61.1461, -25.305)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/Control/Control/Palm3"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(70.3688, -107.405)
+rotation = 2.8594
+scale = Vector2(0.564092, 0.564092)
+texture = ExtResource("12_c8vgy")
+offset = Vector2(12.2626, -54.8562)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/Control/Control/Palm3"]
+libraries = {
+"": SubResource("AnimationLibrary_ar54u")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/Control/Control"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_svoo2")
+}
 
 [node name="Header" type="Control" parent="."]
 layout_mode = 1
