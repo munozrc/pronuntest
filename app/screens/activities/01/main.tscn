@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw2vlfpt8ur2s"]
+[gd_scene load_steps=6 format=3 uid="uid://bskuxf0r65naj"]
 
-[ext_resource type="Script" path="res://screens/activities/01/main.gd" id="1_vyqpx"]
-[ext_resource type="PackedScene" uid="uid://blxorb77bph4y" path="res://screens/activities/01/tasks/presentation.tscn" id="2_a5ib7"]
-[ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_lgn44"]
-[ext_resource type="PackedScene" uid="uid://10x1ajc8vajd" path="res://screens/activities/01/tasks/drag_mechanics.tscn" id="3_ja62y"]
-[ext_resource type="PackedScene" uid="uid://hj5wk2jqg5kc" path="res://screens/activities/01/tasks/drag_sound_spider.tscn" id="4_bderk"]
-[ext_resource type="PackedScene" uid="uid://bgb0vyrqngwm1" path="res://screens/activities/01/tasks/drag_sound_bee.tscn" id="5_57d0h"]
-[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="6_cto1o"]
+[ext_resource type="Script" path="res://screens/activities/01/main.gd" id="1_x31ye"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="2_5pfy0"]
+[ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_65gw0"]
+[ext_resource type="PackedScene" uid="uid://dkofn4uv1ymi6" path="res://screens/activities/01/tasks/presentation.tscn" id="2_yoxgk"]
+[ext_resource type="PackedScene" uid="uid://dute0ijhb3diy" path="res://screens/activities/01/tasks/nasalized_sounds.tscn" id="3_cg758"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]
 layout_mode = 3
@@ -15,12 +13,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vyqpx")
-taks = Array[PackedScene]([ExtResource("2_a5ib7"), ExtResource("3_ja62y"), ExtResource("4_bderk"), ExtResource("5_57d0h")])
+script = ExtResource("1_x31ye")
+taks = Array[PackedScene]([ExtResource("2_yoxgk"), ExtResource("3_cg758")])
 container = NodePath("TaskContainer")
-island = "forest"
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,21 +26,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TaskContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(720, 1280)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -360.0
-offset_right = 360.0
-offset_bottom = 1280.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Header" parent="." instance=ExtResource("2_lgn44")]
+[node name="Header" parent="." instance=ExtResource("2_65gw0")]
 layout_mode = 1
-offset_bottom = 110.0
 
-[node name="TransitionComponent" parent="." instance=ExtResource("6_cto1o")]
-autoplay = "cloud_out"
-
-[connection signal="finished" from="." to="." method="_on_finished"]
-[connection signal="close" from="Header" to="." method="_on_header_close"]
+[node name="TransitionComponent" parent="." instance=ExtResource("2_5pfy0")]
+autoplay = "fade_out"

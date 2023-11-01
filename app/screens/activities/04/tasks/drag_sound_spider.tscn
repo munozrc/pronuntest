@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://hj5wk2jqg5kc"]
 
-[ext_resource type="Script" path="res://screens/activities/01/tasks/drag_sound_spider.gd" id="1_wbrdq"]
+[ext_resource type="Script" path="res://screens/activities/04/tasks/drag_sound_spider.gd" id="1_wbrdq"]
 [ext_resource type="Texture2D" uid="uid://d3v4w8j25fg13" path="res://assets/images/spider.png" id="2_cwf04"]
 [ext_resource type="Texture2D" uid="uid://dxs7u1xdonj0a" path="res://assets/images/spiderweb.png" id="2_gv5re"]
-[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/01/entities/slot.tscn" id="3_17q22"]
+[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/04/entities/slot.tscn" id="3_17q22"]
 [ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="4_uhoi2"]
-[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/01/entities/box.tscn" id="4_wxgts"]
+[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/04/entities/box.tscn" id="4_wxgts"]
 [ext_resource type="AudioStream" uid="uid://cuapjnjf38mly" path="res://assets/voices/statements/mueve_el_sonido_correcto_de.mp3" id="8_81kcp"]
 [ext_resource type="AudioStream" uid="uid://cxa6rsevb1l0r" path="res://assets/voices/words/araña.mp3" id="9_fm5je"]
 
