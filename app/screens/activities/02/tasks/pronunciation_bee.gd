@@ -10,7 +10,7 @@ extends Control
 
 var record_bus_index : int
 var record_effect : AudioEffectRecord
-var pattern := "aa"
+var pattern := "ai"
 
 
 func _ready():

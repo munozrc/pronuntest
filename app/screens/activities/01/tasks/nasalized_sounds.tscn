@@ -1,6 +1,406 @@
-[gd_scene load_steps=2 format=3 uid="uid://dute0ijhb3diy"]
+[gd_scene load_steps=21 format=3 uid="uid://dute0ijhb3diy"]
 
 [ext_resource type="Script" path="res://screens/activities/01/tasks/nasalized_sounds.gd" id="1_a6aux"]
+[ext_resource type="Texture2D" uid="uid://pexulgj4lso1" path="res://assets/images/boy/face.png" id="2_4t17p"]
+[ext_resource type="Texture2D" uid="uid://cqern3jdehruy" path="res://assets/images/boy/mouth-m.png" id="3_trbfl"]
+[ext_resource type="Texture2D" uid="uid://b8y3jo1y8udui" path="res://assets/images/boy/mouth.png" id="3_ydjng"]
+[ext_resource type="Texture2D" uid="uid://b6bj2h26rmxvh" path="res://assets/images/boy/hand.png" id="5_wqbln"]
+[ext_resource type="Texture2D" uid="uid://c6f5fovb4x10" path="res://assets/images/boy/vibration.png" id="6_yiahc"]
+[ext_resource type="Texture2D" uid="uid://d1l0opgfx1qsm" path="res://assets/images/boy/vibration_02.png" id="7_2i2sf"]
+[ext_resource type="Texture2D" uid="uid://ckosiwcaltwt4" path="res://assets/images/boy/wind.png" id="8_eamk2"]
+[ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="8_ldkw1"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="9_y6nfo"]
+[ext_resource type="AudioStream" uid="uid://cfelvebqr4qro" path="res://assets/voices/01/ahora_veremos_sonidos_nasalizados.mp3" id="10_810dq"]
+[ext_resource type="AudioStream" uid="uid://b6ctx83qptfyg" path="res://assets/voices/01/practiquemos_letra.mp3" id="12_0f1q4"]
+[ext_resource type="AudioStream" uid="uid://d1gl2s77jje4i" path="res://assets/voices/01/letra_m.mp3" id="13_ogtmn"]
+[ext_resource type="AudioStream" uid="uid://c1l8copjepvsf" path="res://assets/voices/01/la_letra.mp3" id="14_7sys1"]
+[ext_resource type="AudioStream" uid="uid://72iinhidu7gq" path="res://assets/voices/01/suena.mp3" id="15_ibnir"]
+[ext_resource type="AudioStream" uid="uid://idgbdvr8heuj" path="res://assets/voices/phonemes/m.mp3" id="16_nb2nc"]
+
+[sub_resource type="Animation" id="Animation_i1y0o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Face:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/Face:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/Face:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, 344)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/M:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/M:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Container/M:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["m"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Container/Face/Smile:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Container/Face/Mouth:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Container/Face/VibrationEffect:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Container/Face/VibrationEffect/Vibration:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Container/Face/VibrationEffect/Vibration02:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Container:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7iupn"]
+resource_name = "intro"
+length = 8.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Face:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/Face:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.307786, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/Face:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(108, 344), Vector2(108, 212)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/Face/Smile:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7.1, 7.5, 7.9, 8.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/Face/Mouth:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.1, 7.5, 7.9, 8.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Container/Face/VibrationEffect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7.1, 7.5, 7.9, 8.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Container/Face/VibrationEffect/Vibration:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.5, 7.6, 7.7, 7.8, 7.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0974435, -0.0538542, 0.0, 0.0974435]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Container/Face/VibrationEffect/Vibration02:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(7.55, 7.65, 7.75, 7.85, 7.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.136311, 0.0621856, 0.0, -0.136311]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Container/M:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4.6, 4.9, 5.1, 6.3, 6.6, 6.8, 7.5, 7.8, 8.05),
+"transitions": PackedFloat32Array(0.34151, 1, 1.8025, 0.34151, 1, 1.8025, 1, 0.34151, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Container/M:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Container/M:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.4, 7.5, 8.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["m", "Mmm", "m"]
+}
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Narrator")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_810dq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_0f1q4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_ogtmn")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_7sys1")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_ogtmn")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("15_ibnir")
+}],
+"times": PackedFloat32Array(0, 2.8, 4.6, 5.5, 6.3, 6.8)
+}
+tracks/11/use_blend = true
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Phoneme")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_nb2nc")
+}],
+"times": PackedFloat32Array(7.5)
+}
+tracks/12/use_blend = true
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("NextButton")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(8.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_button"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hisfx"]
+resource_name = "outro"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextButton")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hidden_button"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.366021, 1.6245),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxk35"]
+_data = {
+"RESET": SubResource("Animation_i1y0o"),
+"intro": SubResource("Animation_7iupn"),
+"outro": SubResource("Animation_hisfx")
+}
 
 [node name="NasalizedSounds" type="Control"]
 layout_mode = 3
@@ -18,3 +418,110 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Face" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -296.0
+offset_right = 252.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(252, 296)
+texture = ExtResource("2_4t17p")
+
+[node name="Mouth" type="Sprite2D" parent="Container/Face"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(257, 492)
+texture = ExtResource("3_trbfl")
+
+[node name="Smile" type="Sprite2D" parent="Container/Face"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(257, 495)
+texture = ExtResource("3_ydjng")
+
+[node name="Hand" type="Sprite2D" parent="Container/Face"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-6.99998, 418)
+rotation = -0.484157
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_wqbln")
+offset = Vector2(121.25, 7.49994)
+
+[node name="Wind" type="Sprite2D" parent="Container/Face"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(249, 513)
+texture = ExtResource("8_eamk2")
+
+[node name="VibrationEffect" type="Node2D" parent="Container/Face"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(249, 393)
+rotation = 0.102974
+
+[node name="Vibration" type="Sprite2D" parent="Container/Face/VibrationEffect"]
+position = Vector2(5.22302, 17.5352)
+texture = ExtResource("6_yiahc")
+offset = Vector2(-40.223, 22.4648)
+
+[node name="Vibration02" type="Sprite2D" parent="Container/Face/VibrationEffect"]
+position = Vector2(6.55707, 16.6865)
+texture = ExtResource("7_2i2sf")
+offset = Vector2(40.4429, -22.6865)
+
+[node name="M" type="Label" parent="Container"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = 199.0
+offset_right = 78.5
+offset_bottom = 413.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(78, 107)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("9_y6nfo")
+theme_override_font_sizes/font_size = 150
+text = "m"
+
+[node name="NextButton" parent="." instance=ExtResource("8_ldkw1")]
+layout_mode = 1
+
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+bus = &"Narrator"
+
+[node name="Phoneme" type="AudioStreamPlayer" parent="."]
+volume_db = 10.0
+bus = &"Narrator"
+
+[node name="TaskAnimator" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_fxk35")
+}
+
+[connection signal="button_up" from="NextButton" to="." method="_on_next_button"]

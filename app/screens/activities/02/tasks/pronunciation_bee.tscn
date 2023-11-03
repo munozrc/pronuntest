@@ -136,21 +136,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -39.0
-offset_top = -90.0
+offset_top = -85.0
 offset_right = 40.0
-offset_bottom = 76.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_cro8y")
 theme_override_font_sizes/font_size = 100
-text = "a"
+text = "i"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PredictionComponent" type="HTTPRequest" parent="."]
 script = ExtResource("2_54adj")
-endpoint = "word/aa"
+endpoint = "word/ai"
 
 [node name="RecordButton" type="Button" parent="."]
 layout_mode = 0
