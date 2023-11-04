@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://seysakqbhhjx"]
+
+[ext_resource type="Script" path="res://screens/activities/03/main.gd" id="1_vu5pw"]
+[ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_gci3k"]
+[ext_resource type="PackedScene" uid="uid://cdejg1jnooprl" path="res://screens/activities/03/tasks/pronunciation_mechanics.tscn" id="2_vachf"]
+
+[node name="Main" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vu5pw")
+taks = Array[PackedScene]([ExtResource("2_vachf")])
+container = NodePath("TaskContainer")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TaskContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" parent="." instance=ExtResource("2_gci3k")]
+layout_mode = 1
+offset_bottom = 110.0

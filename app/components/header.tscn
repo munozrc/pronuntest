@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d35deq2tyjx53"]
+[gd_scene load_steps=6 format=3 uid="uid://d35deq2tyjx53"]
 
 [ext_resource type="Texture2D" uid="uid://cpuudtwv4y23j" path="res://assets/icons/close.png" id="1_kkumi"]
 [ext_resource type="Script" path="res://components/header.gd" id="1_yggyy"]
+[ext_resource type="AudioStream" uid="uid://dm114lcr7gyc3" path="res://assets/sounds/completed.mp3" id="3_jhaiw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exrpo"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -64,5 +65,9 @@ size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_exrpo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cv4r1")
 show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jhaiw")
+bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

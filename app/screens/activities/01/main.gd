@@ -1,6 +1,19 @@
 extends Activity
 
 
+var progress_value = 33.3
+
+
+func _ready():
+	super()
+	$Header.increment(progress_value)
+
+
+func _on_task_completed():
+	super()
+	$Header.increment(progress_value)
+
+
 func _start_outro_animation():
 	$TransitionComponent.play("fade_in")
 	await $TransitionComponent.animation_finished
