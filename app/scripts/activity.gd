@@ -18,9 +18,7 @@ var increment_value := 0.0
 
 func _ready():
 	_next_task(0)
-	
-	if tasks.size() > 0:
-		increment_value = 100.0 / tasks.size()
+	increment_value = 100.0 / (tasks.size() + 1.0)
 	
 	if not island.is_empty():
 		current_state = GLOBAL.get_activity_state(island, index_island)

@@ -7,8 +7,11 @@ signal finished
 @export var max_duration := 1.0
 
 
-var enable := true
 var save_path := "user://recording.wav"
+var enable := true:
+	set(new_value):
+		enable = new_value
+		$Button.disabled = !new_value
 
 
 var _tween: Tween
