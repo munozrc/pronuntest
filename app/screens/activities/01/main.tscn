@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bskuxf0r65naj"]
+[gd_scene load_steps=7 format=3 uid="uid://bskuxf0r65naj"]
 
 [ext_resource type="Script" path="res://screens/activities/01/main.gd" id="1_x31ye"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="2_5pfy0"]
 [ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_65gw0"]
 [ext_resource type="PackedScene" uid="uid://dkofn4uv1ymi6" path="res://screens/activities/01/tasks/presentation.tscn" id="2_yoxgk"]
 [ext_resource type="PackedScene" uid="uid://dute0ijhb3diy" path="res://screens/activities/01/tasks/nasalized_sounds.tscn" id="3_cg758"]
+[ext_resource type="PackedScene" uid="uid://dibr1kkw0rbov" path="res://screens/activities/01/tasks/sound_m.tscn" id="4_hih2u"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]
 layout_mode = 3
@@ -14,8 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x31ye")
-taks = Array[PackedScene]([ExtResource("2_yoxgk"), ExtResource("3_cg758")])
-island_menu = null
+taks = Array[PackedScene]([ExtResource("2_yoxgk"), ExtResource("3_cg758"), ExtResource("4_hih2u")])
 container = NodePath("TaskContainer")
 island = "forest"
 
