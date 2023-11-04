@@ -1,17 +1,15 @@
 extends Activity
 
 
-var progress_value = 33.3
-
-
 func _ready():
 	super()
-	$Header.increment(progress_value)
+	$Header.increment(increment_value)
+	print(increment_value)
 
 
 func _on_task_completed():
 	super()
-	$Header.increment(progress_value)
+	$Header.increment(increment_value)
 
 
 func _start_outro_animation():
