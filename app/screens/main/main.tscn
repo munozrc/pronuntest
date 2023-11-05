@@ -193,27 +193,35 @@ offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Cloud02" type="Sprite2D" parent="Clouds"]
+[node name="CloudsContainer" type="Control" parent="Clouds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cloud02" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(717, 272)
 scale = Vector2(0.455398, 0.455398)
 texture = ExtResource("2_dun0b")
 
-[node name="Cloud" type="Sprite2D" parent="Clouds"]
+[node name="Cloud" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(349, 462)
 scale = Vector2(0.199999, 0.199999)
 texture = ExtResource("3_88213")
 
-[node name="Cloud03" type="Sprite2D" parent="Clouds"]
+[node name="Cloud03" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(585, 574)
 scale = Vector2(0.358321, 0.358321)
 texture = ExtResource("2_dun0b")
 
-[node name="Cloud04" type="Sprite2D" parent="Clouds"]
+[node name="Cloud04" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(68.0001, 702)
 scale = Vector2(0.455398, 0.455398)
 texture = ExtResource("2_dun0b")
 
-[node name="Cloud2" type="Sprite2D" parent="Clouds"]
+[node name="Cloud2" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(5, 353)
 scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_88213")
