@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://seysakqbhhjx"]
 
-[ext_resource type="Script" path="res://screens/activities/03/main.gd" id="1_vu5pw"]
-[ext_resource type="PackedScene" uid="uid://cdejg1jnooprl" path="res://screens/activities/03/tasks/pronunciation_mechanics.tscn" id="2_5dphk"]
+[ext_resource type="Script" path="res://screens/activities/05/main.gd" id="1_vu5pw"]
+[ext_resource type="PackedScene" uid="uid://cdejg1jnooprl" path="res://screens/activities/05/tasks/pronunciation_mechanics.tscn" id="2_5dphk"]
 [ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_gci3k"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]

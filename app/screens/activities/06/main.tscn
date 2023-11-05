@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dw2vlfpt8ur2s"]
 
-[ext_resource type="Script" path="res://screens/activities/04/main.gd" id="1_vyqpx"]
-[ext_resource type="PackedScene" uid="uid://blxorb77bph4y" path="res://screens/activities/04/tasks/presentation.tscn" id="2_a5ib7"]
+[ext_resource type="Script" path="res://screens/activities/06/main.gd" id="1_vyqpx"]
+[ext_resource type="PackedScene" uid="uid://blxorb77bph4y" path="res://screens/activities/06/tasks/presentation.tscn" id="2_a5ib7"]
 [ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_lgn44"]
-[ext_resource type="PackedScene" uid="uid://10x1ajc8vajd" path="res://screens/activities/04/tasks/drag_mechanics.tscn" id="3_ja62y"]
-[ext_resource type="PackedScene" uid="uid://hj5wk2jqg5kc" path="res://screens/activities/04/tasks/drag_sound_spider.tscn" id="4_bderk"]
-[ext_resource type="PackedScene" uid="uid://bgb0vyrqngwm1" path="res://screens/activities/04/tasks/drag_sound_bee.tscn" id="5_57d0h"]
+[ext_resource type="PackedScene" uid="uid://10x1ajc8vajd" path="res://screens/activities/06/tasks/drag_mechanics.tscn" id="3_ja62y"]
+[ext_resource type="PackedScene" uid="uid://hj5wk2jqg5kc" path="res://screens/activities/06/tasks/drag_sound_spider.tscn" id="4_bderk"]
+[ext_resource type="PackedScene" uid="uid://bgb0vyrqngwm1" path="res://screens/activities/06/tasks/drag_sound_bee.tscn" id="5_57d0h"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="6_cto1o"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]

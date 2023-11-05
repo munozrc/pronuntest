@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cdejg1jnooprl"]
 
-[ext_resource type="Script" path="res://screens/activities/03/tasks/pronunciation_mechanics.gd" id="1_sjowt"]
+[ext_resource type="Script" path="res://screens/activities/05/tasks/pronunciation_mechanics.gd" id="1_sjowt"]
 [ext_resource type="Texture2D" uid="uid://egqqe6djklih" path="res://assets/images/player/yellow.png" id="2_40psf"]
 [ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="2_p8qsi"]
 [ext_resource type="Script" path="res://scripts/prediction_component.gd" id="2_uetdv"]

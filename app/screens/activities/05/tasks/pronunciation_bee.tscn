@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bok8e0yrbhl7u"]
 
-[ext_resource type="Script" path="res://screens/activities/03/tasks/pronunciation_bee.gd" id="1_30wo1"]
+[ext_resource type="Script" path="res://screens/activities/05/tasks/pronunciation_bee.gd" id="1_30wo1"]
 [ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="1_cro8y"]
 [ext_resource type="Script" path="res://scripts/prediction_component.gd" id="2_54adj"]
 

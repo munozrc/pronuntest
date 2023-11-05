@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bgb0vyrqngwm1"]
 
-[ext_resource type="Script" path="res://screens/activities/04/tasks/drag_sound_bee.gd" id="1_241nr"]
-[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/04/entities/slot.tscn" id="1_ru7k5"]
+[ext_resource type="Script" path="res://screens/activities/06/tasks/drag_sound_bee.gd" id="1_241nr"]
+[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/06/entities/slot.tscn" id="1_ru7k5"]
 [ext_resource type="Texture2D" uid="uid://dss1vpijyunfq" path="res://assets/images/bee.png" id="2_inywm"]
-[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/04/entities/box.tscn" id="3_tx3ia"]
+[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/06/entities/box.tscn" id="3_tx3ia"]
 [ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="5_vaucn"]
 [ext_resource type="AudioStream" uid="uid://cuapjnjf38mly" path="res://assets/voices/statements/mueve_el_sonido_correcto_de.mp3" id="6_wl6sb"]
 [ext_resource type="AudioStream" uid="uid://d286aso6yqdjj" path="res://assets/voices/words/abeja.mp3" id="7_rbpyv"]

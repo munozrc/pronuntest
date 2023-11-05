@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://10x1ajc8vajd"]
 
-[ext_resource type="Script" path="res://screens/activities/04/tasks/drag_mechanics.gd" id="1_mdabv"]
-[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/04/entities/slot.tscn" id="2_ww2tw"]
+[ext_resource type="Script" path="res://screens/activities/06/tasks/drag_mechanics.gd" id="1_mdabv"]
+[ext_resource type="PackedScene" uid="uid://bnqrappec8wn6" path="res://screens/activities/06/entities/slot.tscn" id="2_ww2tw"]
 [ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="3_eeki1"]
-[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/04/entities/box.tscn" id="3_mhgdr"]
+[ext_resource type="PackedScene" uid="uid://c5od4ojjy7wyt" path="res://screens/activities/06/entities/box.tscn" id="3_mhgdr"]
 [ext_resource type="AudioStream" uid="uid://wgo7pdu1y0cx" path="res://assets/voices/phonemes/a.mp3" id="4_38aif"]
 [ext_resource type="Texture2D" uid="uid://crcfqo0l8t2j4" path="res://assets/images/hand.png" id="5_6nk80"]
 [ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="5_qindy"]
