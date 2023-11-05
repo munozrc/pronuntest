@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dibr1kkw0rbov" path="res://screens/activities/01/tasks/sound_m.tscn" id="4_hih2u"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]
+custom_minimum_size = Vector2(720, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,13 +29,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TaskContainer" type="Control" parent="."]
-custom_minimum_size = Vector2(720, 1280)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(360, 640)
 
 [node name="Header" parent="." instance=ExtResource("2_65gw0")]
 layout_mode = 1

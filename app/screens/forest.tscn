@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=25 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://br23rsitmom8f" path="res://components/activity_button.tscn" id="10_a5ag7"]
 [ext_resource type="PackedScene" uid="uid://bskuxf0r65naj" path="res://screens/activities/01/main.tscn" id="11_4b7cp"]
 [ext_resource type="Texture2D" uid="uid://dsnvnol214iw" path="res://assets/ui/button_square.png" id="12_cvnux"]
+[ext_resource type="PackedScene" uid="uid://mi0p8d468cxq" path="res://screens/activities/02/main.tscn" id="12_dote5"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="12_i10dq"]
 [ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="13_04426"]
 
@@ -737,6 +738,7 @@ offset_left = 429.0
 offset_top = 831.0
 offset_right = 555.0
 offset_bottom = 955.0
+activity = ExtResource("12_dote5")
 
 [node name="ThreeButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
 offset_left = 155.0

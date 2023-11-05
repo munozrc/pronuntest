@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c6f5fovb4x10" path="res://assets/images/boy/vibration.png" id="6_yiahc"]
 [ext_resource type="Texture2D" uid="uid://d1l0opgfx1qsm" path="res://assets/images/boy/vibration_02.png" id="7_2i2sf"]
 [ext_resource type="Texture2D" uid="uid://ckosiwcaltwt4" path="res://assets/images/boy/wind.png" id="8_eamk2"]
-[ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="8_ldkw1"]
 [ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="9_y6nfo"]
 [ext_resource type="AudioStream" uid="uid://cfelvebqr4qro" path="res://assets/voices/01/ahora_veremos_sonidos_nasalizados.mp3" id="10_810dq"]
+[ext_resource type="PackedScene" uid="uid://bhlbt7mk6goj4" path="res://components/footer.tscn" id="10_lvcbd"]
 [ext_resource type="AudioStream" uid="uid://b6ctx83qptfyg" path="res://assets/voices/01/practiquemos_letra.mp3" id="12_0f1q4"]
 [ext_resource type="AudioStream" uid="uid://d1gl2s77jje4i" path="res://assets/voices/01/letra_m.mp3" id="13_ogtmn"]
 [ext_resource type="AudioStream" uid="uid://c1l8copjepvsf" path="res://assets/voices/01/la_letra.mp3" id="14_7sys1"]
@@ -353,7 +353,7 @@ tracks/12/use_blend = true
 tracks/13/type = "method"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("NextButton")
+tracks/13/path = NodePath("Footer")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -368,31 +368,31 @@ tracks/13/keys = {
 [sub_resource type="Animation" id="Animation_hisfx"]
 resource_name = "outro"
 length = 0.5
-tracks/0/type = "method"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("NextButton")
+tracks/0/path = NodePath("Container:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.366021, 1.6245),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Footer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"hidden_button"
 }]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Container:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.366021, 1.6245),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fxk35"]
@@ -507,7 +507,7 @@ theme_override_fonts/font = ExtResource("9_y6nfo")
 theme_override_font_sizes/font_size = 150
 text = "m"
 
-[node name="NextButton" parent="." instance=ExtResource("8_ldkw1")]
+[node name="Footer" parent="." instance=ExtResource("10_lvcbd")]
 layout_mode = 1
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
@@ -524,4 +524,4 @@ libraries = {
 "": SubResource("AnimationLibrary_fxk35")
 }
 
-[connection signal="button_up" from="NextButton" to="." method="_on_next_button"]
+[connection signal="pressed" from="Footer" to="." method="_on_button_next_pressed"]

@@ -4,7 +4,6 @@ extends Activity
 func _ready():
 	super()
 	$Header.increment(increment_value)
-	print(increment_value)
 
 
 func _on_task_completed():

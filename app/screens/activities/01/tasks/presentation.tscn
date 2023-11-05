@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkofn4uv1ymi6"]
 
 [ext_resource type="Script" path="res://screens/activities/01/tasks/presentation.gd" id="1_ov0du"]
-[ext_resource type="PackedScene" uid="uid://due721y15oqyk" path="res://components/next_button.tscn" id="2_2m5wp"]
 [ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="2_2t80b"]
 [ext_resource type="Texture2D" uid="uid://cw0mc3g6x4pg8" path="res://assets/images/breathing/face.png" id="3_bc5rf"]
 [ext_resource type="AudioStream" uid="uid://etuklrpjq6fe" path="res://assets/voices/01/intro_1.mp3" id="3_sl4b3"]
 [ext_resource type="Texture2D" uid="uid://qsay2nuy06dp" path="res://assets/images/breathing/arrow.png" id="4_ubfws"]
 [ext_resource type="Texture2D" uid="uid://br1rtcyoypm0p" path="res://assets/images/breathing/wind.png" id="5_lqyi4"]
+[ext_resource type="PackedScene" uid="uid://bhlbt7mk6goj4" path="res://components/footer.tscn" id="6_x3qtp"]
 [ext_resource type="AudioStream" uid="uid://c7dg02wh8h45m" path="res://assets/voices/01/intro_1_1_contexto.mp3" id="8_7wbe5"]
 
 [sub_resource type="Animation" id="Animation_puskc"]
@@ -442,31 +442,31 @@ tracks/16/keys = {
 "update": 0,
 "values": [Vector2(-60, 134), Vector2(-104, 134)]
 }
-tracks/17/type = "method"
+tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("NextButton")
+tracks/17/path = NodePath("TextContainer/Face:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(6.5),
+"times": PackedFloat32Array(5, 5.6),
+"transitions": PackedFloat32Array(0.233259, 1.23114),
+"update": 0,
+"values": [Vector2(143, 333), Vector2(163, 333)]
+}
+tracks/18/type = "method"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Footer")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(5.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"show_button"
 }]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("TextContainer/Face:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(5, 5.6),
-"transitions": PackedFloat32Array(0.233259, 1.23114),
-"update": 0,
-"values": [Vector2(143, 333), Vector2(163, 333)]
 }
 
 [sub_resource type="Animation" id="Animation_qnir6"]
@@ -487,7 +487,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("NextButton")
+tracks/1/path = NodePath("Footer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -544,10 +544,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 81.0
-offset_top = 484.0
-offset_right = 639.0
-offset_bottom = 619.998
+offset_left = -279.0
+offset_top = -156.0
+offset_right = 279.0
+offset_bottom = -20.0021
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
@@ -567,10 +567,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 81.0
-offset_top = 569.0
-offset_right = 639.0
-offset_bottom = 705.0
+offset_left = -279.0
+offset_top = -71.0
+offset_right = 279.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
@@ -590,10 +590,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 81.0
-offset_top = 503.0
-offset_right = 639.0
-offset_bottom = 639.001
+offset_left = -279.0
+offset_top = -137.0
+offset_right = 279.0
+offset_bottom = -0.998779
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
@@ -613,10 +613,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 81.0
-offset_top = 593.0
-offset_right = 639.0
-offset_bottom = 729.0
+offset_left = -279.0
+offset_top = -47.0
+offset_right = 279.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
@@ -637,10 +637,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 143.0
-offset_top = 333.0
-offset_right = 577.0
-offset_bottom = 947.0
+offset_left = -217.0
+offset_top = -307.0
+offset_right = 217.0
+offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
@@ -669,12 +669,8 @@ pivot_offset = Vector2(126, 104)
 texture = ExtResource("5_lqyi4")
 expand_mode = 1
 
-[node name="NextButton" parent="." instance=ExtResource("2_2m5wp")]
+[node name="Footer" parent="." instance=ExtResource("6_x3qtp")]
 layout_mode = 1
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
 volume_db = 5.0
@@ -688,4 +684,4 @@ libraries = {
 "": SubResource("AnimationLibrary_mcjwa")
 }
 
-[connection signal="button_up" from="NextButton" to="." method="_on_next_button"]
+[connection signal="pressed" from="Footer" to="." method="_on_next_button_pressed"]

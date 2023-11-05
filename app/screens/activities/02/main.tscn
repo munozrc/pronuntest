@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://mi0p8d468cxq"]
+[gd_scene load_steps=6 format=3 uid="uid://mi0p8d468cxq"]
 
 [ext_resource type="Script" path="res://screens/activities/02/main.gd" id="1_6jcor"]
 [ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_6dmgf"]
+[ext_resource type="PackedScene" uid="uid://c50per7b64th8" path="res://screens/activities/02/tasks/presentation.tscn" id="2_uu0eg"]
+[ext_resource type="PackedScene" uid="uid://cnnk8lswaxxcv" path="res://screens/activities/02/tasks/sound_a.tscn" id="3_l81nk"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="5_uhbcb"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" node_paths=PackedStringArray("container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +14,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6jcor")
+tasks = Array[PackedScene]([ExtResource("2_uu0eg"), ExtResource("3_l81nk")])
+container = NodePath("TaskContainer")
+island = "forest"
+index_island = 1
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TaskContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Header" parent="." instance=ExtResource("2_6dmgf")]
 layout_mode = 1
+
+[node name="TransitionComponent" parent="." instance=ExtResource("5_uhbcb")]
+autoplay = "fade_out"
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="close" from="Header" to="." method="_on_header_close"]

@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=3 uid="uid://c50per7b64th8"]
+
+[ext_resource type="Script" path="res://screens/activities/02/tasks/presentation.gd" id="1_bm4yv"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="2_5g3bf"]
+[ext_resource type="Texture2D" uid="uid://pexulgj4lso1" path="res://assets/images/boy/face.png" id="2_18tkj"]
+[ext_resource type="Texture2D" uid="uid://b8y3jo1y8udui" path="res://assets/images/boy/mouth.png" id="3_78ljg"]
+[ext_resource type="AudioStream" uid="uid://ccq3jk5i0wfds" path="res://assets/voices/02/es_momento_practicar_no_nasalizados.mp3" id="5_uq016"]
+
+[sub_resource type="Animation" id="Animation_guqxd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_idatc"]
+resource_name = "intro"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 4.2, 4.5),
+"transitions": PackedFloat32Array(0.366021, 1, 0.435275, 0.366021),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 4.2, 4.5),
+"transitions": PackedFloat32Array(0.297302, 1, 0.287175, 0.297302),
+"update": 0,
+"values": [Vector2(0.36, 0.36), Vector2(1, 1), Vector2(1, 1), Vector2(0.36, 0.36)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Narrator")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_uq016")
+}],
+"times": PackedFloat32Array(0.4)
+}
+tracks/2/use_blend = true
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_completed_task"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2atr0"]
+_data = {
+"RESET": SubResource("Animation_guqxd"),
+"intro": SubResource("Animation_idatc")
+}
+
+[node name="Presentation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bm4yv")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 640)
+
+[node name="Face" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -435.0
+offset_right = 252.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(252, 296)
+texture = ExtResource("2_18tkj")
+
+[node name="Mouth" type="Sprite2D" parent="Container/Face"]
+position = Vector2(261, 497)
+texture = ExtResource("3_78ljg")
+
+[node name="Phoneme" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 165.0
+offset_right = 124.0
+offset_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_5g3bf")
+theme_override_font_sizes/font_size = 150
+text = "/a/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskAnimator" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_2atr0")
+}
+
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+bus = &"Narrator"

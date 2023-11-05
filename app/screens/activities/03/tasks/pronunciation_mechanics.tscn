@@ -148,9 +148,5 @@ max_duration = 3.0
 
 [node name="NextButton" parent="." instance=ExtResource("2_p8qsi")]
 layout_mode = 1
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
 
 [connection signal="finished" from="RecordButton" to="." method="_on_record_finished"]

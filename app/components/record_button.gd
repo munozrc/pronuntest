@@ -2,6 +2,8 @@ extends Control
 
 
 signal finished
+signal pressed
+signal fail
 
 
 @export var max_duration := 1.0
@@ -25,10 +27,16 @@ func _ready() -> void:
 	_record_effect = AudioServer.get_bus_effect(_record_bus_index, 0)
 
 
+func reset() -> void:
+	_tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
+	_tween.tween_property($Progressbar, "value", 0, 0.2)
+
+
 func _on_button_down():
 	if not enable:
 		return
 	
+	pressed.emit()
 	$Progressbar.value = 0
 	_record_effect.set_recording_active(true)
 	
@@ -39,6 +47,10 @@ func _on_button_down():
 
 func _on_recording_finished():
 	_record_effect.set_recording_active(false)
+	
+	if $Progressbar.value < 25:
+		fail.emit()
+		return
 
 	if not enable:
 		return

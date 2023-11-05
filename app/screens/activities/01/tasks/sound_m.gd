@@ -15,15 +15,15 @@ func _show_replay_button():
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE)
 	tween.tween_property($Container/ReplayButton, "scale", Vector2(1,1), 0.2)
 	is_hidden_replay_button = false
-	$NextButton.show_button()
-
-
-func _on_next_button():
-	$TaskAnimator.play("outro")
-	await $TaskAnimator.animation_finished
-	self.completed.emit()
+	$Footer.show_button()
 
 
 func _on_replay_button():
 	$TaskAnimator.stop()
 	$TaskAnimator.play("intro")
+
+
+func _on_button_next_pressed():
+	$TaskAnimator.play("outro")
+	await $TaskAnimator.animation_finished
+	self.completed.emit()

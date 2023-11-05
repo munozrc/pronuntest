@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vyqpx")
-taks = Array[PackedScene]([ExtResource("2_a5ib7"), ExtResource("3_ja62y"), ExtResource("4_bderk"), ExtResource("5_57d0h")])
+tasks = Array[PackedScene]([ExtResource("2_a5ib7"), ExtResource("3_ja62y"), ExtResource("4_bderk"), ExtResource("5_57d0h")])
 container = NodePath("TaskContainer")
 island = "forest"
 
