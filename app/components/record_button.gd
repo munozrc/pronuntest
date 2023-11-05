@@ -25,6 +25,7 @@ var _recording: AudioStreamWAV
 func _ready() -> void:
 	_record_bus_index = AudioServer.get_bus_index("Record")
 	_record_effect = AudioServer.get_bus_effect(_record_bus_index, 0)
+	_record_effect.set_recording_active(false)
 
 
 func reset() -> void:
@@ -48,7 +49,7 @@ func _on_button_down():
 func _on_recording_finished():
 	_record_effect.set_recording_active(false)
 	
-	if $Progressbar.value < 25:
+	if $Progressbar.value < 15:
 		fail.emit()
 		return
 
@@ -56,8 +57,8 @@ func _on_recording_finished():
 		return
 	
 	_recording = _record_effect.get_recording()
-	_recording.save_to_wav(self.save_path)
-	self.finished.emit()
+	_recording.save_to_wav(save_path)
+	finished.emit()
 
 
 func _on_button_up():

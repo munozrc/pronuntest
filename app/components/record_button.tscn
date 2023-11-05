@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8kqfmnhflg6m"]
+[gd_scene load_steps=9 format=3 uid="uid://c8kqfmnhflg6m"]
 
 [ext_resource type="Texture2D" uid="uid://dxvke3nrx5ivc" path="res://assets/images/shapes/ellipse.png" id="1_2rhkl"]
 [ext_resource type="Script" path="res://components/record_button.gd" id="1_npqcw"]
@@ -38,8 +38,6 @@ corner_radius_top_left = 175
 corner_radius_top_right = 175
 corner_radius_bottom_right = 175
 corner_radius_bottom_left = 175
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_b37lo"]
 
 [node name="RecordButton" type="Control"]
 layout_mode = 3
@@ -89,12 +87,6 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_kfys7")
 theme_override_styles/focus = SubResource("StyleBoxFlat_60ng1")
 icon = ExtResource("2_knlr6")
 icon_alignment = 1
-
-[node name="RecordAudioStream" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMicrophone_b37lo")
-volume_db = 8.0
-autoplay = true
-bus = &"Record"
 
 [connection signal="button_down" from="Button" to="." method="_on_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_up"]
