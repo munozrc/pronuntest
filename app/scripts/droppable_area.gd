@@ -3,7 +3,7 @@ extends Node2D
 
 
 signal dropped
-signal failed
+signal failed(item: DraggableItem)
 
 
 @export var content: String
@@ -28,19 +28,19 @@ func _input(event):
 	):
 		return
 	
-	if self.content != self._item.content:
-		failed.emit()
+	if self.content != _item.content:
+		failed.emit(_item)
+		_item = null
 		return
 	
 	var current_pos = self.global_position
-	self._item.set_origin(current_pos)
-	self._item = null
+	_item.set_origin(current_pos)
+	_item = null
 	dropped.emit()
 
 
 func _on_area_entered(object: Area2D):
 	if not object.get_parent() is DraggableItem:
-		print("Failed")
 		return
 	self._item = object.get_parent()
 

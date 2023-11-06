@@ -3,7 +3,8 @@ extends Control
 
 @onready var buttons = [
 	$ScrollContainer/Control/Container/OneButton,
-	$ScrollContainer/Control/Container/TwoButton
+	$ScrollContainer/Control/Container/TwoButton,
+	$ScrollContainer/Control/Container/ThreeButton,
 ]
 
 

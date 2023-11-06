@@ -9,11 +9,15 @@ var information = {
 var activities = {
 	"forest": [
 		{
-			"state": "unlocked",
+			"state": "completed",
 			"score": 0
 		},
 		{
-			"state": "locked",
+			"state": "completed",
+			"score": 0
+		},
+		{
+			"state": "completed",
 			"score": 0
 		}
 	]

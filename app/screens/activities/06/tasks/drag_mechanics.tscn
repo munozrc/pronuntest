@@ -370,6 +370,16 @@ theme_override_fonts/font = SubResource("FontVariation_q7jub")
 theme_override_font_sizes/font_size = 160
 text = "a"
 
+[node name="Phoneme2" type="Label" parent="Container/Slot"]
+offset_left = -56.0
+offset_top = -123.0
+offset_right = 52.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = SubResource("FontVariation_q7jub")
+theme_override_font_sizes/font_size = 160
+text = "a"
+
 [node name="Box" parent="Container" instance=ExtResource("3_mhgdr")]
 position = Vector2(360, 860)
 audio = ExtResource("4_38aif")
@@ -401,10 +411,6 @@ bus = &"Narrator"
 
 [node name="NextButton" parent="." instance=ExtResource("5_qindy")]
 layout_mode = 1
-offset_left = 69.0
-offset_top = 1141.0
-offset_right = 651.0
-offset_bottom = 1231.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "intro"

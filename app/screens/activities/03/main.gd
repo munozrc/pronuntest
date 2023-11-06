@@ -17,12 +17,12 @@ func _on_task_completed():
 	$Header.increment(increment_value)
 
 
-func _on_header_close():
-	_start_outro_animation()
-
-
 func _on_finished():
 	if self.current_state == "unlocked":
 		GLOBAL.set_activity_completed(island, index_island)
 	
+	_start_outro_animation()
+
+
+func _on_header_close():
 	_start_outro_animation()
