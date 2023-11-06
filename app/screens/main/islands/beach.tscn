@@ -1,9 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://dp2086gmcm157"]
+[gd_scene load_steps=37 format=3 uid="uid://dp2086gmcm157"]
 
 [ext_resource type="Texture2D" uid="uid://ch1lqknhul2i0" path="res://assets/images/terrains/beach_terrain.png" id="1_qxcyq"]
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_x1a4p"]
 [ext_resource type="PackedScene" uid="uid://wkm4qb35hy2b" path="res://screens/beach.tscn" id="2_0rf16"]
-[ext_resource type="Texture2D" uid="uid://j10nv25tcg6s" path="res://assets/images/temp/reference_beach_island.png" id="2_oq262"]
 [ext_resource type="Texture2D" uid="uid://cir1jp80ijtyi" path="res://assets/images/palm/trunk.png" id="3_ssxh8"]
 [ext_resource type="Texture2D" uid="uid://dk0sarijcpxa0" path="res://assets/images/palm/leaf_001.png" id="4_pw6ds"]
 [ext_resource type="Texture2D" uid="uid://d4md687g4musb" path="res://assets/images/sea/wave.png" id="5_p8e8r"]
@@ -679,7 +678,7 @@ _data = {
 "idle": SubResource("Animation_7gn6b")
 }
 
-[node name="Beach" type="Control" node_paths=PackedStringArray("button")]
+[node name="Beach" type="Control" node_paths=PackedStringArray("button", "visible_notifier")]
 custom_minimum_size = Vector2(720, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -691,12 +690,7 @@ size_flags_horizontal = 3
 script = ExtResource("1_x1a4p")
 button = NodePath("Button")
 scene = ExtResource("2_0rf16")
-
-[node name="BeachReference" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(359.119, 706.5)
-scale = Vector2(0.539459, 0.539459)
-texture = ExtResource("2_oq262")
+visible_notifier = NodePath("VisibleNotifier")
 
 [node name="Terrain" type="TextureRect" parent="."]
 layout_mode = 1
@@ -954,6 +948,10 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_q3mmg")
 }
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(362, 708.5)
+scale = Vector2(32.6, 27.75)
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 1

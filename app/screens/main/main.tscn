@@ -1,14 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://cki5h5l8gxper"]
+[gd_scene load_steps=16 format=3 uid="uid://cki5h5l8gxper"]
 
 [ext_resource type="PackedScene" uid="uid://w04g8t3bky7w" path="res://screens/main/islands/forest.tscn" id="1_q34wy"]
 [ext_resource type="Script" path="res://screens/main/main.gd" id="1_qio5r"]
-[ext_resource type="Texture2D" uid="uid://ccjow1sjtdaa6" path="res://assets/images/clouds/cloud_02.png" id="2_dun0b"]
+[ext_resource type="Texture2D" uid="uid://0rw7gitv5wav" path="res://assets/images/clouds/cloud_02.webp" id="2_7xbp8"]
 [ext_resource type="PackedScene" uid="uid://dp2086gmcm157" path="res://screens/main/islands/beach.tscn" id="2_on1rx"]
 [ext_resource type="Texture2D" uid="uid://cd8pvwfo5oxot" path="res://assets/ui/arrow.png" id="3_4xpxh"]
-[ext_resource type="Texture2D" uid="uid://cead0ie4std05" path="res://assets/images/clouds/cloud.png" id="3_88213"]
 [ext_resource type="Texture2D" uid="uid://c5dawqtpe2nn7" path="res://assets/ui/arrow_pressed.png" id="4_jr7mt"]
 [ext_resource type="PackedScene" uid="uid://bmud555hagxes" path="res://screens/main/islands/lighthouse.tscn" id="4_n5jm1"]
+[ext_resource type="Texture2D" uid="uid://ds1u126hky56q" path="res://assets/images/clouds/cloud.webp" id="7_ddch8"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="7_udwlo"]
+[ext_resource type="PackedScene" uid="uid://bccjdn2ldpl3g" path="res://components/frame_counter.tscn" id="10_7da68"]
 
 [sub_resource type="Gradient" id="Gradient_ruic7"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -171,6 +172,7 @@ grow_vertical = 2
 color = Color(0, 0.654902, 0.952941, 1)
 
 [node name="BackgroundGradient" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,27 +206,27 @@ grow_vertical = 2
 [node name="Cloud02" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(717, 272)
 scale = Vector2(0.455398, 0.455398)
-texture = ExtResource("2_dun0b")
+texture = ExtResource("2_7xbp8")
 
 [node name="Cloud" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(349, 462)
-scale = Vector2(0.199999, 0.199999)
-texture = ExtResource("3_88213")
+scale = Vector2(0.400001, 0.400001)
+texture = ExtResource("7_ddch8")
 
 [node name="Cloud03" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(585, 574)
 scale = Vector2(0.358321, 0.358321)
-texture = ExtResource("2_dun0b")
+texture = ExtResource("2_7xbp8")
 
 [node name="Cloud04" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(68.0001, 702)
 scale = Vector2(0.455398, 0.455398)
-texture = ExtResource("2_dun0b")
+texture = ExtResource("2_7xbp8")
 
 [node name="Cloud2" type="Sprite2D" parent="Clouds/CloudsContainer"]
 position = Vector2(5, 353)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("3_88213")
+scale = Vector2(0.639999, 0.639999)
+texture = ExtResource("7_ddch8")
 flip_h = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -281,36 +283,35 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SmallLeftCloud" type="Sprite2D" parent="Controls/Clouds"]
-modulate = Color(1, 1, 1, 0.431373)
+modulate = Color(0.913725, 0.913725, 0.913725, 1)
 position = Vector2(-200, -59.5)
-scale = Vector2(0.504889, 0.504889)
-texture = ExtResource("3_88213")
+scale = Vector2(1.02489, 1.02489)
+texture = ExtResource("7_ddch8")
 flip_h = true
 
-[node name="BigLeftCloud" type="Sprite2D" parent="Controls/Clouds"]
-modulate = Color(1, 1, 1, 0.803922)
-position = Vector2(-274, 8.5)
-scale = Vector2(0.564604, 0.564604)
-texture = ExtResource("3_88213")
-
 [node name="SmallRightCloud" type="Sprite2D" parent="Controls/Clouds"]
-modulate = Color(1, 1, 1, 0.431373)
+modulate = Color(0.94902, 0.94902, 0.94902, 1)
 position = Vector2(19, -39.5)
-scale = Vector2(0.345142, 0.345142)
-texture = ExtResource("3_88213")
+scale = Vector2(0.705138, 0.705138)
+texture = ExtResource("7_ddch8")
+
+[node name="BigLeftCloud" type="Sprite2D" parent="Controls/Clouds"]
+modulate = Color(0.976471, 0.976471, 0.976471, 1)
+position = Vector2(-274, 8.5)
+scale = Vector2(1.1246, 1.1246)
+texture = ExtResource("7_ddch8")
 
 [node name="MiddleRightCloud2" type="Sprite2D" parent="Controls/Clouds"]
-modulate = Color(1, 1, 1, 0.431373)
+modulate = Color(0.937255, 0.937255, 0.937255, 1)
 position = Vector2(331, -75.5)
-scale = Vector2(0.345142, 0.345142)
-texture = ExtResource("3_88213")
+scale = Vector2(0.705144, 0.705144)
+texture = ExtResource("7_ddch8")
 flip_h = true
 
 [node name="BigRightCloud" type="Sprite2D" parent="Controls/Clouds"]
-modulate = Color(1, 1, 1, 0.717647)
 position = Vector2(282, -11.5001)
-scale = Vector2(0.563352, 0.563352)
-texture = ExtResource("3_88213")
+scale = Vector2(1.12335, 1.12335)
+texture = ExtResource("7_ddch8")
 flip_h = true
 
 [node name="CloudAnimator" type="AnimationPlayer" parent="Controls/Clouds"]
@@ -357,3 +358,10 @@ stretch_mode = 5
 
 [node name="TransitionComponent" parent="." instance=ExtResource("7_udwlo")]
 autoplay = "fade_out"
+
+[node name="FrameCounter" parent="." instance=ExtResource("10_7da68")]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 143.0
+offset_bottom = 78.0

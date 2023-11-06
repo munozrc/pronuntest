@@ -517,7 +517,7 @@ _data = {
 "idle": SubResource("Animation_onvtq")
 }
 
-[node name="Lighthouse" type="Control" node_paths=PackedStringArray("button")]
+[node name="Lighthouse" type="Control" node_paths=PackedStringArray("button", "visible_notifier")]
 custom_minimum_size = Vector2(720, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -528,6 +528,7 @@ grow_vertical = 2
 script = ExtResource("1_ocail")
 button = NodePath("Button")
 scene = ExtResource("2_fp8hj")
+visible_notifier = NodePath("VisibleNotifier")
 
 [node name="Terrain" type="TextureRect" parent="."]
 layout_mode = 1
@@ -714,3 +715,7 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_qx3am")
 }
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(361, 657.5)
+scale = Vector2(34.7, 32.25)

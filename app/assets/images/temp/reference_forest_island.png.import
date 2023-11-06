@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdixv7a8g4hgm"
-path="res://.godot/imported/reference_forest_island.png-7b3e0fbc67e2b8b5d0d30db119ee96bc.ctex"
+path.s3tc="res://.godot/imported/reference_forest_island.png-7b3e0fbc67e2b8b5d0d30db119ee96bc.s3tc.ctex"
+path.etc2="res://.godot/imported/reference_forest_island.png-7b3e0fbc67e2b8b5d0d30db119ee96bc.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/temp/reference_forest_island.png"
-dest_files=["res://.godot/imported/reference_forest_island.png-7b3e0fbc67e2b8b5d0d30db119ee96bc.ctex"]
+dest_files=["res://.godot/imported/reference_forest_island.png-7b3e0fbc67e2b8b5d0d30db119ee96bc.s3tc.ctex", "res://.godot/imported/reference_forest_island.png-7b3e0fbc67e2b8b5d0d30db119ee96bc.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
