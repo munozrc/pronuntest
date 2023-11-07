@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c026cpatxy7o2"]
+[gd_scene load_steps=8 format=3 uid="uid://c026cpatxy7o2"]
 
 [ext_resource type="Script" path="res://screens/activities/03/entities/box.gd" id="1_nywwt"]
 [ext_resource type="Texture2D" uid="uid://degm4jsh84dmo" path="res://assets/images/box.png" id="2_atp7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2sio"]
+size = Vector2(299, 301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5d4l"]
 
@@ -72,6 +75,12 @@ button = NodePath("Button")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_atp7c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_x2sio")
 
 [node name="Button" type="TouchScreenButton" parent="."]
 scale = Vector2(15, 15)

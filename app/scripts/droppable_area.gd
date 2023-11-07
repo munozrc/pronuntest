@@ -15,8 +15,8 @@ var _item : DraggableItem = null
 
 
 func _ready():
-	self.area.area_entered.connect(self._on_area_entered)
-	self.area.area_exited.connect(self._on_area_exited)
+	area.area_entered.connect(self._on_area_entered)
+	area.area_exited.connect(self._on_area_exited)
 
 
 func _input(event):
@@ -28,12 +28,12 @@ func _input(event):
 	):
 		return
 	
-	if self.content != _item.content:
+	if content != _item.content:
 		failed.emit(_item)
 		_item = null
 		return
 	
-	var current_pos = self.global_position
+	var current_pos = global_position
 	_item.set_origin(current_pos)
 	dropped.emit(_item)
 	_item = null
@@ -42,10 +42,10 @@ func _input(event):
 func _on_area_entered(object: Area2D):
 	if not object.get_parent() is DraggableItem:
 		return
-	self._item = object.get_parent()
+	_item = object.get_parent()
 
 
 func _on_area_exited(object: Area2D):
 	if not object.get_parent() is DraggableItem:
 		return
-	self._item = null
+	_item = null
