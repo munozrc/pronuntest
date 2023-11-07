@@ -2,7 +2,7 @@ class_name DroppableArea
 extends Node2D
 
 
-signal dropped
+signal dropped(item: DraggableItem)
 signal failed(item: DraggableItem)
 
 
@@ -35,8 +35,8 @@ func _input(event):
 	
 	var current_pos = self.global_position
 	_item.set_origin(current_pos)
+	dropped.emit(_item)
 	_item = null
-	dropped.emit()
 
 
 func _on_area_entered(object: Area2D):

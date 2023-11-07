@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://8oe1mj5x6mbf"]
+[gd_scene load_steps=26 format=3 uid="uid://8oe1mj5x6mbf"]
 
 [ext_resource type="Script" path="res://screens/activities/03/tasks/drag_mechanics.gd" id="1_8kns3"]
 [ext_resource type="PackedScene" uid="uid://jriwlk872m4b" path="res://components/confetti_effect.tscn" id="2_f48h8"]
@@ -128,58 +128,6 @@ _data = {
 "hidden": SubResource("Animation_uedp5")
 }
 
-[sub_resource type="Animation" id="Animation_lclpd"]
-resource_name = "fade_in"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BoxSlot:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.554785, 4),
-"update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.65, 0.65)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BoxSlot:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.258816, 2.2974),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Box:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.6),
-"transitions": PackedFloat32Array(0.420448, 3.605),
-"update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.65, 0.65)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Box:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.6),
-"transitions": PackedFloat32Array(0.574349, 2.73208),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_fo5xm"]
 length = 0.001
 tracks/0/type = "value"
@@ -231,6 +179,58 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_lclpd"]
+resource_name = "fade_in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxSlot:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.554785, 4),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.65, 0.65)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoxSlot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.258816, 2.2974),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Box:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(0.420448, 0.420448, 3.605),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.65, 0.65)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Box:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(0.574349, 0.574349, 2.73208),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_iminv"]
 resource_name = "phoneme"
 length = 0.5
@@ -247,16 +247,94 @@ tracks/0/keys = {
 "values": [Vector2(0.65, 0.65), Vector2(0.75, 0.75), Vector2(0.65, 0.65)]
 }
 
+[sub_resource type="Animation" id="Animation_m6427"]
+resource_name = "hidden"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxSlot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Box:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uo5qd"]
 _data = {
 "RESET": SubResource("Animation_fo5xm"),
 "fade_in": SubResource("Animation_lclpd"),
+"hidden": SubResource("Animation_m6427"),
 "phoneme": SubResource("Animation_iminv")
+}
+
+[sub_resource type="Animation" id="Animation_fsl6i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContainerCenter:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContainerCenter:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ContainerCenter/BoxAnimtor")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("hidden"),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_wufg2"]
 resource_name = "intro"
-length = 3.2
+length = 3.5
 tracks/0/type = "animation"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -265,7 +343,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": PackedStringArray("fade_in", "phoneme"),
-"times": PackedFloat32Array(0, 2.7)
+"times": PackedFloat32Array(0, 3)
 }
 tracks/1/type = "animation"
 tracks/1/imported = false
@@ -275,7 +353,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": PackedStringArray("drag"),
-"times": PackedFloat32Array(0.6)
+"times": PackedFloat32Array(0.8)
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -293,7 +371,7 @@ tracks/2/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("5_y0kmi")
 }],
-"times": PackedFloat32Array(0.1, 2.7)
+"times": PackedFloat32Array(0.3, 3)
 }
 tracks/2/use_blend = true
 tracks/3/type = "method"
@@ -303,7 +381,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.3),
+"times": PackedFloat32Array(0, 2.6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -312,6 +390,18 @@ tracks/3/keys = {
 "args": [],
 "method": &"enable_interactions"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerCenter:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_nex8c"]
@@ -354,33 +444,6 @@ tracks/2/keys = {
 "args": [],
 "method": &"hidden_button"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_fsl6i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ContainerCenter:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ContainerCenter:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3tmtf"]
@@ -427,6 +490,7 @@ pivot_offset = Vector2(360, 640)
 position = Vector2(360, 405)
 
 [node name="BoxSlot" parent="ContainerCenter" instance=ExtResource("2_mfejj")]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(360, 406)
 scale = Vector2(0.65, 0.65)
 content = "a"
@@ -449,6 +513,7 @@ theme_override_font_sizes/font_size = 200
 text = "a"
 
 [node name="Box" parent="ContainerCenter" instance=ExtResource("3_xf1uf")]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(360, 860)
 scale = Vector2(0.65, 0.65)
 sound = ExtResource("5_y0kmi")

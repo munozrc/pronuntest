@@ -80,6 +80,8 @@ texture = ExtResource("2_atp7c")
 shape = SubResource("RectangleShape2D_1mr0l")
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+bus = &"Narrator"
 
 [node name="BoxAnimator" type="AnimationPlayer" parent="."]
 libraries = {

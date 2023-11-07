@@ -17,7 +17,7 @@ func disable_interactions():
 	$ContainerCenter/Hand/Timer.stop()
 
 
-func _on_box_slot_dropped():
+func _on_box_slot_dropped(_item):
 	$ContainerCenter/ConfettiEffect.start_animation()
 	disable_interactions()
 	$Footer.show_button()

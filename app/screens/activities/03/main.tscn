@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8s4yjb7qp5xi"]
+[gd_scene load_steps=8 format=3 uid="uid://b8s4yjb7qp5xi"]
 
 [ext_resource type="Script" path="res://screens/activities/03/main.gd" id="1_2nfrr"]
 [ext_resource type="PackedScene" uid="uid://bpwl0ojgo8fy4" path="res://screens/activities/03/tasks/presentation.tscn" id="2_7udqk"]
 [ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="2_m8102"]
+[ext_resource type="PackedScene" uid="uid://5cjwofgexmxp" path="res://screens/activities/03/tasks/drag_sound_spider.tscn" id="2_me2j4"]
 [ext_resource type="PackedScene" uid="uid://8oe1mj5x6mbf" path="res://screens/activities/03/tasks/drag_mechanics.tscn" id="3_l7su6"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="3_mbegd"]
+[ext_resource type="PackedScene" uid="uid://d1a8whqydt14u" path="res://screens/activities/03/tasks/drag_sound_bee.tscn" id="5_snddp"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]
 layout_mode = 3
@@ -14,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2nfrr")
-tasks = Array[PackedScene]([ExtResource("2_7udqk"), ExtResource("3_l7su6")])
+tasks = Array[PackedScene]([ExtResource("2_7udqk"), ExtResource("3_l7su6"), ExtResource("2_me2j4"), ExtResource("5_snddp")])
 container = NodePath("TaskContainer")
 island = "forest"
 index_island = 2

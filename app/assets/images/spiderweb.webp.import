@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dss1vpijyunfq"
-path="res://.godot/imported/bee.png-0b539d75f9f436bddea0407dace6fa6d.ctex"
+uid="uid://dap40qomh4w08"
+path="res://.godot/imported/spiderweb.webp-4db95d3e4819d646141de68a5480e8da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/bee.png"
-dest_files=["res://.godot/imported/bee.png-0b539d75f9f436bddea0407dace6fa6d.ctex"]
+source_file="res://assets/images/spiderweb.webp"
+dest_files=["res://.godot/imported/spiderweb.webp-4db95d3e4819d646141de68a5480e8da.ctex"]
 
 [params]
 

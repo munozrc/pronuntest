@@ -11,16 +11,16 @@ func _ready():
 	failed.connect(_on_failed)
 
 
-func _on_dropped():
+func _on_dropped(_box: DraggableItem):
 	$Sound.stream = success_sound
 	$Sound.play()
 
 
-func _on_failed(item: DraggableItem):
+func _on_failed(box: DraggableItem):
 	$Sound.stream = wrong_sound
 	$Sound.play()
 	
-	if item == null:
+	if box == null:
 		return
 	
-	item.start_shake_animation()
+	box.start_shake_animation()
