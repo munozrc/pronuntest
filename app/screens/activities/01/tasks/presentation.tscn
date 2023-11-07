@@ -230,7 +230,7 @@ tracks/17/keys = {
 
 [sub_resource type="Animation" id="Animation_7uouw"]
 resource_name = "intro"
-length = 8.4
+length = 8.8
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -247,7 +247,7 @@ tracks/0/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("8_7wbe5")
 }],
-"times": PackedFloat32Array(0.2, 3.4)
+"times": PackedFloat32Array(0.3, 3.8)
 }
 tracks/0/use_blend = true
 tracks/1/type = "value"
@@ -257,34 +257,34 @@ tracks/1/path = NodePath("TextContainer/Vamos:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 1, 1.3),
-"transitions": PackedFloat32Array(0.482968, 1, 1, 0.482969),
+"times": PackedFloat32Array(0, 0.4, 1.4, 1.8),
+"transitions": PackedFloat32Array(0.482968, 1, 1, 1.27456),
 "update": 0,
 "values": [Vector2(81, 300), Vector2(81, 484), Vector2(81, 484), Vector2(81, 300)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextContainer/Diferenciar:position")
+tracks/2/path = NodePath("TextContainer/Vamos:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0.3, 0.7, 1.2, 1.5),
-"transitions": PackedFloat32Array(0.34151, 1, 1, 0.466517),
+"times": PackedFloat32Array(0, 0.4, 1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 0.482969),
 "update": 0,
-"values": [Vector2(81, 800), Vector2(81, 569), Vector2(81, 569), Vector2(81, 800)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextContainer/Vamos:modulate")
+tracks/3/path = NodePath("TextContainer/Diferenciar:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 0.482969),
+"times": PackedFloat32Array(0.4, 0.9, 1.6, 2),
+"transitions": PackedFloat32Array(0.34151, 0.378929, 1, 1.93187),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Vector2(81, 800), Vector2(81, 569), Vector2(81, 569), Vector2(81, 800)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -293,7 +293,7 @@ tracks/4/path = NodePath("TextContainer/Diferenciar:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0.3, 0.7, 1.2, 1.5),
+"times": PackedFloat32Array(0.4, 0.9, 1.6, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -305,7 +305,7 @@ tracks/5/path = NodePath("TextContainer/Sonidos:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = false
 tracks/5/keys = {
-"times": PackedFloat32Array(1.4, 1.7, 2.5, 2.9),
+"times": PackedFloat32Array(1.6, 2, 2.9, 3.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -317,7 +317,7 @@ tracks/6/path = NodePath("TextContainer/Sonidos:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = false
 tracks/6/keys = {
-"times": PackedFloat32Array(1.4, 1.7, 2.5, 2.9),
+"times": PackedFloat32Array(1.6, 2, 2.9, 3.3),
 "transitions": PackedFloat32Array(0.329877, 1, 2.07053, 1.93187),
 "update": 0,
 "values": [Vector2(81, 386), Vector2(81, 503), Vector2(81, 503), Vector2(81, 386)]
@@ -329,7 +329,7 @@ tracks/7/path = NodePath("TextContainer/Nasalizados:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = false
 tracks/7/keys = {
-"times": PackedFloat32Array(1.8, 2, 2.7, 3),
+"times": PackedFloat32Array(2, 2.4, 3, 3.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -341,7 +341,7 @@ tracks/8/path = NodePath("TextContainer/Nasalizados:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = false
 tracks/8/keys = {
-"times": PackedFloat32Array(1.8, 2, 2.7, 3),
+"times": PackedFloat32Array(2, 2.4, 3, 3.4),
 "transitions": PackedFloat32Array(0.34151, 1, 3.03143, 1),
 "update": 0,
 "values": [Vector2(81, 712), Vector2(81, 593), Vector2(81, 593), Vector2(81, 712)]
@@ -353,7 +353,7 @@ tracks/9/path = NodePath("TextContainer/Face:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(3.4, 3.7),
+"times": PackedFloat32Array(4, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -365,8 +365,8 @@ tracks/10/path = NodePath("TextContainer/Face:scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(3.4, 3.7),
-"transitions": PackedFloat32Array(0.615572, 2.92817),
+"times": PackedFloat32Array(4, 4.5),
+"transitions": PackedFloat32Array(0.615572, 0.287175),
 "update": 0,
 "values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
@@ -377,7 +377,7 @@ tracks/11/path = NodePath("TextContainer/Face/Arrow:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(4.4, 5),
+"times": PackedFloat32Array(5, 5.6),
 "transitions": PackedFloat32Array(0.34151, 2.07053),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -389,7 +389,7 @@ tracks/12/path = NodePath("TextContainer/Face/Arrow:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(4.3, 5),
+"times": PackedFloat32Array(4.9, 5.6),
 "transitions": PackedFloat32Array(0.435275, 2.07053),
 "update": 0,
 "values": [Vector2(221, 265), Vector2(136, 203)]
@@ -401,7 +401,7 @@ tracks/13/path = NodePath("TextContainer/Face/Arrow:size")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(4.3, 5),
+"times": PackedFloat32Array(4.9, 5.6),
 "transitions": PackedFloat32Array(0.329877, 2.14355),
 "update": 0,
 "values": [Vector2(53, 110), Vector2(138, 172)]
@@ -413,7 +413,7 @@ tracks/14/path = NodePath("TextContainer/Face/Wind:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(5.1, 5.8),
+"times": PackedFloat32Array(5.7, 6.4),
 "transitions": PackedFloat32Array(0.378929, 3.4822),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -425,7 +425,7 @@ tracks/15/path = NodePath("TextContainer/Face/Wind:size")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(5, 5.8),
+"times": PackedFloat32Array(5.6, 6.4),
 "transitions": PackedFloat32Array(0.287175, 3.24901),
 "update": 0,
 "values": [Vector2(82, 104), Vector2(126, 104)]
@@ -437,7 +437,7 @@ tracks/16/path = NodePath("TextContainer/Face/Wind:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(5, 5.8),
+"times": PackedFloat32Array(5.6, 6.4),
 "transitions": PackedFloat32Array(0.366021, 3.24901),
 "update": 0,
 "values": [Vector2(-60, 134), Vector2(-104, 134)]
@@ -449,7 +449,7 @@ tracks/17/path = NodePath("TextContainer/Face:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(5, 5.6),
+"times": PackedFloat32Array(5.6, 6.2),
 "transitions": PackedFloat32Array(0.233259, 1.23114),
 "update": 0,
 "values": [Vector2(143, 333), Vector2(163, 333)]
@@ -461,7 +461,7 @@ tracks/18/path = NodePath("Footer")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(5.8),
+"times": PackedFloat32Array(8.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -547,7 +547,7 @@ anchor_bottom = 0.5
 offset_left = -279.0
 offset_top = -156.0
 offset_right = 279.0
-offset_bottom = -20.0021
+offset_bottom = -20.0057
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
@@ -593,7 +593,7 @@ anchor_bottom = 0.5
 offset_left = -279.0
 offset_top = -137.0
 offset_right = 279.0
-offset_bottom = -0.998779
+offset_bottom = -0.998474
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
@@ -679,7 +679,6 @@ bus = &"Narrator"
 
 [node name="TaskAnimator" type="AnimationPlayer" parent="."]
 autoplay = "intro"
-speed_scale = 0.75
 libraries = {
 "": SubResource("AnimationLibrary_mcjwa")
 }
