@@ -16,113 +16,6 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="Animation" id="Animation_onp6p"]
-resource_name = "intro"
-length = 3.5
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Narrator")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("7_qncxq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("8_jv47k")
-}],
-"times": PackedFloat32Array(0.4, 2.5)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopContainer/Bee:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1),
-"transitions": PackedFloat32Array(0.329877, 1, 0.5),
-"update": 0,
-"values": [Vector2(294.5, -149), Vector2(294.5, 378), Vector2(294.5, 338)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TopContainer/Display:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 1.2),
-"transitions": PackedFloat32Array(0.267943, 0.392292),
-"update": 0,
-"values": [Vector2(82.5, -118), Vector2(82.5, 146)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TopContainer/BoxSlot:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.3, 1.5, 2.7, 2.9, 3.3),
-"transitions": PackedFloat32Array(0.307786, 1.51572, 1.56917, 1.56917, 1.51572, 1.56917),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.805, 0.805), Vector2(0.72, 0.72), Vector2(0.72, 0.72), Vector2(0.805, 0.805), Vector2(0.72, 0.72)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CenterContainer/Box:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1.4, 1.7),
-"transitions": PackedFloat32Array(0.392292, 0.466517),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CenterContainer/Box2:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.6, 1.9),
-"transitions": PackedFloat32Array(0.406126, 0.329877),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CenterContainer/Box3:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1.8, 2.1),
-"transitions": PackedFloat32Array(0.34151, 0.378929),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("CenterContainer/Box4:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(2, 2.3),
-"transitions": PackedFloat32Array(0.34151, 0.329877),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
-}
-
 [sub_resource type="Animation" id="Animation_hbgae"]
 length = 0.001
 tracks/0/type = "value"
@@ -256,6 +149,113 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_onp6p"]
+resource_name = "intro"
+length = 3.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Narrator")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_qncxq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_jv47k")
+}],
+"times": PackedFloat32Array(0.4, 2.5)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopContainer/Bee:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(0.329877, 1, 0.5),
+"update": 0,
+"values": [Vector2(294.5, -149), Vector2(294.5, 378), Vector2(294.5, 338)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TopContainer/Display:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.2),
+"transitions": PackedFloat32Array(0.267943, 0.392292),
+"update": 0,
+"values": [Vector2(82.5, -118), Vector2(82.5, 146)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TopContainer/BoxSlot:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.3, 1.5, 2.7, 2.9, 3.3),
+"transitions": PackedFloat32Array(0.307786, 1.51572, 1.56917, 1.56917, 1.51572, 1.56917),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.805, 0.805), Vector2(0.72, 0.72), Vector2(0.72, 0.72), Vector2(0.805, 0.805), Vector2(0.72, 0.72)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CenterContainer/Box:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4, 1.7),
+"transitions": PackedFloat32Array(0.392292, 0.466517),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CenterContainer/Box2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.6, 1.9),
+"transitions": PackedFloat32Array(0.406126, 0.329877),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CenterContainer/Box3:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.8, 2.1),
+"transitions": PackedFloat32Array(0.34151, 0.378929),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CenterContainer/Box4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2, 2.3),
+"transitions": PackedFloat32Array(0.34151, 0.329877),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.7, 0.7)]
 }
 
 [sub_resource type="Animation" id="Animation_ufirg"]
