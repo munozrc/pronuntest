@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=28 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="12_i10dq"]
 [ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="13_04426"]
 [ext_resource type="PackedScene" uid="uid://b8s4yjb7qp5xi" path="res://screens/activities/03/main.tscn" id="13_kmamp"]
+[ext_resource type="PackedScene" uid="uid://cfva6237ia4hy" path="res://screens/activities/04/main.tscn" id="14_73b0e"]
 [ext_resource type="PackedScene" uid="uid://bccjdn2ldpl3g" path="res://components/frame_counter.tscn" id="17_yb0xw"]
 
 [sub_resource type="Gradient" id="Gradient_mftu1"]
@@ -754,6 +755,7 @@ offset_left = 440.0
 offset_top = 290.0
 offset_right = 566.0
 offset_bottom = 414.0
+activity = ExtResource("14_73b0e")
 
 [node name="FiveButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
 visible = false

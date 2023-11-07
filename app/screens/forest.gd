@@ -5,6 +5,7 @@ extends Control
 	$ScrollContainer/Control/Container/OneButton,
 	$ScrollContainer/Control/Container/TwoButton,
 	$ScrollContainer/Control/Container/ThreeButton,
+	$ScrollContainer/Control/Container/FourButton
 ]
 
 

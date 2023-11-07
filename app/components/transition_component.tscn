@@ -317,7 +317,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_daeqn"]
 resource_name = "fade_in"
-length = 0.5
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -325,7 +325,7 @@ tracks/0/path = NodePath("TransitionComponent/BackgroundColor:visible")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
@@ -337,7 +337,7 @@ tracks/1/path = NodePath("TransitionComponent/BackgroundColor:modulate")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -386,7 +386,6 @@ libraries = {
 }
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

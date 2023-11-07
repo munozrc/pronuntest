@@ -19,6 +19,10 @@ var activities = {
 		{
 			"state": "completed",
 			"score": 0
+		},
+		{
+			"state": "completed",
+			"score": 0
 		}
 	]
 }
