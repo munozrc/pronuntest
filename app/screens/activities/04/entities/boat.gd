@@ -17,6 +17,10 @@ func _process(_delta):
 		return
 	
 	var sample = AudioServer.get_bus_peak_volume_left_db(record_bux_index, 0)
-	var linear_sample = db_to_linear(sample)
+	var linear_sample = round(db_to_linear(sample) * speed)
 	
-	apply_impulse(Vector2(0, -round(linear_sample * speed)))
+	apply_impulse(Vector2(0, -linear_sample))
+	
+	$AnimationTree.set("parameters/conditions/idle", linear_sample <= 0)
+	$AnimationTree.set("parameters/conditions/wind", linear_sample >= 1)
+	print(linear_velocity)
