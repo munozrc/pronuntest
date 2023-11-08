@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfmbflbrgja"]
+[gd_scene load_steps=17 format=3 uid="uid://bfmbflbrgja"]
 
 [ext_resource type="Script" path="res://screens/activities/04/entities/boat.gd" id="1_kdcy4"]
 [ext_resource type="Texture2D" uid="uid://diahj4kk2g3ww" path="res://assets/images/shapes/circle.png" id="2_6ujbm"]
@@ -9,65 +9,8 @@
 _data = [Vector2(0.00816327, 0), 0.0, 1.03158, 0, 0, Vector2(1, 0), -1.20888, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_uvx35"]
-curve = SubResource("Curve_ges0n")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c64dl"]
-lifetime_randomness = 0.12
-particle_flag_disable_z = true
-direction = Vector3(0, 1, 0)
-spread = 16.65
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 74.78
-initial_velocity_max = 92.24
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 0.2
-scale_max = 0.5
-scale_curve = SubResource("CurveTexture_uvx35")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpg3e"]
 size = Vector2(72, 131)
-
-[sub_resource type="Animation" id="Animation_m4rsq"]
-resource_name = "wind"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Boat:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.574349, 0.420448),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BoatWind:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.366021, 0.392292),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bubbles:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_vo0ti"]
 length = 0.001
@@ -136,6 +79,46 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_m4rsq"]
+resource_name = "wind"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boat:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.574349, 0.420448),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoatWind:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.366021, 0.392292),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bubbles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fty2k"]
 _data = {
 "RESET": SubResource("Animation_vo0ti"),
@@ -176,11 +159,21 @@ lock_rotation = true
 linear_damp = 2.0
 script = ExtResource("1_kdcy4")
 
-[node name="Bubbles" type="GPUParticles2D" parent="."]
+[node name="Bubbles" type="CPUParticles2D" parent="."]
 position = Vector2(0, 50)
 emitting = false
-process_material = SubResource("ParticleProcessMaterial_c64dl")
+lifetime_randomness = 0.12
+fixed_fps = 30
+draw_order = 1
 texture = ExtResource("2_6ujbm")
+direction = Vector2(0, 1)
+spread = 16.65
+gravity = Vector2(0, 0)
+initial_velocity_min = 74.78
+initial_velocity_max = 92.24
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_ges0n")
 
 [node name="Boat" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
