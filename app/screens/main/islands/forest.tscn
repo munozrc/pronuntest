@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://w04g8t3bky7w"]
+[gd_scene load_steps=22 format=3 uid="uid://w04g8t3bky7w"]
 
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_a1q2v"]
 [ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="1_spgkh"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bp8k7jeg81kwa" path="res://assets/images/bonfire/wood_sticks.png" id="7_ynxvk"]
 [ext_resource type="Texture2D" uid="uid://dyj4hmarag43o" path="res://assets/images/bonfire/fire.png" id="8_f3g6r"]
 [ext_resource type="Texture2D" uid="uid://bojure2e7vq8j" path="res://assets/images/lagoon_water.png" id="8_r0u2c"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="13_apklx"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rbg2u"]
 noise_type = 0
@@ -256,6 +257,26 @@ size_flags_horizontal = 3
 script = ExtResource("1_a1q2v")
 button = NodePath("Terrain/Button")
 scene = ExtResource("2_famuy")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_apklx")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Terrain" type="TextureRect" parent="."]
 layout_mode = 1

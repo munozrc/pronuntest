@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bmud555hagxes"]
+[gd_scene load_steps=25 format=3 uid="uid://bmud555hagxes"]
 
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_ocail"]
 [ext_resource type="PackedScene" uid="uid://dcqws3k1gphsm" path="res://screens/lighthouse.tscn" id="2_fp8hj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://co3c3bnfedcl8" path="res://assets/images/palm/leaf_005.png" id="10_h00xq"]
 [ext_resource type="Texture2D" uid="uid://ddnevmaiwpex8" path="res://assets/images/palm/leaf_006.png" id="11_hraa3"]
 [ext_resource type="Texture2D" uid="uid://c7x1a8hsyafll" path="res://assets/images/palm/trunk_02.png" id="12_eqcpj"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="13_tjsd6"]
 
 [sub_resource type="Animation" id="Animation_wvv03"]
 length = 0.001
@@ -719,3 +720,23 @@ libraries = {
 [node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(361, 657.5)
 scale = Vector2(34.7, 32.25)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_tjsd6")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 3"
+horizontal_alignment = 1
+vertical_alignment = 1

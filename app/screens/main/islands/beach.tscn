@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dp2086gmcm157"]
+[gd_scene load_steps=38 format=3 uid="uid://dp2086gmcm157"]
 
 [ext_resource type="Texture2D" uid="uid://ch1lqknhul2i0" path="res://assets/images/terrains/beach_terrain.png" id="1_qxcyq"]
 [ext_resource type="Script" path="res://scripts/island.gd" id="1_x1a4p"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://csfylmcb5rqht" path="res://assets/images/palm/trunk_03.png" id="14_ojghy"]
 [ext_resource type="Texture2D" uid="uid://betxl6u2vt1k2" path="res://assets/images/umbrella/fabric.png" id="15_fr00o"]
 [ext_resource type="Texture2D" uid="uid://bjv0y73d4bnhj" path="res://assets/images/umbrella/fabric_02.png" id="16_5tsge"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="20_hjpy4"]
 
 [sub_resource type="Animation" id="Animation_wvv03"]
 length = 0.001
@@ -966,3 +967,43 @@ offset_right = 308.0
 offset_bottom = 317.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("20_hjpy4")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("20_hjpy4")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 2"
+horizontal_alignment = 1
+vertical_alignment = 1
