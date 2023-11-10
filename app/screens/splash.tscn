@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw4xu2eegrjpe"]
+
+[ext_resource type="FontFile" uid="uid://dd6buxm08rjw3" path="res://assets/fonts/Poppins-Bold.ttf" id="1_kgbas"]
+[ext_resource type="Script" path="res://screens/splash.gd" id="1_pigbe"]
+
+[sub_resource type="Animation" id="Animation_fu4wd"]
+resource_name = "intro"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpapr"]
+_data = {
+"intro": SubResource("Animation_fu4wd")
+}
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pigbe")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -106.0
+offset_right = 170.5
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -60
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("1_kgbas")
+theme_override_font_sizes/font_size = 80
+text = "PRONUN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("1_kgbas")
+theme_override_font_sizes/font_size = 146
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_qpapr")
+}

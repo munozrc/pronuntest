@@ -46,7 +46,7 @@ autoplay = "fade_out"
 
 [node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMicrophone_tkc0l")
-volume_db = 3.0
+volume_db = 5.0
 autoplay = true
 bus = &"Record"
 

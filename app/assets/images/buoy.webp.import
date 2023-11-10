@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhhbve724jcr2"
-path="res://.godot/imported/border_cloud.png-49aad9e90541a6281961e1cc1546860c.ctex"
+uid="uid://cu067tkdlnfuu"
+path="res://.godot/imported/buoy.webp-99f5a24d93d7463e82d53bfab9a53338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/clouds/border_cloud.png"
-dest_files=["res://.godot/imported/border_cloud.png-49aad9e90541a6281961e1cc1546860c.ctex"]
+source_file="res://assets/images/buoy.webp"
+dest_files=["res://.godot/imported/buoy.webp-99f5a24d93d7463e82d53bfab9a53338.ctex"]
 
 [params]
 

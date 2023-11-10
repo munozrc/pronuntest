@@ -1,0 +1,2535 @@
+[gd_scene load_steps=84 format=3 uid="uid://bdb1vm6hgcjyr"]
+
+[ext_resource type="Script" path="res://screens/menu.gd" id="1_s14br"]
+[ext_resource type="Texture2D" uid="uid://ds1u126hky56q" path="res://assets/images/clouds/cloud.webp" id="2_smnxj"]
+[ext_resource type="Texture2D" uid="uid://cd8pvwfo5oxot" path="res://assets/ui/arrow.png" id="3_q3g1j"]
+[ext_resource type="Texture2D" uid="uid://c5dawqtpe2nn7" path="res://assets/ui/arrow_pressed.png" id="4_5mv3l"]
+[ext_resource type="Script" path="res://scripts/island.gd" id="4_ip0ui"]
+[ext_resource type="Texture2D" uid="uid://0rw7gitv5wav" path="res://assets/images/clouds/cloud_02.webp" id="5_3x4kv"]
+[ext_resource type="PackedScene" uid="uid://bcp4b3pfsi6m1" path="res://screens/forest.tscn" id="5_kesk5"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="6_vxl81"]
+[ext_resource type="Texture2D" uid="uid://cgx74xvut2jvv" path="res://assets/images/terrains/forest_terrain.png" id="7_78kep"]
+[ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="8_gdk0e"]
+[ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="9_wfbf4"]
+[ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="10_cexxn"]
+[ext_resource type="Texture2D" uid="uid://bev34h8lg7g0b" path="res://assets/images/lagoon.png" id="11_prs3j"]
+[ext_resource type="Shader" path="res://shaders/wave.gdshader" id="12_51rl0"]
+[ext_resource type="Texture2D" uid="uid://bojure2e7vq8j" path="res://assets/images/lagoon_water.png" id="13_mjr4x"]
+[ext_resource type="Texture2D" uid="uid://cax4qxduexg4n" path="res://assets/images/tent.png" id="14_d2dxc"]
+[ext_resource type="Texture2D" uid="uid://bp8k7jeg81kwa" path="res://assets/images/bonfire/wood_sticks.png" id="15_637ps"]
+[ext_resource type="Texture2D" uid="uid://dyj4hmarag43o" path="res://assets/images/bonfire/fire.png" id="16_25gq8"]
+[ext_resource type="PackedScene" uid="uid://wkm4qb35hy2b" path="res://screens/beach.tscn" id="17_64qpm"]
+[ext_resource type="Texture2D" uid="uid://ch1lqknhul2i0" path="res://assets/images/terrains/beach_terrain.png" id="18_i8t1h"]
+[ext_resource type="Texture2D" uid="uid://d4md687g4musb" path="res://assets/images/sea/wave.png" id="19_vdn7y"]
+[ext_resource type="Texture2D" uid="uid://rhrs02ed7844" path="res://assets/images/sea/base_wave.png" id="20_5u7ds"]
+[ext_resource type="Texture2D" uid="uid://deqlf87sirkb0" path="res://assets/images/sea/sea_border.png" id="21_y5ld8"]
+[ext_resource type="Texture2D" uid="uid://cir1jp80ijtyi" path="res://assets/images/palm/trunk.png" id="22_5yk1k"]
+[ext_resource type="Texture2D" uid="uid://dk0sarijcpxa0" path="res://assets/images/palm/leaf_001.png" id="23_1sisd"]
+[ext_resource type="Texture2D" uid="uid://be3lxv78acj75" path="res://assets/images/palm/leaf_002.png" id="24_gfkvf"]
+[ext_resource type="Texture2D" uid="uid://cbu2xmfmy0lwm" path="res://assets/images/palm/leaf_003.png" id="25_ttovr"]
+[ext_resource type="Texture2D" uid="uid://cs57usnftd4fy" path="res://assets/images/palm/leaf_004.png" id="26_vt1b7"]
+[ext_resource type="Texture2D" uid="uid://co3c3bnfedcl8" path="res://assets/images/palm/leaf_005.png" id="27_4eh3l"]
+[ext_resource type="Texture2D" uid="uid://ddnevmaiwpex8" path="res://assets/images/palm/leaf_006.png" id="28_bs6k8"]
+[ext_resource type="Texture2D" uid="uid://c7x1a8hsyafll" path="res://assets/images/palm/trunk_02.png" id="29_uvruu"]
+[ext_resource type="Texture2D" uid="uid://csfylmcb5rqht" path="res://assets/images/palm/trunk_03.png" id="30_qvvgn"]
+[ext_resource type="Texture2D" uid="uid://c02tjct3fkv8a" path="res://assets/images/umbrella/shadow.png" id="31_m4o8q"]
+[ext_resource type="Texture2D" uid="uid://ds2ujwpmfspjp" path="res://assets/images/umbrella/stick.png" id="32_qh7om"]
+[ext_resource type="Texture2D" uid="uid://betxl6u2vt1k2" path="res://assets/images/umbrella/fabric.png" id="33_34uvv"]
+[ext_resource type="Texture2D" uid="uid://bjv0y73d4bnhj" path="res://assets/images/umbrella/fabric_02.png" id="34_83xax"]
+[ext_resource type="PackedScene" uid="uid://dcqws3k1gphsm" path="res://screens/lighthouse.tscn" id="35_uvv5o"]
+[ext_resource type="Texture2D" uid="uid://crowmiij8w6ar" path="res://assets/images/terrains/lighthouse_terrain.png" id="36_3nbgb"]
+[ext_resource type="Texture2D" uid="uid://ejjnpwqrpf3y" path="res://assets/images/seagull.png" id="37_a5l2p"]
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="40_ajaof"]
+[ext_resource type="PackedScene" uid="uid://bccjdn2ldpl3g" path="res://components/frame_counter.tscn" id="41_qm3g5"]
+[ext_resource type="AudioStream" uid="uid://c75bhlngxq01o" path="res://assets/sounds/selection.mp3" id="42_oa7mh"]
+
+[sub_resource type="Gradient" id="Gradient_ruic7"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ycby"]
+gradient = SubResource("Gradient_ruic7")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rbg2u"]
+noise_type = 0
+fractal_type = 0
+fractal_ping_pong_strength = 1.535
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6j2oi"]
+seamless = true
+noise = SubResource("FastNoiseLite_rbg2u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lrfx3"]
+shader = ExtResource("12_51rl0")
+shader_parameter/intensity = -0.03
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset_speed = Vector2(0.11, 0.045)
+shader_parameter/noise = SubResource("NoiseTexture2D_6j2oi")
+
+[sub_resource type="Curve" id="Curve_iifhy"]
+_data = [Vector2(0.00471698, 0.0421052), 0.0, 2.41754, 0, 0, Vector2(1, 1), -0.0223158, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qch12"]
+offsets = PackedFloat32Array(0, 0.19337, 0.823204, 1)
+colors = PackedColorArray(0.980392, 0.67451, 0.258824, 0, 0.980469, 0.675781, 0.257813, 1, 0.942879, 0.394955, 0.176822, 1, 0.937255, 0.352941, 0.164706, 0)
+
+[sub_resource type="Animation" id="Animation_2kmde"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tree/BaseBranchBone2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tree/BaseBranchBone2D/MiddleBranchBone2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tree/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tree/Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 151)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Tree2/BaseBranchBone2D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tree2/BaseBranchBone2D/MiddleBranchBone2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tree2/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Tree2/Shadow:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.52171, 151)]
+}
+
+[sub_resource type="Animation" id="Animation_5rqrl"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tree/BaseBranchBone2D:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.6, 2.6, 3.6, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0698132, 0.0, 0.0698132]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tree/BaseBranchBone2D/MiddleBranchBone2D:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9, 2.9, 3.9, 9.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0698132, 0.0, 0.0698132]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tree/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.1, 3.1, 4.1, 10.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0698132, 0.0, 0.0698132]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tree/Shadow:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.6, 2.6, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 151), Vector2(8, 151), Vector2(8, 151)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Tree2/BaseBranchBone2D:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 4.5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0874357, 0.0, 0.0874357]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tree2/BaseBranchBone2D/MiddleBranchBone2D:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 1.3, 4.8, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0810166, 0.0, 0.0810166]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tree2/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D:rotation")
+tracks/6/interp = 4
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 5.1, 6.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0698132, 0.0, 0.0698132]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Tree2/Shadow:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.1, 4.5, 6.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6.10352e-05, 151), Vector2(6.52171, 151), Vector2(6.10352e-05, 151), Vector2(6.52171, 151)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcqen"]
+_data = {
+"RESET": SubResource("Animation_2kmde"),
+"idle": SubResource("Animation_5rqrl")
+}
+
+[sub_resource type="Animation" id="Animation_wvv03"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm/Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm/Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Palm/Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Palm/Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Palm/Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_elrjl"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.16114]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm/Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.218325]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm/Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.197243]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Palm/Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.322361]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Palm/Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.201064]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Palm/Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.155196]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwy1h"]
+_data = {
+"RESET": SubResource("Animation_wvv03"),
+"idle": SubResource("Animation_elrjl")
+}
+
+[sub_resource type="Animation" id="Animation_issda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.93296]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.108362]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.62396]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.917365]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.156087]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.8594]
+}
+
+[sub_resource type="Animation" id="Animation_sdd7j"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.93296, 2.1559]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.108362, 0.39989]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.62396, 1.74449]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.917365, 0.704755]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.156087, 0.407249]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.8594, 2.51866]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ar54u"]
+_data = {
+"RESET": SubResource("Animation_issda"),
+"idle": SubResource("Animation_sdd7j")
+}
+
+[sub_resource type="Animation" id="Animation_2112b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.502386]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.482258]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.525921]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.459946]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.498647]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.484678]
+}
+
+[sub_resource type="Animation" id="Animation_a2bhe"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.502386, 0.600702]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.482258, 0.607179]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.525921, 0.380017]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.459946, 0.280821]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.498647, 0.436712]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.484678, 0.323723]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mebr7"]
+_data = {
+"RESET": SubResource("Animation_2112b"),
+"idle": SubResource("Animation_a2bhe")
+}
+
+[sub_resource type="Animation" id="Animation_ddete"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18.1379, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u8xxj"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-18.1379, 48.9723), Vector2(-12.6965, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.15708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dsqo"]
+_data = {
+"RESET": SubResource("Animation_ddete"),
+"idle": SubResource("Animation_u8xxj")
+}
+
+[sub_resource type="Animation" id="Animation_j5p6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18.138, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.204772]
+}
+
+[sub_resource type="Animation" id="Animation_lsiry"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-18.138, 48.9723), Vector2(-7.25513, 48.9723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fabric:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.204772]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crivx"]
+_data = {
+"RESET": SubResource("Animation_j5p6l"),
+"idle": SubResource("Animation_lsiry")
+}
+
+[sub_resource type="Animation" id="Animation_7gn6b"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm2/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm3/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "animation"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Umbrella/AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Umbrella2/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3mmg"]
+_data = {
+"idle": SubResource("Animation_7gn6b")
+}
+
+[sub_resource type="Animation" id="Animation_igv6a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm/Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm/Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Palm/Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Palm/Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Palm/Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qihom"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.16114]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm/Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.218325]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Palm/Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.197243]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Palm/Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.322361]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Palm/Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.201064]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Palm/Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.155196]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vq8r6"]
+_data = {
+"RESET": SubResource("Animation_igv6a"),
+"idle": SubResource("Animation_qihom")
+}
+
+[sub_resource type="Animation" id="Animation_u40ki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.93296]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.108362]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.62396]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.917365]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.156087]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.8594]
+}
+
+[sub_resource type="Animation" id="Animation_biljx"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leaf:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.93296, 2.1559]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leaf2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.108362, 0.39989]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leaf3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.62396, 1.74449]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.917365, 0.704755]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leaf5:rotation")
+tracks/4/interp = 4
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.8, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.156087, 0.407249]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leaf6:rotation")
+tracks/5/interp = 4
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.8594, 2.51866]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kddr1"]
+_data = {
+"RESET": SubResource("Animation_u40ki"),
+"idle": SubResource("Animation_biljx")
+}
+
+[sub_resource type="Animation" id="Animation_h8fs0"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Palm/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Palm2/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("idle"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3e827"]
+_data = {
+"idle": SubResource("Animation_h8fs0")
+}
+
+[sub_resource type="Animation" id="Animation_h3isa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Terrain/Seagull:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Terrain/Seagull:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-102, 536)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Terrain/Seagull2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Terrain/Seagull2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, 548)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Terrain/Seagull3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Terrain/Seagull3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-98, 248)]
+}
+
+[sub_resource type="Animation" id="Animation_onvtq"]
+resource_name = "idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Terrain/Seagull:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.8, 2.5, 3.5, 4.2, 5.3, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Terrain/Seagull:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-102, 536), Vector2(302, 198), Vector2(-102, 536), Vector2(302, 198)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Terrain/Seagull2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.2, 2.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Terrain/Seagull2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(26, 548), Vector2(370, 228)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Terrain/Seagull3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Terrain/Seagull3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-98, 248), Vector2(280, 180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qx3am"]
+_data = {
+"RESET": SubResource("Animation_h3isa"),
+"idle": SubResource("Animation_onvtq")
+}
+
+[sub_resource type="Animation" id="Animation_4q45h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SmallLeftCloud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, -59.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigLeftCloud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-274, 8.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallRightCloud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, -39.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleRightCloud2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(331, -75.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BigRightCloud:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(282, -11.5001)]
+}
+
+[sub_resource type="Animation" id="Animation_iml3t"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SmallLeftCloud:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, -59.5), Vector2(-200, -29.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigLeftCloud:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-274, 8.5), Vector2(-274, -9.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallRightCloud:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(19, -39.5), Vector2(19, -62.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddleRightCloud2:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(331, -75.5), Vector2(331, -57.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BigRightCloud:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(282, -11.5001), Vector2(282, -24.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t3vmq"]
+_data = {
+"RESET": SubResource("Animation_4q45h"),
+"idle": SubResource("Animation_iml3t")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s14br")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.654902, 0.952941, 1)
+
+[node name="BackgroundGradient" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_8ycby")
+
+[node name="Clouds" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloudsContainer" type="Control" parent="Clouds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cloud02" type="Sprite2D" parent="Clouds/CloudsContainer"]
+position = Vector2(717, 272)
+scale = Vector2(0.455398, 0.455398)
+texture = ExtResource("5_3x4kv")
+
+[node name="Cloud" type="Sprite2D" parent="Clouds/CloudsContainer"]
+position = Vector2(349, 462)
+scale = Vector2(0.400001, 0.400001)
+texture = ExtResource("2_smnxj")
+
+[node name="Cloud03" type="Sprite2D" parent="Clouds/CloudsContainer"]
+position = Vector2(585, 574)
+scale = Vector2(0.358321, 0.358321)
+texture = ExtResource("5_3x4kv")
+
+[node name="Cloud04" type="Sprite2D" parent="Clouds/CloudsContainer"]
+position = Vector2(68.0001, 702)
+scale = Vector2(0.455398, 0.455398)
+texture = ExtResource("5_3x4kv")
+
+[node name="Cloud2" type="Sprite2D" parent="Clouds/CloudsContainer"]
+position = Vector2(5, 353)
+scale = Vector2(0.639999, 0.639999)
+texture = ExtResource("2_smnxj")
+flip_h = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 640)
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Forest" type="Control" parent="ScrollContainer/HBoxContainer" node_paths=PackedStringArray("button", "visible_notifier")]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_ip0ui")
+button = NodePath("Terrain/Button")
+scene = ExtResource("5_kesk5")
+visible_notifier = NodePath("Terrain/VisibleNotifier")
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Forest"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_vxl81")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Terrain" type="TextureRect" parent="ScrollContainer/HBoxContainer/Forest"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -10.0
+offset_right = 311.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(311, 162)
+texture = ExtResource("7_78kep")
+expand_mode = 1
+
+[node name="Tree" type="Skeleton2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+position = Vector2(133, -67)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree"]
+position = Vector2(1, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("8_gdk0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("9_wfbf4")
+
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree"]
+position = Vector2(0, 116)
+scale = Vector2(0.974574, 0.974574)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree/BaseBranchBone2D"]
+self_modulate = Color(0, 0.290196, 0.223529, 1)
+texture = ExtResource("10_cexxn")
+offset = Vector2(1.02609, -94.4)
+
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789572, 0.789572)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0, 0.32549, 0.227451, 1)
+texture = ExtResource("10_cexxn")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
+modulate = Color(0, 0.378906, 0.269531, 1)
+texture = ExtResource("10_cexxn")
+offset = Vector2(1.55667, -94.9185)
+
+[node name="Tree2" type="Skeleton2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+position = Vector2(284, -80)
+scale = Vector2(0.799995, 0.799995)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2"]
+position = Vector2(6.52171, 151)
+scale = Vector2(0.516129, 0.516129)
+texture = ExtResource("8_gdk0e")
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2"]
+position = Vector2(-1, 52)
+scale = Vector2(0.642857, 0.642857)
+texture = ExtResource("9_wfbf4")
+
+[node name="BaseBranchBone2D" type="Bone2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2"]
+position = Vector2(0, 116)
+scale = Vector2(0.974576, 0.974576)
+rest = Transform2D(0.974576, 0, 0, 0.974576, 0, 116)
+
+[node name="BaseBranch" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2/BaseBranchBone2D"]
+self_modulate = Color(0.0745098, 0.368627, 0, 1)
+texture = ExtResource("10_cexxn")
+offset = Vector2(1.02609, -94.4)
+
+[node name="MiddleBranchBone2D" type="Bone2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2/BaseBranchBone2D"]
+position = Vector2(0, -75.9304)
+scale = Vector2(0.789573, 0.789573)
+rest = Transform2D(0.789573, 0, 0, 0.789573, 0, -75.9304)
+
+[node name="MiddleBranch" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2/BaseBranchBone2D/MiddleBranchBone2D"]
+self_modulate = Color(0.0901961, 0.407843, 0, 1)
+texture = ExtResource("10_cexxn")
+offset = Vector2(0.000946045, -94.8673)
+
+[node name="TopBranchBone2D" type="Bone2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2/BaseBranchBone2D/MiddleBranchBone2D"]
+position = Vector2(-0.114853, -87.3946)
+scale = Vector2(0.711283, 0.711283)
+rest = Transform2D(0.711283, 0, 0, 0.711283, -0.114853, -87.3946)
+auto_calculate_length_and_angle = false
+length = 1.0
+bone_angle = 0.0
+
+[node name="TopBranch" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Tree2/BaseBranchBone2D/MiddleBranchBone2D/TopBranchBone2D"]
+modulate = Color(0.12549, 0.466667, 0.0431373, 1)
+texture = ExtResource("10_cexxn")
+offset = Vector2(1.55667, -94.9185)
+
+[node name="Lagoon" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+self_modulate = Color(0.933594, 0.816406, 0.40625, 1)
+position = Vector2(442, 134)
+scale = Vector2(0.539131, 0.539131)
+texture = ExtResource("11_prs3j")
+
+[node name="BigWave" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Lagoon"]
+visible = false
+self_modulate = Color(0.351563, 0.882813, 0.839844, 1)
+position = Vector2(21.2534, -2.36072)
+scale = Vector2(0.843108, 0.843108)
+texture = ExtResource("11_prs3j")
+
+[node name="WaterEffect" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Lagoon"]
+material = SubResource("ShaderMaterial_lrfx3")
+position = Vector2(16.6935, -3.70978)
+scale = Vector2(1.1907, 1.24228)
+texture = ExtResource("13_mjr4x")
+
+[node name="Tent" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+position = Vector2(184, 125)
+scale = Vector2(0.633741, 0.633741)
+texture = ExtResource("14_d2dxc")
+
+[node name="Bonfire" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+position = Vector2(343, 205)
+scale = Vector2(0.56875, 0.56875)
+texture = ExtResource("15_637ps")
+
+[node name="Flame" type="CPUParticles2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain/Bonfire"]
+position = Vector2(-7.03296, -29.89)
+amount = 4
+lifetime = 1.3
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+texture = ExtResource("16_25gq8")
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_iifhy")
+color_ramp = SubResource("Gradient_qch12")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_vcqen")
+}
+
+[node name="Button" type="TextureButton" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.618
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.149994
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="ScrollContainer/HBoxContainer/Forest/Terrain"]
+position = Vector2(310, 88.5)
+scale = Vector2(33.6, 34.85)
+
+[node name="Beach" type="Control" parent="ScrollContainer/HBoxContainer" node_paths=PackedStringArray("button", "visible_notifier")]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("4_ip0ui")
+button = NodePath("Button")
+scene = ExtResource("17_64qpm")
+visible_notifier = NodePath("VisibleNotifier")
+
+[node name="Terrain" type="TextureRect" parent="ScrollContainer/HBoxContainer/Beach"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -10.0
+offset_right = 311.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(311, 162)
+texture = ExtResource("18_i8t1h")
+expand_mode = 1
+
+[node name="Wave" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(229, 133)
+scale = Vector2(0.538721, 0.53872)
+texture = ExtResource("19_vdn7y")
+
+[node name="Water" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Wave"]
+position = Vector2(-106.937, 1.78845)
+texture = ExtResource("20_5u7ds")
+
+[node name="BorderSea" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(171.852, 214)
+scale = Vector2(0.538721, 0.538721)
+texture = ExtResource("21_y5ld8")
+
+[node name="Palm" type="Node2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(419, -28)
+scale = Vector2(0.54001, 0.54001)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+position = Vector2(-5.5358, -9.25989)
+texture = ExtResource("22_5yk1k")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(-77.7764, -146.294)
+texture = ExtResource("23_1sisd")
+offset = Vector2(27, -60)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("24_gfkvf")
+offset = Vector2(-58.1836, -19.26)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("25_ttovr")
+offset = Vector2(-52.628, 52.9609)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(-22.9989, 56.6646)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-77.7763, -148.145)
+texture = ExtResource("27_4eh3l")
+offset = Vector2(60.3329, -24.8154)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("28_bs6k8")
+offset = Vector2(60.3329, 12.2209)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_pwy1h")
+}
+
+[node name="Palm2" type="Node2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(493, 4)
+scale = Vector2(0.54001, 0.54001)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+texture = ExtResource("29_uvruu")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(69.9212, -103.216)
+rotation = 1.93296
+scale = Vector2(0.537347, 0.537347)
+texture = ExtResource("23_1sisd")
+offset = Vector2(-44.4976, 60.1912)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(71.3795, -103.799)
+rotation = 0.108362
+scale = Vector2(0.667684, 0.667684)
+texture = ExtResource("24_gfkvf")
+offset = Vector2(-58.9695, -19.9148)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(68.5172, -105.553)
+rotation = 1.62396
+scale = Vector2(0.524903, 0.524903)
+texture = ExtResource("25_ttovr")
+offset = Vector2(50.1383, -55.5837)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(68.5174, -103.702)
+rotation = 0.917365
+scale = Vector2(0.703745, 0.703745)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(-20.1625, 53.975)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(70.3691, -105.554)
+rotation = 0.156087
+scale = Vector2(0.673657, 0.673658)
+texture = ExtResource("27_4eh3l")
+offset = Vector2(61.1461, -25.305)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(70.3688, -107.405)
+rotation = 2.8594
+scale = Vector2(0.564092, 0.564092)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(12.2626, -54.8562)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm2"]
+libraries = {
+"": SubResource("AnimationLibrary_ar54u")
+}
+
+[node name="Palm3" type="Node2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(568, 72)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+position = Vector2(-8.49994, 19.1328)
+scale = Vector2(0.540816, 0.540816)
+texture = ExtResource("30_qvvgn")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-19, -39)
+rotation = 0.502386
+scale = Vector2(0.423954, 0.423954)
+texture = ExtResource("23_1sisd")
+offset = Vector2(27, -60)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-19, -39)
+rotation = 0.482258
+scale = Vector2(0.380357, 0.380357)
+texture = ExtResource("24_gfkvf")
+offset = Vector2(-58.1836, -19.26)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-18, -38)
+rotation = 0.525921
+scale = Vector2(0.424424, 0.424424)
+texture = ExtResource("25_ttovr")
+offset = Vector2(-52.628, 52.9609)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(-19.0001, -40)
+rotation = 0.459946
+scale = Vector2(0.424626, 0.424626)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(-22.9989, 56.6646)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-19, -40)
+rotation = 0.498647
+scale = Vector2(0.428023, 0.428023)
+texture = ExtResource("27_4eh3l")
+offset = Vector2(60.3329, -24.8154)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(-21.2562, -39.4526)
+rotation = 0.484678
+scale = Vector2(0.4403, 0.4403)
+texture = ExtResource("28_bs6k8")
+offset = Vector2(60.3329, 12.2209)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Palm3"]
+libraries = {
+"": SubResource("AnimationLibrary_mebr7")
+}
+
+[node name="Umbrella" type="Node2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(395, 95)
+scale = Vector2(0.551332, 0.551332)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella"]
+position = Vector2(-18.1379, 48.9723)
+scale = Vector2(0.912, 0.912)
+texture = ExtResource("31_m4o8q")
+
+[node name="Stick" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella"]
+position = Vector2(-14.5104, 52.6)
+texture = ExtResource("32_qh7om")
+offset = Vector2(15, -43)
+
+[node name="Fabric" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella"]
+position = Vector2(17, -49)
+texture = ExtResource("33_34uvv")
+offset = Vector2(-10, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella"]
+libraries = {
+"": SubResource("AnimationLibrary_0dsqo")
+}
+
+[node name="Umbrella2" type="Node2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+position = Vector2(455, 152)
+scale = Vector2(0.551332, 0.551332)
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella2"]
+position = Vector2(-18.138, 48.9723)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("31_m4o8q")
+
+[node name="Stick" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella2"]
+position = Vector2(-14.5104, 52.6)
+texture = ExtResource("32_qh7om")
+offset = Vector2(15, -43)
+
+[node name="Fabric" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella2"]
+position = Vector2(18.1378, -54.4137)
+rotation = 0.204772
+texture = ExtResource("34_83xax")
+offset = Vector2(-10, 24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Beach/Terrain/Umbrella2"]
+libraries = {
+"": SubResource("AnimationLibrary_crivx")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Beach/Terrain"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_q3mmg")
+}
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="ScrollContainer/HBoxContainer/Beach"]
+position = Vector2(362, 708.5)
+scale = Vector2(32.6, 27.75)
+
+[node name="Button" type="TextureButton" parent="ScrollContainer/HBoxContainer/Beach"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -130.0
+offset_right = 308.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Beach"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_vxl81")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="ScrollContainer/HBoxContainer/Beach"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_vxl81")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lighthouse" type="Control" parent="ScrollContainer/HBoxContainer" node_paths=PackedStringArray("button", "visible_notifier")]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+script = ExtResource("4_ip0ui")
+button = NodePath("Button")
+scene = ExtResource("35_uvv5o")
+visible_notifier = NodePath("VisibleNotifier")
+
+[node name="Terrain" type="TextureRect" parent="ScrollContainer/HBoxContainer/Lighthouse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -295.0
+offset_right = 311.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(311, 305)
+texture = ExtResource("36_3nbgb")
+expand_mode = 1
+
+[node name="Seagull2" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain"]
+position = Vector2(26, 548)
+rotation = -0.593096
+scale = Vector2(0.211093, 0.211093)
+texture = ExtResource("37_a5l2p")
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Seagull2"]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.286275)
+position = Vector2(-146.331, 217.093)
+texture = ExtResource("37_a5l2p")
+
+[node name="Seagull3" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain"]
+position = Vector2(-98, 248)
+rotation = -0.593096
+scale = Vector2(0.211093, 0.211093)
+texture = ExtResource("37_a5l2p")
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Seagull3"]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.286275)
+position = Vector2(-299.201, 443.885)
+texture = ExtResource("37_a5l2p")
+
+[node name="Seagull" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain"]
+position = Vector2(-102, 536)
+rotation = -0.593096
+scale = Vector2(0.343767, 0.343767)
+texture = ExtResource("37_a5l2p")
+
+[node name="Shadow" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Seagull"]
+modulate = Color(0.262745, 0.262745, 0.262745, 0.286275)
+position = Vector2(-146.331, 217.093)
+texture = ExtResource("37_a5l2p")
+
+[node name="Palm" type="Node2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain"]
+position = Vector2(480, 422)
+scale = Vector2(0.38001, 0.38001)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+position = Vector2(-5.5358, -9.25989)
+texture = ExtResource("22_5yk1k")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(-77.7764, -146.294)
+texture = ExtResource("23_1sisd")
+offset = Vector2(27, -60)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("24_gfkvf")
+offset = Vector2(-58.1836, -19.26)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("25_ttovr")
+offset = Vector2(-52.628, 52.9609)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-77.7763, -146.294)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(-22.9989, 56.6646)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(-77.7763, -148.145)
+texture = ExtResource("27_4eh3l")
+offset = Vector2(60.3329, -24.8154)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(-79.6282, -146.294)
+texture = ExtResource("28_bs6k8")
+offset = Vector2(60.3329, 12.2209)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_vq8r6")
+}
+
+[node name="Palm2" type="Node2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain"]
+position = Vector2(537, 404)
+scale = Vector2(0.365204, 0.365204)
+
+[node name="Trunk" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+texture = ExtResource("29_uvruu")
+
+[node name="Leaf" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(69.9212, -103.216)
+rotation = 1.93296
+scale = Vector2(0.537347, 0.537347)
+texture = ExtResource("23_1sisd")
+offset = Vector2(-44.4976, 60.1912)
+
+[node name="Leaf2" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(71.3795, -103.799)
+rotation = 0.108362
+scale = Vector2(0.667684, 0.667684)
+texture = ExtResource("24_gfkvf")
+offset = Vector2(-58.9695, -19.9148)
+
+[node name="Leaf3" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+modulate = Color(0.300781, 0.464844, 0.179688, 1)
+position = Vector2(68.5172, -105.553)
+rotation = 1.62396
+scale = Vector2(0.524903, 0.524903)
+texture = ExtResource("25_ttovr")
+offset = Vector2(50.1383, -55.5837)
+
+[node name="Leaf4" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(68.5174, -103.702)
+rotation = 0.917365
+scale = Vector2(0.703745, 0.703745)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(-20.1625, 53.975)
+
+[node name="Leaf5" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+modulate = Color(0.507813, 0.625, 0.183594, 1)
+position = Vector2(70.3691, -105.554)
+rotation = 0.156087
+scale = Vector2(0.673657, 0.673658)
+texture = ExtResource("27_4eh3l")
+offset = Vector2(61.1461, -25.305)
+
+[node name="Leaf6" type="Sprite2D" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+modulate = Color(0.523438, 0.617188, 0.214844, 1)
+position = Vector2(70.3688, -107.405)
+rotation = 2.8594
+scale = Vector2(0.564092, 0.564092)
+texture = ExtResource("26_vt1b7")
+offset = Vector2(12.2626, -54.8562)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain/Palm2"]
+libraries = {
+"": SubResource("AnimationLibrary_kddr1")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Lighthouse/Terrain"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_3e827")
+}
+
+[node name="Button" type="TextureButton" parent="ScrollContainer/HBoxContainer/Lighthouse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -200.0
+offset_right = 308.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/HBoxContainer/Lighthouse"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_qx3am")
+}
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="ScrollContainer/HBoxContainer/Lighthouse"]
+position = Vector2(361, 657.5)
+scale = Vector2(34.7, 32.25)
+
+[node name="Title" type="Label" parent="ScrollContainer/HBoxContainer/Lighthouse"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -381.0
+offset_right = 117.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_vxl81")
+theme_override_font_sizes/font_size = 71
+text = "Nivel 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -255.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(360, 146)
+
+[node name="Clouds" type="Control" parent="Controls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SmallLeftCloud" type="Sprite2D" parent="Controls/Clouds"]
+modulate = Color(0.913725, 0.913725, 0.913725, 1)
+position = Vector2(-200, -59.5)
+scale = Vector2(1.02489, 1.02489)
+texture = ExtResource("2_smnxj")
+flip_h = true
+
+[node name="SmallRightCloud" type="Sprite2D" parent="Controls/Clouds"]
+modulate = Color(0.94902, 0.94902, 0.94902, 1)
+position = Vector2(19, -39.5)
+scale = Vector2(0.705138, 0.705138)
+texture = ExtResource("2_smnxj")
+
+[node name="BigLeftCloud" type="Sprite2D" parent="Controls/Clouds"]
+modulate = Color(0.976471, 0.976471, 0.976471, 1)
+position = Vector2(-274, 8.5)
+scale = Vector2(1.1246, 1.1246)
+texture = ExtResource("2_smnxj")
+
+[node name="MiddleRightCloud2" type="Sprite2D" parent="Controls/Clouds"]
+modulate = Color(0.937255, 0.937255, 0.937255, 1)
+position = Vector2(331, -75.5)
+scale = Vector2(0.705144, 0.705144)
+texture = ExtResource("2_smnxj")
+flip_h = true
+
+[node name="BigRightCloud" type="Sprite2D" parent="Controls/Clouds"]
+position = Vector2(282, -11.5001)
+scale = Vector2(1.12335, 1.12335)
+texture = ExtResource("2_smnxj")
+flip_h = true
+
+[node name="CloudAnimator" type="AnimationPlayer" parent="Controls/Clouds"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_t3vmq")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 340
+alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="Controls/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96.25, 196.35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_q3g1j")
+texture_pressed = ExtResource("4_5mv3l")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="RightButton" type="TextureButton" parent="Controls/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96.25, 196.35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_q3g1j")
+texture_pressed = ExtResource("4_5mv3l")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TransitionComponent" parent="." instance=ExtResource("40_ajaof")]
+autoplay = "fade_out"
+
+[node name="FrameCounter" parent="." instance=ExtResource("41_qm3g5")]
+layout_mode = 1
+offset_left = 31.0
+offset_top = 26.0
+offset_right = 122.0
+offset_bottom = 79.0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_oa7mh")
+volume_db = 4.0
+bus = &"SFX"

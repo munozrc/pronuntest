@@ -161,7 +161,6 @@ script = ExtResource("1_kdcy4")
 
 [node name="Bubbles" type="CPUParticles2D" parent="."]
 position = Vector2(0, 50)
-emitting = false
 lifetime_randomness = 0.12
 fixed_fps = 30
 draw_order = 1

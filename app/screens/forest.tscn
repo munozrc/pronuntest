@@ -1,10 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://bcp4b3pfsi6m1"]
+[gd_scene load_steps=27 format=3 uid="uid://bcp4b3pfsi6m1"]
 
 [ext_resource type="Script" path="res://screens/forest.gd" id="1_qtjli"]
 [ext_resource type="Texture2D" uid="uid://crwdbcusaaiyj" path="res://assets/images/tree/shadow.png" id="2_cbw0e"]
 [ext_resource type="Texture2D" uid="uid://85jvxurmvyti" path="res://assets/images/tree/trunk.png" id="3_6p8yc"]
 [ext_resource type="Texture2D" uid="uid://ynewje4mqo8h" path="res://assets/images/tree/branch.png" id="4_vpskh"]
-[ext_resource type="Texture2D" uid="uid://sguuoxtqn6h5" path="res://assets/images/temp/Screenshot 2023-10-18 010321.png" id="5_0xci6"]
 [ext_resource type="Texture2D" uid="uid://bev34h8lg7g0b" path="res://assets/images/lagoon.png" id="6_h1aft"]
 [ext_resource type="Texture2D" uid="uid://c1smp1vncbpgq" path="res://assets/images/grass.png" id="6_y4e68"]
 [ext_resource type="Shader" path="res://shaders/wave.gdshader" id="7_m70vk"]
@@ -237,12 +236,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtjli")
-
-[node name="Screenshot2023-10-18010321" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(383.5, 894)
-scale = Vector2(3.03082, 3.03082)
-texture = ExtResource("5_0xci6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false

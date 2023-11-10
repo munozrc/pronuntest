@@ -49,6 +49,8 @@ func _move_to(time := 0.3):
 
 
 func _on_left_pressed():
+	$SFX.play()
+	
 	if current_island > 0:
 		current_island -= 1
 		cloud_position = clouds.position - Vector2.LEFT * 12
@@ -56,6 +58,8 @@ func _on_left_pressed():
 
 
 func _on_right_pressed():
+	$SFX.play()
+	
 	if current_island < 2:
 		current_island += 1
 		cloud_position = clouds.position - Vector2.RIGHT * 12
