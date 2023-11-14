@@ -80,12 +80,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.337255, 0.337255, 0.337255, 1)
 theme_override_fonts/font = ExtResource("3_yv57b")
 theme_override_font_sizes/font_size = 24
-text = "Introduce un nombre corto."
+text = "Se empleará para personalizar la experiencia dentro de la aplicación"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -103,30 +108,6 @@ theme_override_constants/margin_right = 44
 theme_override_constants/margin_bottom = 0
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_yv57b")
-theme_override_font_sizes/font_size = 38
-theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
-theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
-toggle_mode = true
-button_group = ExtResource("4_q11y1")
-text = "3"
-
-[node name="Number6" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 73)
-layout_mode = 2
-theme_override_constants/margin_left = 44
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 44
-theme_override_constants/margin_bottom = 0
-
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number6"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
 theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)

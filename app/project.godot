@@ -15,7 +15,7 @@ run/main_scene="res://screens/splash.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/show_image=false
+boot_splash/image="res://assets/images/splash.png"
 config/icon="res://icon.svg"
 
 [audio]
@@ -30,6 +30,8 @@ GLOBAL="*res://singletons/global.gd"
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
+window/size/resizable=false
+window/size/always_on_top=true
 window/size/window_width_override=400
 window/size/window_height_override=711
 window/stretch/mode="canvas_items"
