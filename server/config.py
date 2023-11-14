@@ -7,4 +7,4 @@ class DevelopmentConfig(Config):
     SERVER_NAME = "192.168.0.12:4000"
 
 
-config = {"development": DevelopmentConfig}
+config = {"development": DevelopmentConfig, "production": Config}
