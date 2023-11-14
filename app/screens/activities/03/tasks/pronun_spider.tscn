@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4q65yvabk5ur"]
+[gd_scene load_steps=13 format=3 uid="uid://c4q65yvabk5ur"]
 
 [ext_resource type="Script" path="res://screens/activities/03/tasks/pronun_spider.gd" id="1_hjrp4"]
 [ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="2_2uwye"]
@@ -228,8 +228,6 @@ _data = {
 "outro": SubResource("Animation_d7etv")
 }
 
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_fchte"]
-
 [node name="PronunSpider" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -366,12 +364,6 @@ autoplay = "intro"
 libraries = {
 "": SubResource("AnimationLibrary_jysqe")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMicrophone_fchte")
-volume_db = 12.0
-autoplay = true
-bus = &"Record"
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
 volume_db = 5.0

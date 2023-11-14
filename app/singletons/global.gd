@@ -3,7 +3,7 @@ extends Node
 
 var information = {
 	"name": "",
-	"gender": "",
+	"gender": "M",
 	"age": 0,
 }
 
@@ -22,14 +22,14 @@ var activities = {
 			"score": 0
 		},
 		{
-			"state": "completed",
+			"state": "unlocked",
 			"score": 0
 		}
 	]
 }
 
 var current_island := 0
-var menu_scene := load("res://screens/menu.tscn")
+var menu_scene := preload("res://screens/menu.tscn")
 
 
 func set_activity_completed(island: String, index: int):

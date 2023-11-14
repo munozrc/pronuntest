@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8s4yjb7qp5xi"]
+[gd_scene load_steps=11 format=3 uid="uid://b8s4yjb7qp5xi"]
 
 [ext_resource type="Script" path="res://screens/activities/03/main.gd" id="1_2nfrr"]
 [ext_resource type="PackedScene" uid="uid://bpwl0ojgo8fy4" path="res://screens/activities/03/tasks/presentation.tscn" id="2_7udqk"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="3_mbegd"]
 [ext_resource type="PackedScene" uid="uid://d1a8whqydt14u" path="res://screens/activities/03/tasks/drag_sound_bee.tscn" id="5_snddp"]
 [ext_resource type="PackedScene" uid="uid://c4q65yvabk5ur" path="res://screens/activities/03/tasks/pronun_spider.tscn" id="5_wagc3"]
+[ext_resource type="PackedScene" uid="uid://bnjkg0t31f7xm" path="res://screens/activities/03/tasks/pronun_bee.tscn" id="7_adt7q"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5ak5e"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("container")]
 layout_mode = 3
@@ -17,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2nfrr")
-tasks = Array[PackedScene]([ExtResource("2_7udqk"), ExtResource("3_l7su6"), ExtResource("2_me2j4"), ExtResource("5_wagc3"), ExtResource("5_snddp")])
+tasks = Array[PackedScene]([ExtResource("2_7udqk"), ExtResource("3_l7su6"), ExtResource("2_me2j4"), ExtResource("5_wagc3"), ExtResource("5_snddp"), ExtResource("7_adt7q")])
 container = NodePath("TaskContainer")
 island = "forest"
 index_island = 2
@@ -43,6 +46,12 @@ layout_mode = 1
 
 [node name="TransitionComponent" parent="." instance=ExtResource("3_mbegd")]
 autoplay = "fade_out"
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_5ak5e")
+volume_db = 12.0
+autoplay = true
+bus = &"Record"
 
 [connection signal="finished" from="." to="." method="_on_finished"]
 [connection signal="close" from="Header" to="." method="_on_header_close"]
