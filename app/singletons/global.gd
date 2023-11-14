@@ -4,8 +4,9 @@ extends Node
 var menu_scene = preload("res://screens/menu.tscn")
 
 var information = {
-	"age": 7,
-	"gender": "M"
+	"name": "",
+	"gender": "",
+	"age": 0,
 }
 
 var activities = {

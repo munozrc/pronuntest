@@ -280,7 +280,7 @@ mouse_filter = 1
 
 [node name="Path" type="Line2D" parent="ScrollContainer/Control/Container"]
 position = Vector2(314, 1050)
-points = PackedVector2Array(-99, 78, 175, 78, 175, -175, -100, -484, -100, -686, 189, -686)
+points = PackedVector2Array(-99, 78, 175, 78, 175, -175, -100, -484, 123, -813, -69, -1065)
 width = 60.0
 gradient = SubResource("Gradient_mftu1")
 joint_mode = 2
@@ -744,18 +744,17 @@ offset_bottom = 955.0
 activity = ExtResource("12_dote5")
 
 [node name="FourButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
-offset_left = 440.0
-offset_top = 290.0
-offset_right = 566.0
-offset_bottom = 414.0
+offset_left = 373.0
+offset_top = 176.0
+offset_right = 499.0
+offset_bottom = 300.0
 activity = ExtResource("14_73b0e")
 
 [node name="FiveButton" parent="ScrollContainer/Control/Container" instance=ExtResource("10_a5ag7")]
-visible = false
-offset_left = 134.0
-offset_top = 83.0
-offset_right = 260.0
-offset_bottom = 207.0
+offset_left = 179.0
+offset_top = -76.0
+offset_right = 305.0
+offset_bottom = 48.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScrollContainer/Control/Container"]
 root_node = NodePath("../../../..")

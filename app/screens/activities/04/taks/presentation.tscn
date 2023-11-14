@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6u55bmkj3fkd"]
+[gd_scene load_steps=17 format=3 uid="uid://b6u55bmkj3fkd"]
 
 [ext_resource type="Script" path="res://screens/activities/04/taks/presentation.gd" id="1_mcei8"]
 [ext_resource type="PackedScene" uid="uid://bfmbflbrgja" path="res://screens/activities/04/entities/boat.tscn" id="2_q4jqd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://jriwlk872m4b" path="res://components/confetti_effect.tscn" id="5_uq5mr"]
 [ext_resource type="AudioStream" uid="uid://d37b6bceaowc0" path="res://assets/voices/statements/lleva_el_bote_meta.mp3" id="6_4dgqr"]
 [ext_resource type="AudioStream" uid="uid://d2klwbv7flmv8" path="res://assets/voices/statements/ya.mp3" id="7_dlm8r"]
+[ext_resource type="AudioStream" uid="uid://dc7j0lar46ayo" path="res://assets/voices/statements/toma_aire_sopla_mover.mp3" id="8_36li6"]
 [ext_resource type="AudioStream" uid="uid://c75bhlngxq01o" path="res://assets/sounds/selection.mp3" id="8_n8wyn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nct17"]
@@ -150,7 +151,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_j8aw0"]
 resource_name = "intro"
-length = 3.0
+length = 5.5
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -162,8 +163,12 @@ tracks/0/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("6_4dgqr")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_36li6")
 }],
-"times": PackedFloat32Array(0.8)
+"times": PackedFloat32Array(0.4, 2.4)
 }
 tracks/0/use_blend = true
 tracks/1/type = "value"
@@ -209,7 +214,7 @@ tracks/4/path = NodePath("CenterContainer/Numbers:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
@@ -221,7 +226,7 @@ tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(5.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -265,9 +270,49 @@ tracks/8/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ran0n"]
+resource_name = "outro"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundColor:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.366021, 0.366021),
+"update": 0,
+"values": [Color(0, 0.654902, 0.952941, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.366021, 0.420448),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.378929, 0.25),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.75, 0.75)]
+}
+
 [sub_resource type="Animation" id="Animation_lylpy"]
 resource_name = "statement"
-length = 3.0
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -311,7 +356,7 @@ tracks/3/path = NodePath("CenterContainer/Numbers:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.6, 2.8),
+"times": PackedFloat32Array(0, 0.4, 3.3, 3.5),
 "transitions": PackedFloat32Array(0.297302, 0.406126, 0.406126, 0.406126),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -323,7 +368,7 @@ tracks/4/path = NodePath("CenterContainer/Numbers/One:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.4, 0.8, 1),
+"times": PackedFloat32Array(0.4, 1, 1.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -335,7 +380,7 @@ tracks/5/path = NodePath("CenterContainer/Numbers/Two:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.8, 1, 1.4, 1.6),
+"times": PackedFloat32Array(1, 1.2, 1.8, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -347,7 +392,7 @@ tracks/6/path = NodePath("CenterContainer/Numbers/Three:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1.4, 1.6, 2, 2.2),
+"times": PackedFloat32Array(1.8, 2, 2.7, 2.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -359,7 +404,7 @@ tracks/7/path = NodePath("CenterContainer/Numbers/Ready:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(2, 2.2, 2.6),
+"times": PackedFloat32Array(2.7, 2.9, 3.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
@@ -376,7 +421,7 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("7_dlm8r")
 }],
-"times": PackedFloat32Array(2.2)
+"times": PackedFloat32Array(2.9)
 }
 tracks/8/use_blend = true
 tracks/9/type = "audio"
@@ -403,49 +448,9 @@ tracks/9/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("8_n8wyn")
 }],
-"times": PackedFloat32Array(0.4, 1, 1.6, 2.2)
+"times": PackedFloat32Array(0.4, 1.2, 2, 2.9)
 }
 tracks/9/use_blend = true
-
-[sub_resource type="Animation" id="Animation_ran0n"]
-resource_name = "outro"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackgroundColor:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.366021, 0.366021),
-"update": 0,
-"values": [Color(0, 0.654902, 0.952941, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.366021, 0.420448),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CenterContainer:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(0.378929, 0.25),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.75, 0.75)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8udqa"]
 _data = {

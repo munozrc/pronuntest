@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://c176ksvoprkb7"]
+
+[ext_resource type="Script" path="res://screens/register/steps/introduction.gd" id="1_lcrw3"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="2_7orbs"]
+[ext_resource type="Texture2D" uid="uid://bn6yb1xhr7rcc" path="res://assets/images/name.png" id="2_k0xsw"]
+[ext_resource type="Texture2D" uid="uid://c1smp1vncbpgq" path="res://assets/images/grass.png" id="2_mia3s"]
+
+[node name="Introduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcrw3")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.5
+offset_top = -311.0
+offset_right = 288.5
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Grass" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(479.5, 769)
+texture = ExtResource("2_mia3s")
+
+[node name="Grass2" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(443.5, -171)
+texture = ExtResource("2_mia3s")
+
+[node name="Grass3" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(442.5, 495)
+texture = ExtResource("2_mia3s")
+
+[node name="Grass4" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(176.5, 8)
+texture = ExtResource("2_mia3s")
+
+[node name="Grass5" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(86.5, 876)
+texture = ExtResource("2_mia3s")
+
+[node name="Grass6" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(347.5, 660)
+texture = ExtResource("2_mia3s")
+
+[node name="AppName2" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(577, 255)
+layout_mode = 2
+texture = ExtResource("2_k0xsw")
+expand_mode = 1
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337255, 0.337255, 0.337255, 1)
+theme_override_fonts/font = ExtResource("2_7orbs")
+theme_override_font_sizes/font_size = 28
+text = "Antes de empezar necesitamos algunos datos."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

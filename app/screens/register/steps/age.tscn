@@ -1,0 +1,242 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpss8uy0rifyq"]
+
+[ext_resource type="Script" path="res://screens/register/steps/age.gd" id="1_u31ub"]
+[ext_resource type="FontFile" uid="uid://dd6buxm08rjw3" path="res://assets/fonts/Poppins-Bold.ttf" id="2_ywf5r"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="3_yv57b"]
+[ext_resource type="ButtonGroup" uid="uid://dikmao4lfwq7j" path="res://age_button_group.tres" id="4_q11y1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8e50"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpdf2"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxscq"]
+bg_color = Color(0, 0.6, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahvhx"]
+
+[node name="Age" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u31ub")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -345.5
+offset_right = 360.0
+offset_bottom = 345.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 85
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_ywf5r")
+theme_override_font_sizes/font_size = 32
+text = "¿Qué edad tiene _@_=...?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337255, 0.337255, 0.337255, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 24
+text = "Introduce un nombre corto."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Number" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
+toggle_mode = true
+button_group = ExtResource("4_q11y1")
+text = "3"
+
+[node name="Number6" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
+toggle_mode = true
+button_group = ExtResource("4_q11y1")
+text = "3"
+
+[node name="Number2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
+toggle_mode = true
+button_group = ExtResource("4_q11y1")
+text = "4
+"
+
+[node name="Number3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
+toggle_mode = true
+button_group = ExtResource("4_q11y1")
+text = "5"
+
+[node name="Number4" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
+toggle_mode = true
+button_group = ExtResource("4_q11y1")
+text = "6"
+
+[node name="Number5" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2/Number5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_focus_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yv57b")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_b8e50")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpdf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qxscq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ahvhx")
+toggle_mode = true
+button_group = ExtResource("4_q11y1")
+text = "7"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

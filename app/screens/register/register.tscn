@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6i73wj1gkxil"]
+
+[ext_resource type="Script" path="res://screens/register/register.gd" id="1_51kwc"]
+[ext_resource type="PackedScene" uid="uid://c176ksvoprkb7" path="res://screens/register/steps/introduction.tscn" id="2_o4y10"]
+[ext_resource type="PackedScene" uid="uid://8rf2x1uqtvww" path="res://screens/register/steps/name.tscn" id="3_g7rsd"]
+[ext_resource type="PackedScene" uid="uid://dpss8uy0rifyq" path="res://screens/register/steps/age.tscn" id="4_cgtuq"]
+[ext_resource type="Texture2D" uid="uid://qrqeu1cv2q7a" path="res://assets/ui/continue_button.png" id="4_ocm0d"]
+[ext_resource type="Texture2D" uid="uid://7upfkpq1frp2" path="res://assets/ui/continue_button_pressed.png" id="5_73n6f"]
+[ext_resource type="PackedScene" uid="uid://c2fopg3s345x2" path="res://screens/register/steps/permissions.tscn" id="5_os6v4"]
+[ext_resource type="Texture2D" uid="uid://dp1a1ypfu457y" path="res://assets/ui/continue_button_disabled.png" id="6_ygv1n"]
+[ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="7_8mwjl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6g5w"]
+bg_color = Color(0.941176, 0.941176, 0.941176, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_miu3e"]
+bg_color = Color(0.392157, 0.74902, 0.266667, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="Register" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51kwc")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Steps" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Introduction" parent="Steps" instance=ExtResource("2_o4y10")]
+layout_mode = 1
+
+[node name="Name" parent="Steps" instance=ExtResource("3_g7rsd")]
+visible = false
+layout_mode = 1
+
+[node name="Age" parent="Steps" instance=ExtResource("4_cgtuq")]
+visible = false
+layout_mode = 1
+
+[node name="Permissions" parent="Steps" instance=ExtResource("5_os6v4")]
+visible = false
+layout_mode = 1
+
+[node name="Toolbar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 104.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -50.0
+offset_right = 360.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toolbar/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="BackButton" type="TextureButton" parent="Toolbar/MarginContainer/HBoxContainer"]
+modulate = Color(0, 0.6, 1, 1)
+layout_mode = 2
+texture_normal = ExtResource("7_8mwjl")
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="Toolbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(570, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_q6g5w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_miu3e")
+show_percentage = false
+
+[node name="Footer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ContinueButton" type="TextureButton" parent="Footer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -45.0
+offset_right = 291.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_ocm0d")
+texture_pressed = ExtResource("5_73n6f")
+texture_disabled = ExtResource("6_ygv1n")
+stretch_mode = 5
+
+[connection signal="button_up" from="Toolbar/MarginContainer/HBoxContainer/BackButton" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="Footer/ContinueButton" to="." method="_on_continue_button_up"]
