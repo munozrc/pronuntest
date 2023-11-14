@@ -30,7 +30,7 @@ print("\n")
 
 model = models.Sequential()
 model.add(layers.Input(shape=input_shape, name="input_spectrogram"))
-# model.add(layers.Resizing(32, 32))
+model.add(layers.Resizing(32, 32))
 
 norm_layer = layers.Normalization()
 norm_layer.adapt(data=X_train)
