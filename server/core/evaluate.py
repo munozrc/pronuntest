@@ -9,7 +9,7 @@ from dataset import load_dataset_file
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
-model_path = "models/phoneme_model.keras"
+model_path = "models/phoneme_model.h5"
 model_phoneme: Any = load_model(model_path)
 
 X_test, y, classes = load_dataset_file("data/test.json")

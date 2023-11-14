@@ -64,4 +64,4 @@ history = model.fit(
 )
 
 plot_model_metrics(history.epoch, history.history)
-model.save("models/phoneme_model.keras")
+model.save("models/phoneme_model.h5", save_format="h5")
