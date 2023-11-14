@@ -6,3 +6,4 @@ tensorflow
 typing_extensions
 librosa
 gunicorn
+matplotlib
