@@ -78,8 +78,10 @@ func _on_continue_button_up():
 
 
 func _on_animation_finished():
-	if finished:
-		get_tree().change_scene_to_packed(GLOBAL.menu_scene)
+	if not finished:
+		return
+	
+	get_tree().change_scene_to_packed(GLOBAL.menu_scene)
 
 
 func _on_back_button_up():

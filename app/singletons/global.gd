@@ -1,8 +1,6 @@
 extends Node
 
 
-var menu_scene = preload("res://screens/menu.tscn")
-
 var information = {
 	"name": "",
 	"gender": "",
@@ -31,6 +29,7 @@ var activities = {
 }
 
 var current_island := 0
+var menu_scene := load("res://screens/menu.tscn")
 
 
 func set_activity_completed(island: String, index: int):
