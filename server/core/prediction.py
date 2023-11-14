@@ -20,7 +20,7 @@ class PhonemeRecognitionService:
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls._instance._model = load_model("models/phoneme_model.h5")
+            cls._instance._model = load_model("models/phoneme_model.keras")
         return cls._instance
 
     def predict(self, spectrograms: np.ndarray):
