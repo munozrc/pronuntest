@@ -293,8 +293,8 @@ tracks/0/path = NodePath("../SingleAnimator")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": PackedStringArray("idle", "greeting", "idle", "idle"),
-"times": PackedFloat32Array(0, 2, 3.5, 5.5)
+"clips": PackedStringArray("greeting", "idle", "idle", "idle"),
+"times": PackedFloat32Array(0, 1.5, 3.5, 5.5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nh01p"]
@@ -363,6 +363,7 @@ rest = Transform2D(1, 0, 0, 1, 0, -75)
 
 [node name="HairLeft" type="Bone2D" parent="UnlockedButton/Skeleton2D/Body/Hair"]
 position = Vector2(22, 6)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 22, 6)
 auto_calculate_length_and_angle = false
 length = 25.0

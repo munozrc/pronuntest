@@ -29,6 +29,14 @@ func change_state(new_state: String):
 	_enable_current_button()
 
 
+func _input(event):
+	if event is InputEventScreenTouch and state == STATE_BUTTON.unlocked:
+		if not event.is_pressed():
+			return
+		$UnlockedButton/GlobalAnimator.stop()
+		$UnlockedButton/GlobalAnimator.play("idle")
+
+
 func _enable_current_button():
 	for key in buttons:
 		var button: TextureButton = buttons[key]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6i73wj1gkxil"]
+[gd_scene load_steps=13 format=3 uid="uid://b6i73wj1gkxil"]
 
 [ext_resource type="Script" path="res://screens/register/register.gd" id="1_51kwc"]
 [ext_resource type="PackedScene" uid="uid://c176ksvoprkb7" path="res://screens/register/steps/introduction.tscn" id="2_o4y10"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c2fopg3s345x2" path="res://screens/register/steps/permissions.tscn" id="5_os6v4"]
 [ext_resource type="Texture2D" uid="uid://dp1a1ypfu457y" path="res://assets/ui/continue_button_disabled.png" id="6_ygv1n"]
 [ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="7_8mwjl"]
+[ext_resource type="AudioStream" uid="uid://bu2pwfyi4f2vb" path="res://assets/sounds/keypress.mp3" id="10_armgq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6g5w"]
 bg_color = Color(0.941176, 0.941176, 0.941176, 1)
@@ -135,6 +136,10 @@ texture_normal = ExtResource("4_ocm0d")
 texture_pressed = ExtResource("5_73n6f")
 texture_disabled = ExtResource("6_ygv1n")
 stretch_mode = 5
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_armgq")
+bus = &"SFX"
 
 [connection signal="button_up" from="Toolbar/MarginContainer/HBoxContainer/BackButton" to="." method="_on_back_button_up"]
 [connection signal="button_up" from="Footer/ContinueButton" to="." method="_on_continue_button_up"]

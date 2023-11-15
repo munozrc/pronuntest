@@ -63,6 +63,8 @@ func _on_invalidated_step():
 
 
 func _on_continue_button_up():
+	$Sound.play()
+	
 	if current_step == steps.size() - 1:
 		_increment(progressbar_step)
 		back_button.disabled = true
