@@ -6,6 +6,7 @@ extends HTTPRequest
 
 
 var _url = "http://192.168.0.12:4000/api/"
+#var _url = "https://pronuntest.onrender.com/api/"
 
 
 func send_audio():
