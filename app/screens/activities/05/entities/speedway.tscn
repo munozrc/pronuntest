@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://7govdidjgxm8"]
+
+[ext_resource type="Texture2D" uid="uid://de46kbnru0ia8" path="res://assets/images/race/speedway.webp" id="1_oejft"]
+[ext_resource type="Script" path="res://screens/activities/05/entities/speedway_node.gd" id="1_rgmtr"]
+[ext_resource type="Texture2D" uid="uid://da401i5uwuf2l" path="res://assets/images/race/lines.png" id="2_x4ixj"]
+
+[node name="SpeedWay" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("speedway")]
+script = ExtResource("1_rgmtr")
+speedway = NodePath("Speedway")
+
+[node name="Speedway" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_oejft")
+
+[node name="Lines2" type="Sprite2D" parent="Node2D/Speedway"]
+position = Vector2(0, -255)
+texture = ExtResource("2_x4ixj")
+
+[node name="Lines" type="Sprite2D" parent="Node2D/Speedway"]
+position = Vector2(0, 254)
+texture = ExtResource("2_x4ixj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D"]
+position = Vector2(-2.49998, 22)
+scale = Vector2(35.75, 10.1)
+
+[node name="Node2D2" type="Node2D" parent="." node_paths=PackedStringArray("speedway")]
+position = Vector2(719, 0)
+script = ExtResource("1_rgmtr")
+speedway = NodePath("Speedway")
+
+[node name="Speedway" type="Sprite2D" parent="Node2D2"]
+texture = ExtResource("1_oejft")
+
+[node name="Lines" type="Sprite2D" parent="Node2D2/Speedway"]
+position = Vector2(0, 254)
+texture = ExtResource("2_x4ixj")
+
+[node name="Lines2" type="Sprite2D" parent="Node2D2/Speedway"]
+position = Vector2(0, -255)
+texture = ExtResource("2_x4ixj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D2"]
+position = Vector2(2.76566e-05, -9)
+scale = Vector2(36, 18)
+
+[node name="Node2D3" type="Node2D" parent="." node_paths=PackedStringArray("speedway")]
+position = Vector2(1437, 0)
+script = ExtResource("1_rgmtr")
+speedway = NodePath("Speedway")
+
+[node name="Speedway" type="Sprite2D" parent="Node2D3"]
+texture = ExtResource("1_oejft")
+
+[node name="Lines" type="Sprite2D" parent="Node2D3/Speedway"]
+position = Vector2(0, 254)
+texture = ExtResource("2_x4ixj")
+
+[node name="Lines2" type="Sprite2D" parent="Node2D3/Speedway"]
+position = Vector2(0, -255)
+texture = ExtResource("2_x4ixj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D3"]
+position = Vector2(6.91414e-05, -14)
+scale = Vector2(35.5, 12.3)
+
+[node name="Node2D4" type="Node2D" parent="." node_paths=PackedStringArray("speedway")]
+position = Vector2(2157, 0)
+script = ExtResource("1_rgmtr")
+speedway = NodePath("Speedway")
+
+[node name="Speedway" type="Sprite2D" parent="Node2D4"]
+texture = ExtResource("1_oejft")
+
+[node name="Lines" type="Sprite2D" parent="Node2D4/Speedway"]
+position = Vector2(0, 254)
+texture = ExtResource("2_x4ixj")
+
+[node name="Lines2" type="Sprite2D" parent="Node2D4/Speedway"]
+position = Vector2(0, -255)
+texture = ExtResource("2_x4ixj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D4"]
+position = Vector2(-4.00003, 2.49998)
+scale = Vector2(35.6, 19.95)
+
+[node name="Node2D5" type="Node2D" parent="." node_paths=PackedStringArray("speedway")]
+position = Vector2(2877, 0)
+script = ExtResource("1_rgmtr")
+speedway = NodePath("Speedway")
+
+[node name="Speedway" type="Sprite2D" parent="Node2D5"]
+texture = ExtResource("1_oejft")
+
+[node name="Lines" type="Sprite2D" parent="Node2D5/Speedway"]
+position = Vector2(0, 254)
+texture = ExtResource("2_x4ixj")
+
+[node name="Lines2" type="Sprite2D" parent="Node2D5/Speedway"]
+position = Vector2(0, -255)
+texture = ExtResource("2_x4ixj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D5"]
+position = Vector2(4.00001, -18.5)
+scale = Vector2(35.6, 15.65)
+
+[connection signal="screen_entered" from="Node2D/VisibleOnScreenNotifier2D" to="Node2D" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Node2D/VisibleOnScreenNotifier2D" to="Node2D" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_entered" from="Node2D2/VisibleOnScreenNotifier2D" to="Node2D2" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Node2D2/VisibleOnScreenNotifier2D" to="Node2D2" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_entered" from="Node2D3/VisibleOnScreenNotifier2D" to="Node2D3" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Node2D3/VisibleOnScreenNotifier2D" to="Node2D3" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_entered" from="Node2D4/VisibleOnScreenNotifier2D" to="Node2D4" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Node2D4/VisibleOnScreenNotifier2D" to="Node2D4" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_entered" from="Node2D5/VisibleOnScreenNotifier2D" to="Node2D5" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Node2D5/VisibleOnScreenNotifier2D" to="Node2D5" method="_on_visible_on_screen_notifier_2d_screen_exited"]

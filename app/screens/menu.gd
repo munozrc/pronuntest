@@ -71,6 +71,8 @@ func _on_island_selected():
 		printerr("Island scene is required")
 		return
 	
+	$SelectedSound.play()
+	
 	$TransitionComponent.play("fade_in")
 	await $TransitionComponent.animation_finished
 	

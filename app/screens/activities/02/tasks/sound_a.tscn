@@ -529,6 +529,7 @@ offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.919999, 0.919999)
+max_duration = 2.0
 
 [node name="ConfettiEffect" parent="Container" instance=ExtResource("8_kqka5")]
 position = Vector2(361, 988)

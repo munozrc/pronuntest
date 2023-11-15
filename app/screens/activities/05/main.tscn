@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://lag1n0dls61l"]
+
+[ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="1_5m1m3"]
+[ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="1_js8cs"]
+[ext_resource type="Script" path="res://screens/activities/05/main.gd" id="1_lcphe"]
+[ext_resource type="PackedScene" uid="uid://btkmineyue1gp" path="res://screens/activities/05/tasks/race.tscn" id="2_y5jhh"]
+[ext_resource type="PackedScene" uid="uid://cktvc0cy73dmd" path="res://screens/activities/05/tasks/presentation_e.tscn" id="3_edsjt"]
+[ext_resource type="PackedScene" uid="uid://db3elyv8np0q" path="res://screens/activities/05/tasks/presentation_i.tscn" id="4_3w2j1"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_fyv87"]
+
+[node name="Main" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcphe")
+tasks = Array[PackedScene]([ExtResource("3_edsjt"), ExtResource("4_3w2j1"), ExtResource("2_y5jhh")])
+container = NodePath("TaskContainer")
+island = "forest"
+index_island = 4
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TaskContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" parent="." instance=ExtResource("1_js8cs")]
+layout_mode = 1
+offset_bottom = 110.0
+
+[node name="TransitionComponent" parent="." instance=ExtResource("1_5m1m3")]
+autoplay = "fade_out"
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_fyv87")
+volume_db = 12.0
+autoplay = true
+bus = &"Record"
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="close" from="Header" to="." method="_on_header_close"]

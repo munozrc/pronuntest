@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://wkm4qb35hy2b"]
+[gd_scene load_steps=43 format=3 uid="uid://wkm4qb35hy2b"]
 
 [ext_resource type="Texture2D" uid="uid://dw1lnhbmtqlbj" path="res://assets/images/temp/beach_menu_lighthouse.png" id="1_8a2pf"]
 [ext_resource type="Script" path="res://screens/beach.gd" id="1_nb33m"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2ujwpmfspjp" path="res://assets/images/umbrella/stick.png" id="16_snb7j"]
 [ext_resource type="Texture2D" uid="uid://bjv0y73d4bnhj" path="res://assets/images/umbrella/fabric_02.png" id="17_rgj1a"]
 [ext_resource type="Texture2D" uid="uid://betxl6u2vt1k2" path="res://assets/images/umbrella/fabric.png" id="17_u8bi5"]
+[ext_resource type="AudioStream" uid="uid://dwxtdugcmhojh" path="res://assets/sounds/pause_game.mp3" id="23_6njvc"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_y6qch"]
 seed = 3
@@ -819,5 +820,10 @@ texture = ExtResource("6_q27s1")
 
 [node name="TransitionComponent" parent="." instance=ExtResource("8_rxced")]
 autoplay = "fade_out"
+
+[node name="BackSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_6njvc")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Header/MarginContainer/HBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]

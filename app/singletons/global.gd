@@ -22,6 +22,10 @@ var activities = {
 			"score": 0
 		},
 		{
+			"state": "completed",
+			"score": 0
+		},
+		{
 			"state": "unlocked",
 			"score": 0
 		}

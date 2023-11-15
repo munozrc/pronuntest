@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bdb1vm6hgcjyr"]
+[gd_scene load_steps=86 format=3 uid="uid://bdb1vm6hgcjyr"]
 
 [ext_resource type="Script" path="res://screens/menu.gd" id="1_s14br"]
 [ext_resource type="Texture2D" uid="uid://ds1u126hky56q" path="res://assets/images/clouds/cloud.webp" id="2_smnxj"]
@@ -42,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="40_ajaof"]
 [ext_resource type="PackedScene" uid="uid://bccjdn2ldpl3g" path="res://components/frame_counter.tscn" id="41_qm3g5"]
 [ext_resource type="AudioStream" uid="uid://c75bhlngxq01o" path="res://assets/sounds/selection.mp3" id="42_oa7mh"]
+[ext_resource type="AudioStream" uid="uid://ci86rocyxqlgh" path="res://assets/sounds/resumen_game.mp3" id="43_j1y63"]
+[ext_resource type="AudioStream" uid="uid://b03ug47cnvypq" path="res://assets/music/ambient_music.mp3" id="44_o7to0"]
 
 [sub_resource type="Gradient" id="Gradient_ruic7"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -1596,7 +1598,6 @@ grow_vertical = 2
 color = Color(0, 0.654902, 0.952941, 1)
 
 [node name="BackgroundGradient" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2533,3 +2534,13 @@ offset_bottom = 79.0
 stream = ExtResource("42_oa7mh")
 volume_db = 4.0
 bus = &"SFX"
+
+[node name="SelectedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_j1y63")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_o7to0")
+autoplay = true
+bus = &"Music"
