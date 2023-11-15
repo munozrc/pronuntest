@@ -1,0 +1,375 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjd06c288mp3g"]
+
+[ext_resource type="PackedScene" uid="uid://jriwlk872m4b" path="res://components/confetti_effect.tscn" id="1_8mire"]
+[ext_resource type="Script" path="res://screens/activities/04/taks/pronun_grape.gd" id="1_ae77p"]
+[ext_resource type="Texture2D" uid="uid://c25mpgrfqucpb" path="res://assets/images/uvas.webp" id="2_x23qh"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="3_of1p5"]
+[ext_resource type="PackedScene" uid="uid://c8kqfmnhflg6m" path="res://components/record_button.tscn" id="4_mivt4"]
+[ext_resource type="Script" path="res://scripts/prediction_component.gd" id="5_army1"]
+[ext_resource type="AudioStream" uid="uid://doirdvttjaoqp" path="res://assets/voices/statements/manten_presionado_pronuncia.mp3" id="6_orv5g"]
+[ext_resource type="AudioStream" uid="uid://xb1mue5b7rtx" path="res://assets/voices/words/uva.mp3" id="8_8h8h1"]
+
+[sub_resource type="Animation" id="Animation_46v5u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/HBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bottom/RecordButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/HBoxContainer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bottom/RecordButton:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/HBoxContainer/Word/Letter:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vyail"]
+resource_name = "intro"
+length = 4.4
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Narrator")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_orv5g")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_8h8h1")
+}],
+"times": PackedFloat32Array(0.6, 3.5)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/HBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.329877, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bottom/RecordButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.329877, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/HBoxContainer:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bottom/RecordButton:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.6, 1.8),
+"transitions": PackedFloat32Array(0.287174, 1, 0.287174, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Container/HBoxContainer/Word/Letter:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.5, 3.7, 3.8),
+"transitions": PackedFloat32Array(0.329877, 1.10957, 0.267943),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"enable_interactions"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d7etv"]
+resource_name = "outro"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/HBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/HBoxContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.34151, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bottom/RecordButton:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.277393, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bottom/RecordButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.297302, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jysqe"]
+_data = {
+"RESET": SubResource("Animation_46v5u"),
+"intro": SubResource("Animation_vyail"),
+"outro": SubResource("Animation_d7etv")
+}
+
+[node name="PronunGrape" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ae77p")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -640.0
+offset_right = 360.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 640)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -297.0
+offset_right = 297.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(297, 183)
+theme_override_constants/separation = 10
+
+[node name="ConfettiEffect" parent="Container/HBoxContainer" instance=ExtResource("1_8mire")]
+position = Vector2(295.5, 89)
+
+[node name="Grape" type="TextureRect" parent="Container/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_x23qh")
+stretch_mode = 5
+
+[node name="Word" type="Control" parent="Container/HBoxContainer"]
+custom_minimum_size = Vector2(0, 144)
+layout_mode = 2
+
+[node name="Letter" type="Label" parent="Container/HBoxContainer/Word"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -78.5
+offset_right = -42.0
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(39, 79)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("3_of1p5")
+theme_override_font_sizes/font_size = 111
+text = "U"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="Container/HBoxContainer/Word"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -82.0
+offset_right = 168.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("3_of1p5")
+theme_override_font_sizes/font_size = 111
+text = "va"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bottom" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -613.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(360, 333)
+
+[node name="RecordButton" parent="Bottom" instance=ExtResource("4_mivt4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+max_duration = 3.0
+
+[node name="PredictionComponent" type="HTTPRequest" parent="."]
+script = ExtResource("5_army1")
+endpoint = "word/u"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_jysqe")
+}
+
+[node name="Narrator" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
+bus = &"Narrator"
+
+[connection signal="finished" from="Container/HBoxContainer/ConfettiEffect" to="." method="_on_confetti_effect_finished"]
+[connection signal="fail" from="Bottom/RecordButton" to="." method="_on_record_button_fail"]
+[connection signal="finished" from="Bottom/RecordButton" to="." method="_on_record_button_finished"]
+[connection signal="pressed" from="Bottom/RecordButton" to="." method="_on_record_button_pressed"]

@@ -175,12 +175,10 @@ scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_ges0n")
 
 [node name="Boat" type="Sprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_8ahko")
 
 [node name="BoatWind" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_22nks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

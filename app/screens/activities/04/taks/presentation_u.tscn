@@ -1,17 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://bheo78upe1nvq"]
+[gd_scene load_steps=18 format=3 uid="uid://ccxej8qc2jsn"]
 
-[ext_resource type="Script" path="res://screens/activities/04/taks/presentation.gd" id="1_mcei8"]
-[ext_resource type="Texture2D" uid="uid://pexulgj4lso1" path="res://assets/images/boy/face.png" id="2_6evyx"]
-[ext_resource type="Texture2D" uid="uid://b8y3jo1y8udui" path="res://assets/images/boy/mouth.png" id="3_3mr74"]
-[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="3_736bh"]
-[ext_resource type="Texture2D" uid="uid://c83nk8mst6k40" path="res://assets/images/boy/mouth_o.png" id="3_nn2gk"]
-[ext_resource type="PackedScene" uid="uid://jriwlk872m4b" path="res://components/confetti_effect.tscn" id="5_uq5mr"]
-[ext_resource type="PackedScene" uid="uid://c8kqfmnhflg6m" path="res://components/record_button.tscn" id="6_hhhq0"]
-[ext_resource type="AudioStream" uid="uid://btockxhcv5h3h" path="res://assets/voices/04/trabar_sonido_de_letra.mp3" id="6_lvlc5"]
-[ext_resource type="AudioStream" uid="uid://b3ab8v2ebeiys" path="res://assets/voices/phonemes/o.mp3" id="7_4yusj"]
-[ext_resource type="PackedScene" uid="uid://bhlbt7mk6goj4" path="res://components/footer.tscn" id="7_cccvb"]
-[ext_resource type="AudioStream" uid="uid://cqd4ix3fd38k6" path="res://assets/voices/02/presiona_boton_pronuncia.mp3" id="8_gnbdd"]
-[ext_resource type="Script" path="res://scripts/prediction_component.gd" id="8_ie1my"]
+[ext_resource type="Script" path="res://screens/activities/04/taks/presentation_u.gd" id="1_48sr2"]
+[ext_resource type="Texture2D" uid="uid://pexulgj4lso1" path="res://assets/images/boy/face.png" id="2_c8v52"]
+[ext_resource type="PackedScene" uid="uid://jriwlk872m4b" path="res://components/confetti_effect.tscn" id="3_vtdao"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="4_h0ae0"]
+[ext_resource type="Texture2D" uid="uid://b8y3jo1y8udui" path="res://assets/images/boy/mouth.png" id="5_w156t"]
+[ext_resource type="Texture2D" uid="uid://d3o525b4sd2v0" path="res://assets/images/boy/mouth_u.png" id="6_dalut"]
+[ext_resource type="PackedScene" uid="uid://c8kqfmnhflg6m" path="res://components/record_button.tscn" id="7_d3ulg"]
+[ext_resource type="PackedScene" uid="uid://bhlbt7mk6goj4" path="res://components/footer.tscn" id="8_kwygf"]
+[ext_resource type="Script" path="res://scripts/prediction_component.gd" id="9_g3hty"]
+[ext_resource type="AudioStream" uid="uid://btockxhcv5h3h" path="res://assets/voices/04/trabar_sonido_de_letra.mp3" id="10_r875s"]
+[ext_resource type="AudioStream" uid="uid://ccuhrvtjnq7gg" path="res://assets/voices/phonemes/u.mp3" id="11_vvai7"]
+[ext_resource type="AudioStream" uid="uid://cqd4ix3fd38k6" path="res://assets/voices/02/presiona_boton_pronuncia.mp3" id="12_x7wfj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmxf7"]
 bg_color = Color(0.933333, 0.933333, 0.933333, 1)
@@ -19,6 +19,105 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id="Animation_e7p2s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContainerCenter/Face:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContainerCenter/Face:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ContainerCenter/Face/Mouth:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ContainerCenter/Face/MouthU:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ContainerCenter/Face/Phoneme:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ContainerCenter/Face:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, 344)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ContainerBottom/RecordButton:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9, 0.9)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ContainerBottom/RecordButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_sv22p"]
 resource_name = "intro"
@@ -62,7 +161,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ContainerCenter/Face/MouthO:modulate")
+tracks/3/path = NodePath("ContainerCenter/Face/MouthU:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -119,145 +218,46 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/8/type = "method"
+tracks/8/type = "audio"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath(".")
+tracks/8/path = NodePath("Narrator")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_r875s")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_vvai7")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.68,
+"stream": ExtResource("12_x7wfj")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_vvai7")
+}],
+"times": PackedFloat32Array(0.9, 3.7, 5.5, 8.1)
+}
+tracks/8/use_blend = true
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(8.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"enable_interactions"
 }]
-}
-tracks/9/type = "audio"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Narrator")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("6_lvlc5")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("7_4yusj")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.68,
-"stream": ExtResource("8_gnbdd")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("7_4yusj")
-}],
-"times": PackedFloat32Array(0.9, 3.7, 5.5, 8)
-}
-tracks/9/use_blend = true
-
-[sub_resource type="Animation" id="Animation_e7p2s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ContainerCenter/Face:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ContainerCenter/Face:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ContainerCenter/Face/Mouth:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ContainerCenter/Face/MouthO:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ContainerCenter/Face/Phoneme:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("ContainerCenter/Face:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(108, 344)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("ContainerBottom/RecordButton:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.9, 0.9)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ContainerBottom/RecordButton:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_px14c"]
@@ -319,14 +319,14 @@ _data = {
 "outro": SubResource("Animation_px14c")
 }
 
-[node name="Presentation" type="Control"]
+[node name="PresentationU" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mcei8")
+script = ExtResource("1_48sr2")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
@@ -353,16 +353,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 108.0
-offset_top = 344.0
-offset_right = 612.0
-offset_bottom = 936.0
+offset_left = -252.0
+offset_top = -296.0
+offset_right = 252.0
+offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(252, 296)
-texture = ExtResource("2_6evyx")
+texture = ExtResource("2_c8v52")
 
-[node name="ConfettiEffect" parent="ContainerCenter/Face" instance=ExtResource("5_uq5mr")]
+[node name="ConfettiEffect" parent="ContainerCenter/Face" instance=ExtResource("3_vtdao")]
 position = Vector2(250, 20)
 
 [node name="Phoneme" type="Panel" parent="ContainerCenter/Face"]
@@ -395,19 +395,19 @@ offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
-theme_override_fonts/font = ExtResource("3_736bh")
+theme_override_fonts/font = ExtResource("4_h0ae0")
 theme_override_font_sizes/font_size = 180
-text = "o"
+text = "u"
 
 [node name="Mouth" type="Sprite2D" parent="ContainerCenter/Face"]
 position = Vector2(257, 499)
-texture = ExtResource("3_3mr74")
+texture = ExtResource("5_w156t")
 
-[node name="MouthO" type="Sprite2D" parent="ContainerCenter/Face"]
+[node name="MouthU" type="Sprite2D" parent="ContainerCenter/Face"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(259, 503)
 scale = Vector2(0.72, 0.72)
-texture = ExtResource("3_nn2gk")
+texture = ExtResource("6_dalut")
 
 [node name="ContainerBottom" type="Control" parent="."]
 layout_mode = 1
@@ -422,7 +422,7 @@ offset_right = 360.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="RecordButton" parent="ContainerBottom" instance=ExtResource("6_hhhq0")]
+[node name="RecordButton" parent="ContainerBottom" instance=ExtResource("7_d3ulg")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -439,12 +439,12 @@ grow_vertical = 2
 scale = Vector2(0.9, 0.9)
 max_duration = 2.0
 
-[node name="Footer" parent="." instance=ExtResource("7_cccvb")]
+[node name="Footer" parent="." instance=ExtResource("8_kwygf")]
 layout_mode = 1
 
 [node name="PredictionComponent" type="HTTPRequest" parent="."]
-script = ExtResource("8_ie1my")
-endpoint = "word/o"
+script = ExtResource("9_g3hty")
+endpoint = "word/u"
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
 volume_db = 5.0
