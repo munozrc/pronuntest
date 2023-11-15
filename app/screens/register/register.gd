@@ -72,6 +72,7 @@ func _on_continue_button_up():
 			steps[current_step].disable_interactions()
 		
 		finished = true
+		GLOBAL.save_user_data()
 		return
 	
 	show_next_step()
