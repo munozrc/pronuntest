@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://btkmineyue1gp"]
+[gd_scene load_steps=23 format=3 uid="uid://btkmineyue1gp"]
 
 [ext_resource type="PackedScene" uid="uid://7govdidjgxm8" path="res://screens/activities/05/entities/speedway.tscn" id="1_62cbq"]
 [ext_resource type="Script" path="res://screens/activities/05/tasks/race.gd" id="1_impug"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ce2eg02ncgc" path="res://assets/images/flag.webp" id="3_ysl2e"]
 [ext_resource type="PackedScene" uid="uid://jriwlk872m4b" path="res://components/confetti_effect.tscn" id="4_nub6g"]
 [ext_resource type="PackedScene" uid="uid://bccjdn2ldpl3g" path="res://components/frame_counter.tscn" id="5_t7p62"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="6_0nrhg"]
 [ext_resource type="Script" path="res://scripts/prediction_component.gd" id="6_lvfr2"]
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="7_tvmg0"]
 [ext_resource type="AudioStream" uid="uid://bpp3f6i3p4oqu" path="res://assets/voices/05/mueve_el_auto.mp3" id="8_w5ht4"]
@@ -15,9 +16,17 @@
 [ext_resource type="AudioStream" uid="uid://7lndmvl80sun" path="res://assets/voices/phonemes/e.mp3" id="12_sn1q1"]
 [ext_resource type="AudioStream" uid="uid://c5paxb8ngcmqm" path="res://assets/voices/05/mover_abajo.mp3" id="13_akqns"]
 [ext_resource type="PackedScene" uid="uid://bhlbt7mk6goj4" path="res://components/footer.tscn" id="14_ocblk"]
+[ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="17_ojxsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cr241"]
 size = Vector2(43.75, 531.25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acq3x"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Animation" id="Animation_qmns2"]
 resource_name = "intro"
@@ -186,7 +195,6 @@ linear_damp = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContainerCenter/SpeedWay/Goal2/Area2D"]
 position = Vector2(149.375, -124.875)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cr241")
 
 [node name="BoxSpawner" type="Node2D" parent="ContainerCenter"]
@@ -225,6 +233,106 @@ position = Vector2(141, 613)
 [node name="Spawn3" type="Node2D" parent="ContainerCenter"]
 position = Vector2(141, 742)
 
+[node name="Phoneme" type="Panel" parent="ContainerCenter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -527.0
+offset_right = 97.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(97, 97)
+theme_override_styles/panel = SubResource("StyleBoxFlat_acq3x")
+
+[node name="Arrow" type="Sprite2D" parent="ContainerCenter/Phoneme"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+position = Vector2(-85.5002, 94.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_ojxsj")
+
+[node name="Arrow2" type="Sprite2D" parent="ContainerCenter/Phoneme"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+position = Vector2(254.5, 94.5001)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_ojxsj")
+
+[node name="Letter" type="Label" parent="ContainerCenter/Phoneme"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.75
+offset_top = -116.25
+offset_right = 120.25
+offset_bottom = 194.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("6_0nrhg")
+theme_override_font_sizes/font_size = 180
+text = "i"
+
+[node name="Phoneme2" type="Panel" parent="ContainerCenter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = 309.0
+offset_right = 97.0
+offset_bottom = 503.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(97, 97)
+theme_override_styles/panel = SubResource("StyleBoxFlat_acq3x")
+
+[node name="Arrow" type="Sprite2D" parent="ContainerCenter/Phoneme2"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+position = Vector2(-85.5002, 94.5)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_ojxsj")
+flip_h = true
+
+[node name="Arrow2" type="Sprite2D" parent="ContainerCenter/Phoneme2"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+position = Vector2(254.5, 94.5001)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_ojxsj")
+flip_h = true
+
+[node name="Letter" type="Label" parent="ContainerCenter/Phoneme2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -138.75
+offset_right = 94.0
+offset_bottom = 172.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("6_0nrhg")
+theme_override_font_sizes/font_size = 180
+text = "e"
+
 [node name="Footer" parent="." instance=ExtResource("14_ocblk")]
 layout_mode = 1
 
@@ -237,12 +345,10 @@ offset_bottom = 393.0
 theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
 
 [node name="PredictionComponent" type="HTTPRequest" parent="."]
-use_threads = true
 accept_gzip = false
 script = ExtResource("6_lvfr2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.8
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
 volume_db = 5.0

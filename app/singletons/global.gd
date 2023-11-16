@@ -10,23 +10,23 @@ var information = {
 var activities = {
 	"forest": [
 		{
-			"state": "completed",
-			"score": 0
-		},
-		{
-			"state": "completed",
-			"score": 0
-		},
-		{
-			"state": "completed",
-			"score": 0
-		},
-		{
-			"state": "completed",
-			"score": 0
-		},
-		{
 			"state": "unlocked",
+			"score": 0
+		},
+		{
+			"state": "locked",
+			"score": 0
+		},
+		{
+			"state": "locked",
+			"score": 0
+		},
+		{
+			"state": "locked",
+			"score": 0
+		},
+		{
+			"state": "locked",
 			"score": 0
 		}
 	]
@@ -43,9 +43,19 @@ func _ready():
 		if load_user_info.has(user_info):
 			information[user_info] = load_user_info[user_info]
 
+	var load_activities = _load_json_file("user://activities.json")
+	
+	for island in activities:
+		if load_activities.has(island):
+			activities[island] = load_activities[island]
+
 
 func save_user_data():
 	_save_json_file("user://info.json", information)
+
+
+func save_activities_data():
+	_save_json_file("user://activities.json", activities)
 
 
 func _load_json_file(file_path: String) -> Dictionary:
@@ -75,9 +85,11 @@ func set_activity_completed(island: String, index: int):
 	
 	if index + 1 >= activities[island].size():
 		print("There are no more activities to unlock")
+		save_activities_data()
 		return
 	
 	activities[island][index + 1]["state"] = "unlocked"
+	save_activities_data()
 
 
 func get_activity_state(island: String, index) -> String:
