@@ -79,3 +79,7 @@ func _on_island_selected():
 	var target = islands[current_island].scene
 	GLOBAL.current_island = current_island
 	get_tree().change_scene_to_packed(target)
+
+
+func _on_settings_pressed():
+	get_tree().change_scene_to_file("res://screens/settings.tscn")

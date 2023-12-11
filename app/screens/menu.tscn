@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bdb1vm6hgcjyr"]
+[gd_scene load_steps=92 format=3 uid="uid://bdb1vm6hgcjyr"]
 
 [ext_resource type="Script" path="res://screens/menu.gd" id="1_s14br"]
 [ext_resource type="Texture2D" uid="uid://ds1u126hky56q" path="res://assets/images/clouds/cloud.webp" id="2_smnxj"]
@@ -44,6 +44,7 @@
 [ext_resource type="AudioStream" uid="uid://c75bhlngxq01o" path="res://assets/sounds/selection.mp3" id="42_oa7mh"]
 [ext_resource type="AudioStream" uid="uid://ci86rocyxqlgh" path="res://assets/sounds/resumen_game.mp3" id="43_j1y63"]
 [ext_resource type="AudioStream" uid="uid://b03ug47cnvypq" path="res://assets/music/ambient_music.mp3" id="44_o7to0"]
+[ext_resource type="Texture2D" uid="uid://k5yy15staw7w" path="res://assets/icons/setting.png" id="45_1ilfi"]
 
 [sub_resource type="Gradient" id="Gradient_ruic7"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -1579,6 +1580,52 @@ _data = {
 "idle": SubResource("Animation_iml3t")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khcsd"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhn1e"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlp8b"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n0n4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5w0k"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -2520,6 +2567,43 @@ texture_pressed = ExtResource("4_5mv3l")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Header" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_right = 360.0
+offset_bottom = 179.0
+grow_horizontal = 2
+
+[node name="SettingsButton" type="Button" parent="Header"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -49.0
+offset_right = -48.0
+offset_bottom = 49.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/icon_pressed_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/icon_hover_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/icon_focus_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_colors/icon_disabled_color = Color(0.192157, 0.192157, 0.192157, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_khcsd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nhn1e")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mlp8b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2n0n4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_n5w0k")
+icon = ExtResource("45_1ilfi")
+icon_alignment = 1
+
 [node name="TransitionComponent" parent="." instance=ExtResource("40_ajaof")]
 autoplay = "fade_out"
 
@@ -2544,3 +2628,5 @@ bus = &"SFX"
 stream = ExtResource("44_o7to0")
 autoplay = true
 bus = &"Music"
+
+[connection signal="pressed" from="Header/SettingsButton" to="." method="_on_settings_pressed"]

@@ -1,7 +1,7 @@
 extends Node
 
-
 var information = {
+	"server": "http://localhost:4000",
 	"name": "",
 	"gender": "M",
 	"age": 0,

@@ -1,0 +1,193 @@
+[gd_scene load_steps=12 format=3 uid="uid://xnosuf24pxis"]
+
+[ext_resource type="FontFile" uid="uid://dd6buxm08rjw3" path="res://assets/fonts/Poppins-Bold.ttf" id="1_2gnsy"]
+[ext_resource type="Script" path="res://screens/settings.gd" id="1_8c3o2"]
+[ext_resource type="FontFile" uid="uid://cogryc0bfmmla" path="res://assets/fonts/Poppins-SemiBold.ttf" id="1_mq0ia"]
+[ext_resource type="Texture2D" uid="uid://bbwok74hcj4xv" path="res://assets/icons/arrow.png" id="2_ygefg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm8rt"]
+content_margin_left = 24.0
+content_margin_top = 20.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt5q1"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbnt6"]
+bg_color = Color(0, 0.6, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug2sm"]
+bg_color = Color(0, 0.6, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0aqwx"]
+bg_color = Color(0, 0.6, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vwtv"]
+bg_color = Color(0, 0.6, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhgiv"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8c3o2")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_right = 360.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+
+[node name="Background" type="ColorRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 521.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="Container/HBoxContainer/MarginContainer/HBoxContainer"]
+modulate = Color(0, 0.6, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_ygefg")
+
+[node name="TitleMargin" type="MarginContainer" parent="Container/HBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Title" type="Label" parent="Container/HBoxContainer/MarginContainer/HBoxContainer/TitleMargin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_fonts/font = ExtResource("1_2gnsy")
+theme_override_font_sizes/font_size = 42
+text = "Configuraciones"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ServerField" type="MarginContainer" parent="Container/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/HBoxContainer/ServerField"]
+layout_mode = 2
+
+[node name="LabelContainer" type="MarginContainer" parent="Container/HBoxContainer/ServerField/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Container/HBoxContainer/ServerField/VBoxContainer/LabelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337255, 0.337255, 0.337255, 1)
+theme_override_fonts/font = ExtResource("1_mq0ia")
+theme_override_font_sizes/font_size = 24
+text = "Servidor"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FieldContainer" type="MarginContainer" parent="Container/HBoxContainer/ServerField/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 44
+theme_override_constants/margin_bottom = 0
+
+[node name="LineEdit" type="LineEdit" parent="Container/HBoxContainer/ServerField/VBoxContainer/FieldContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_placeholder_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/caret_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_mq0ia")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_fm8rt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yt5q1")
+placeholder_text = "http://127.0.0.1:4000"
+
+[node name="ButtonMargin" type="MarginContainer" parent="Container/HBoxContainer"]
+custom_minimum_size = Vector2(380, 73)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 66
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 66
+theme_override_constants/margin_bottom = 0
+
+[node name="SaveButton" type="Button" parent="Container/HBoxContainer/ButtonMargin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_mq0ia")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_gbnt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ug2sm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0aqwx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3vwtv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nhgiv")
+text = "Guardar"
+
+[connection signal="pressed" from="Container/HBoxContainer/MarginContainer/HBoxContainer/BackButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Container/HBoxContainer/ButtonMargin/SaveButton" to="." method="_on_save_pressed"]
