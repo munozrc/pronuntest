@@ -43,7 +43,7 @@ layout_mode = 1
 
 [node name="AudioStreamRecord" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMicrophone_2cr4h")
-volume_db = 5.0
+volume_db = 12.0
 autoplay = true
 bus = &"Record"
 

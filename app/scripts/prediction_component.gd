@@ -5,8 +5,9 @@ extends HTTPRequest
 @export var endpoint := ""
 
 
-#var _url = "http://192.168.0.12:4000/api/"
-var _url = "https://pronuntest-api-f5zmx.ondigitalocean.app/api/"
+var _url = "http://192.168.0.12:4000/api/"
+#var _url = "https://pronuntest-api-f5zmx.ondigitalocean.app/api/"
+#var _url = "http://146.190.3.58/api/"
 
 
 func send_audio():

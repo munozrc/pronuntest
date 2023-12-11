@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://ca36cfa3brykw" path="res://components/transition_component.tscn" id="1_5m1m3"]
 [ext_resource type="PackedScene" uid="uid://d35deq2tyjx53" path="res://components/header.tscn" id="1_js8cs"]
 [ext_resource type="Script" path="res://screens/activities/05/main.gd" id="1_lcphe"]
-[ext_resource type="PackedScene" uid="uid://btkmineyue1gp" path="res://screens/activities/05/tasks/race.tscn" id="2_y5jhh"]
 [ext_resource type="PackedScene" uid="uid://cktvc0cy73dmd" path="res://screens/activities/05/tasks/presentation_e.tscn" id="3_edsjt"]
 [ext_resource type="PackedScene" uid="uid://db3elyv8np0q" path="res://screens/activities/05/tasks/presentation_i.tscn" id="4_3w2j1"]
+[ext_resource type="PackedScene" uid="uid://btkmineyue1gp" path="res://screens/activities/05/tasks/race.tscn" id="4_a2i52"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_fyv87"]
 
@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lcphe")
-tasks = Array[PackedScene]([ExtResource("3_edsjt"), ExtResource("4_3w2j1"), ExtResource("2_y5jhh")])
+tasks = Array[PackedScene]([ExtResource("3_edsjt"), ExtResource("4_3w2j1"), ExtResource("4_a2i52")])
 container = NodePath("TaskContainer")
 island = "forest"
 index_island = 4
