@@ -21,6 +21,7 @@ var current_position: int
 var record_effect: AudioEffectRecord
 var recording: AudioStreamWAV
 var tween: Tween
+var is_finished:= false
 
 
 func _ready():
@@ -37,6 +38,7 @@ func start_race():
 	
 	car.position = spawn_points[current_position].position
 	car.move_animation()
+	is_finished = false
 	
 	timer_box.start()
 	timer.start()
@@ -45,6 +47,7 @@ func start_race():
 
 func stop_race():
 	record_effect.set_recording_active(false)
+	is_finished = true
 	
 	timer_box.stop()
 	timer.stop()
@@ -107,7 +110,10 @@ func _on_timer_box_timeout():
 
 
 func _on_prediction_completed(_result, response_code, _headers, body):
-	if response_code != HTTPClient.RESPONSE_OK:
+	if (
+		response_code != HTTPClient.RESPONSE_OK ||
+		is_finished
+	):
 		return
 	
 	var response = JSON.parse_string(body.get_string_from_utf8())
